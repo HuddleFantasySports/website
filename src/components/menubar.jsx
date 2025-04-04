@@ -7,8 +7,10 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const menuItems = [
   { title: "Home", to: "/" },
-  { title: "About", to: "/about" },
-  { title: "Services", to: "/services" },
+  { title: "Squad-Based Management", to: "/squad-based-management" },
+  { title: "Fantasy Leagues", to: "/fantasy-leagues" },
+  { title: "Testimonials", to: "/testimonials" },
+  { title: "Sponsors", to: "/sponsors" },
   { title: "Contact", to: "/contact" },
 ];
 
@@ -17,17 +19,18 @@ export function MenuBar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
-        <div className="mr-4 hidden md:flex">
-          <Link to="/" className="mr-6 flex items-center space-x-2">
-            <span className="hidden font-bold sm:inline-block">YourLogo</span>
+      <div className="container flex h-14 items-center justify-between">
+        <div className="flex-shrink-0">
+          <Link to="/" className="flex items-center space-x-2">
+            <img src="public/Mesh Base Logo.png" width={182} height={64} />
           </Link>
-          <nav className="flex items-center space-x-6 text-sm font-medium">
+
+          <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center space-x-6 text-sm font-medium">
             {menuItems.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className="transition-colors hover:text-foreground/80 text-foreground/60"
+                className="whitespace-nowrap transition-colors hover:text-foreground/80 text-foreground/60"
               >
                 {item.title}
               </Link>

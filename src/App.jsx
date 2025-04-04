@@ -5,26 +5,30 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function Home() {
   return (
     <main className="flex-1 container py-8">
-      <h1 className="text-3xl font-bold mb-4">Welcome to Our Website</h1>
-      <p className="text-lg">
-        This is a modern website with a responsive menu bar.
-      </p>
+      <h1 className="text-3xl font-bold mb-4">Welcome to Mesh Leagues</h1>
+      <p className="text-lg">Test</p>
     </main>
   );
 }
 
-function About() {
-  return <h1>About Page</h1>;
+function SquadBasedManagement() {
+  return <h1>Squad Page</h1>;
 }
 
-function Services() {
-  return <h1>Services Page</h1>;
+function FantasyLeagues() {
+  return <h1>Fantasy Page</h1>;
+}
+
+function Testimonials() {
+  return <h1>Testimonials Page</h1>;
+}
+function Sponsors() {
+  return <h1>Sponsors Page</h1>;
 }
 
 function Contact() {
   return <h1>Contact Page</h1>;
 }
-
 function App() {
   return (
     <Router>
@@ -32,8 +36,13 @@ function App() {
         <MenuBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
+          <Route
+            path="/squad-based-management"
+            element={<SquadBasedManagement />}
+          />
+          <Route path="/fantasy-leagues" element={<FantasyLeagues />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/sponsors" element={<Sponsors />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
