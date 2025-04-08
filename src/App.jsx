@@ -1,6 +1,6 @@
 import "./App.css";
-
-import { MenuBar } from "@/components/menubar";
+import MeshVideo from "./components/MeshVideo";
+import { MenuBar } from "./components/menubar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function Home() {
   return (
@@ -20,8 +20,20 @@ function FantasyLeagues() {
 }
 
 function Testimonials() {
-  return <h1>Testimonials Page</h1>;
+  return (
+    <main className="flex-1 container py-8">
+      <h1 className="text-6xl font-bold mb-4">
+        Don’t Take Our Word for It—Hear It From the Squads.
+      </h1>
+      <p className="text-lg">
+        MESH is changing the game for fantasy sports. Here’s what players have
+        to say.
+      </p>
+      <MeshVideo />
+    </main>
+  );
 }
+
 function Sponsors() {
   return <h1>Sponsors Page</h1>;
 }
