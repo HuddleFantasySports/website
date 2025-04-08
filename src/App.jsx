@@ -2,6 +2,7 @@ import "./App.css";
 import MeshVideo from "./components/MeshVideo";
 import { TestimonalCarousel } from "./components/TestimonialCarousel";
 import { MenuBar } from "./components/menubar";
+import { ContactUs } from "./components/ContactUsButton";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function Home() {
   return (
@@ -32,6 +33,7 @@ function Testimonials() {
       </p>
       <MeshVideo />
       <TestimonalCarousel />
+      <ContactUs />
     </main>
   );
 }
@@ -39,7 +41,6 @@ function Testimonials() {
 function Sponsors() {
   return <h1>Sponsors Page</h1>;
 }
-ß;
 
 function Contact() {
   return <h1>Contact Page</h1>;
