@@ -1,13 +1,10 @@
 /** @type {import('tailwindcss').Config} */
-// tailwind.config.js
 export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', "ui-sans-serif", "system-ui"], // default sans stack
-      },
-      animation: {
-        "gradient-x": "gradient-x 1s linear infinite",
+        sans: ['"Plus Jakarta Sans"', "ui-sans-serif", "system-ui"],
       },
       keyframes: {
         "gradient-x": {
@@ -18,9 +15,16 @@ export default {
             backgroundPosition: "100% 50%",
           },
         },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        "gradient-x": "gradient-x 1s linear infinite",
+        marquee: "marquee 30s linear infinite",
       },
     },
   },
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   plugins: [],
 };
