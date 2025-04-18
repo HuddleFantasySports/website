@@ -1,6 +1,6 @@
 const MeshVideo = () => {
   return (
-    <div className="flex justify-center pt-12">
+    <div className="flex justify-center pt-8">
       <video
         src="/Huddle_RD_2.0_4K.mov"
         autoPlay

@@ -8,6 +8,7 @@ function Home() {
   return (
     <main className="flex-1 container py-8">
       <h1 className="text-3xl font-bold mb-4">Welcome to Mesh Leagues</h1>
+      <div className="font-sans text-3xl">This should be Plus Jakarta Sans</div>
       <p className="text-lg">Test</p>
     </main>
   );
