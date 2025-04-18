@@ -7,9 +7,26 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function Home() {
   return (
     <main className="flex-1 container py-8">
-      <h1 className="text-3xl font-bold mb-4">Welcome to Mesh Leagues</h1>
-      <div className="font-sans text-3xl">This should be Plus Jakarta Sans</div>
-      <p className="text-lg">Test</p>
+      <h1
+        className="text-6xl md:text-6xl font-extrabold text-transparent bg-clip-text 
+             bg-[linear-gradient(90deg,_#80FFEA,_#B59BF0,_#FF7EB3,_#80FFEA)] 
+             bg-[length:300%_300%] bg-fixed animate-gradient-x"
+      >
+        Squad Up. Compete. Win.
+      </h1>
+      <div className="font-sans text-2xl italic">
+        A new era of fantasy football starts here
+      </div>
+      <div className="flex justify-center mt-6">
+        <div className="flex flex-wrap gap-4">
+          <button className="px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition">
+            Download the app
+          </button>
+          <button className="px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition">
+            Explore Leagues
+          </button>
+        </div>
+      </div>
     </main>
   );
 }

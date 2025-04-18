@@ -18,70 +18,55 @@ export function MenuBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-transparent backdrop-blur-md font-sans text-white">
-      <div className="flex flex-wrap items-center justify-between max-w-7xl mx-auto px-4 py-3">
-        {/* Logo */}
-        <div className="flex-shrink-0">
-          <Link to="/" className="flex items-center space-x-2">
-            <img
-              src="public/Mesh Base Logo.png"
-              width={182}
-              height={64}
-              alt="Mesh Logo"
-              className="h-10 w-auto max-w-full"
-            />
-          </Link>
-        </div>
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-transparent backdrop-blur-md text-white">
+      <div className="container mx-auto flex items-center justify-between px-4 py-3">
+        {/* Logo on left */}
+        <Link to="/">
+          <img
+            src="/Mesh Base Logo.png"
+            className="h-14 w-auto"
+            alt="Mesh Logo"
+          />
+        </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center space-x-6 text-lg mx-auto">
+        <nav className="hidden md:flex items-center gap-6 text-lg font-semibold mx-auto">
           {menuItems.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className="text-white font-bold text-base hover:text-[#B59BF0]"
+              className="hover:text-[#B59BF0] transition"
             >
               {item.title}
             </Link>
           ))}
         </nav>
 
-        {/* Mobile Nav Toggle */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild>
-            <Button
-              variant="ghost"
-              className="px-2 text-base hover:bg-transparent focus-visible:ring-0 md:hidden"
-            >
-              <Menu className="h-5 w-5" />
-              <span className="sr-only">Toggle Menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="pr-0">
-            <MobileLink
-              to="/"
-              className="flex items-center font-bold text-lg"
-              onOpenChange={setIsOpen}
-            >
-              Mesh Leagues
-            </MobileLink>
-            <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-              <div className="flex flex-col space-y-3">
-                {menuItems.map((item) => (
-                  <MobileLink
-                    key={item.to}
-                    to={item.to}
-                    onOpenChange={setIsOpen}
-                    className="text-base"
-                  >
-                    {item.title}
-                  </MobileLink>
-                ))}
-              </div>
-            </div>
-          </SheetContent>
-        </Sheet>
+        {/* Mobile Menu Toggle */}
+        <div className="md:hidden">
+          <button onClick={() => setIsOpen(!isOpen)} className="p-2">
+            <Menu className="w-6 h-6" />
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Nav Drawer */}
+      {isOpen && (
+        <div className="md:hidden bg-background/95 backdrop-blur px-4 py-4">
+          <nav className="flex flex-col gap-4 text-base font-semibold">
+            {menuItems.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                onClick={() => setIsOpen(false)}
+                className="hover:text-[#B59BF0] transition"
+              >
+                {item.title}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
