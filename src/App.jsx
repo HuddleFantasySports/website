@@ -8,7 +8,7 @@ import UniversityCarousel from "./components/UniversityCarousel";
 
 function Home() {
   return (
-    <main className="flex-1 container py-8">
+    <main className="flex-1 w-full py-8">
       <h1
         className="text-6xl md:text-6xl font-extrabold text-transparent bg-clip-text 
              bg-[linear-gradient(90deg,_#80FFEA,_#B59BF0,_#FF7EB3,_#80FFEA)] 

@@ -13,25 +13,30 @@ const logos = [
 
 export default function UniversityCarousel() {
   return (
-    <section className="py-12 overflow-hidden">
-      <h2 className="text-center text-1xl font-semibold mb-4 text-white">
-        Organizations We Work With
-      </h2>
+    <section className="my-12 mx-0">
+      {/* Heading */}
+      <div className="py-8">
+        <h2 className="text-center text-1xl font-semibold text-white">
+          Organizations We Work With
+        </h2>
+      </div>
 
-      {/* Edge-to-edge white background */}
-      <div className="fixed left-0 right-0 w-screen bg-white py-8 z-0">
-        <Marquee gradient={false} speed={50}>
-          <div className="flex items-center justify-around gap-12 px-6">
-            {logos.map((logo, index) => (
-              <img
-                key={index}
-                src={logo.src}
-                alt={logo.name}
-                className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition"
-              />
-            ))}
-          </div>
-        </Marquee>
+      {/* Carousel */}
+      <div className="w-full py-6">
+        <div className="max-w-[2000px] mx-auto overflow-hidden">
+          <Marquee gradient={false} speed={50}>
+            <div className="flex items-center gap-16">
+              {logos.map((logo, index) => (
+                <img
+                  key={index}
+                  src={logo.src}
+                  alt={logo.name}
+                  className="h-16 w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition"
+                />
+              ))}
+            </div>
+          </Marquee>
+        </div>
       </div>
     </section>
   );
