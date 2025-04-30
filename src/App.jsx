@@ -6,6 +6,8 @@ import { ContactUs } from "./components/ContactUsButton";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UniversityCarousel from "./components/UniversityCarousel";
 import { HomeDynamicText } from "./components/VoteOnDynamicText";
+import { Link } from "react-router-dom";
+import { AppPreviewCarouselPlaceholder } from "./components/AppPreviewCarouselPlaceholder";
 
 function Home() {
   return (
@@ -31,7 +33,24 @@ function Home() {
         </div>
       </div>
       <UniversityCarousel></UniversityCarousel>
-      <HomeDynamicText></HomeDynamicText>
+
+      <div className="flex flex-col md:flex-row items-center justify-center my-10">
+        {/* Left: Vote text */}
+        <div className="w-full md:w-1/2">
+          <HomeDynamicText />
+        </div>
+        {/* Right: Phone preview */}
+        <div className="w-full md:w-1/2 flex justify-center">
+          <AppPreviewCarouselPlaceholder />
+        </div>
+      </div>
+      <div className="my-6">
+        <Link to="/squad-based-management">
+          <a className="px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition my-10">
+            Learn More about Squad-Based Management
+          </a>
+        </Link>
+      </div>
     </main>
   );
 }

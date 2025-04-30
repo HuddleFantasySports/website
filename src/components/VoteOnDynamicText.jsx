@@ -9,7 +9,7 @@ export function HomeDynamicText() {
     "Waivers",
     "Trades",
     "Squad Gamification",
-    "Draft (pending)",
+    "Drafts",
   ];
   const [idx, setIdx] = useState(0);
   const [hidden, setHidden] = useState(false);
