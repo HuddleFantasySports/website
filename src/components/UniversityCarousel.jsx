@@ -1,3 +1,4 @@
+// components/UniversityCarousel.jsx
 "use client";
 
 import Marquee from "react-fast-marquee";
@@ -13,30 +14,31 @@ const logos = [
 
 export default function UniversityCarousel() {
   return (
-    <section className="my-12 mx-0">
-      {/* Heading */}
-      <div className="py-8">
-        <h2 className="text-center text-1xl font-semibold text-white">
+    <section className="my-16">
+      {/* center the content in a max-width wrapper */}
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-sm text-gray-400 uppercase text-center mb-6">
           Organizations We Work With
         </h2>
-      </div>
 
-      {/* Carousel */}
-      <div className="w-full py-6">
-        <div className="max-w-[2000px] mx-auto overflow-hidden">
-          <Marquee gradient={false} speed={50}>
-            <div className="flex items-center gap-16">
-              {logos.map((logo, index) => (
-                <img
-                  key={index}
-                  src={logo.src}
-                  alt={logo.name}
-                  className="h-16 w-auto object-contain brightness-0 invert opacity-70 hover:opacity-100 transition"
-                />
-              ))}
-            </div>
-          </Marquee>
-        </div>
+        {/* marquee itself will fill the wrapper, logos inside flex-centered */}
+        <Marquee
+          gradient={false}
+          speed={25}
+          pauseOnHover
+          className="overflow-hidden"
+        >
+          <div className="flex items-center justify-center space-x-8">
+            {logos.map((logo, i) => (
+              <img
+                key={i}
+                src={logo.src}
+                alt={logo.name}
+                className="h-16 w-auto object-contain grayscale brightness-0 invert opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300"
+              />
+            ))}
+          </div>
+        </Marquee>
       </div>
     </section>
   );

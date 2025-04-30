@@ -5,6 +5,7 @@ import { MenuBar } from "./components/menubar";
 import { ContactUs } from "./components/ContactUsButton";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UniversityCarousel from "./components/UniversityCarousel";
+import { HomeDynamicText } from "./components/VoteOnDynamicText";
 
 function Home() {
   return (
@@ -30,6 +31,7 @@ function Home() {
         </div>
       </div>
       <UniversityCarousel></UniversityCarousel>
+      <HomeDynamicText></HomeDynamicText>
     </main>
   );
 }
