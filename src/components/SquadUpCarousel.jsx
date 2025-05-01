@@ -3,7 +3,7 @@ import React from "react";
 
 export function SquadUpCarousel() {
   return (
-    <div className="max-w-md mx-auto my-15">
+    <div className="max-w-md mx-auto my-5">
       {" "}
       {/* ← limits width to ~28rem and centers */}
       <Carousel autoplay>
@@ -15,7 +15,7 @@ export function SquadUpCarousel() {
           "Your… Squad",
         ].map((item) => (
           <div key={item}>
-            <div className="h-100 bg-gray-300 text-gray-800 flex items-center justify-center">
+            <div className="h-100 bg-gray-300 text-gray-800 flex items-center justify-center rounded-2xl ">
               <span className="text-2xl font-bold">{item}</span>
             </div>
           </div>

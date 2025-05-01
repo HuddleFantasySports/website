@@ -9,6 +9,7 @@ import { HomeDynamicText } from "./components/VoteOnDynamicText";
 import { Link } from "react-router-dom";
 import { AppPreviewCarouselPlaceholder } from "./components/AppPreviewCarouselPlaceholder";
 import { SquadUpCarousel } from "./components/SquadUpCarousel";
+import { SquadFeatures } from "./components/SquadFeatures";
 
 function Home() {
   return (
@@ -33,7 +34,17 @@ function Home() {
           </button>
         </div>
       </div>
+
       <UniversityCarousel></UniversityCarousel>
+      <hr
+        className="
+      relative
+      left-1/2                /* position its left edge at 50% of parent */
+      transform -translate-x-1/2 /* shift it back by half its own width */
+      w-screen                /* make it as wide as the viewport */
+      border-t border-gray-200 opacity-50
+    "
+      />
 
       <div className="flex flex-col md:flex-row items-center justify-center my-10">
         {/* Left: Vote text */}
@@ -51,10 +62,20 @@ function Home() {
             Learn More about Squad-Based Management
           </a>
         </Link>
+        <hr
+          className="
+      relative
+      left-1/2                /* position its left edge at 50% of parent */
+      transform -translate-x-1/2 /* shift it back by half its own width */
+      w-screen                /* make it as wide as the viewport */
+      border-t border-gray-200 opacity-50
+      my-10
+    "
+        />
         <SquadUpCarousel></SquadUpCarousel>
       </div>
       <Link to="/fantasy-leagues">
-        <a className=" shadow-md  px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition my-10">
+        <a className=" shadow-md  px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition my-5">
           Learn More About Leagues
         </a>
       </Link>
@@ -63,7 +84,51 @@ function Home() {
 }
 
 function SquadBasedManagement() {
-  return <h1>Squad Page</h1>;
+  return (
+    <main className="flex-1 flex flex-col items-center text-center max-w-3xl mx-auto px-4 py-8 space-y-5">
+      <div>
+        <section className="py-16">
+          <h1 className="text-4xl font-bold text-center">
+            Fantasy Football, Reimagined for Everyone.
+          </h1>
+          <p className="mt-4 text-center max-w-2xl mx-auto">
+            Whether you’re a seasoned pro or a first-time player, MESH makes
+            fantasy football a squad experience.
+          </p>
+        </section>
+        {/* Divider */}
+        <hr
+          className="
+      relative
+      left-1/2                /* position its left edge at 50% of parent */
+      transform -translate-x-1/2 /* shift it back by half its own width */
+      w-screen                /* make it as wide as the viewport */
+      border-t border-gray-200 opacity-50
+    "
+        />
+
+        {/* 2️⃣ Quote */}
+        <section className="py-16">
+          <blockquote className="text-center italic max-w-3xl mx-auto">
+            “Forget going solo – MESH transforms fantasy football into a shared
+            mission. Compete together. Win together. Grow together.”
+          </blockquote>
+        </section>
+
+        {/* Divider */}
+        <hr
+          className="
+      relative
+      left-1/2                /* position its left edge at 50% of parent */
+      transform -translate-x-1/2 /* shift it back by half its own width */
+      w-screen                /* make it as wide as the viewport */
+      border-t border-gray-200 opacity-50
+    "
+        />
+      </div>
+      <SquadFeatures></SquadFeatures>
+    </main>
+  );
 }
 
 function FantasyLeagues() {
