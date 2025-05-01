@@ -10,7 +10,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-export function TestimonalCarousel() {
+export function TestimonialCarousel() {
   return (
     <div className="flex justify-center p-6">
       <Carousel

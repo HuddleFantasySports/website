@@ -1,6 +1,6 @@
 import "./App.css";
 import MeshVideo from "./components/MeshVideo";
-import { TestimonalCarousel } from "./components/TestimonialCarousel";
+import { TestimonialCarousel } from "./components/TestimonialCarousel";
 import { MenuBar } from "./components/menubar";
 import { ContactUs } from "./components/ContactUsButton";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -25,10 +25,10 @@ function Home() {
       </div>
       <div className="flex justify-center mt-6">
         <div className="flex flex-wrap gap-4">
-          <button className="px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition">
+          <button className=" shadow-md px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition">
             Download the app
           </button>
-          <button className="px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition">
+          <button className=" shadow-md px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition">
             Explore Leagues
           </button>
         </div>
@@ -47,12 +47,17 @@ function Home() {
       </div>
       <div className="my-6">
         <Link to="/squad-based-management">
-          <a className="px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition my-10">
+          <a className=" shadow-md px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition my-10">
             Learn More about Squad-Based Management
           </a>
         </Link>
         <SquadUpCarousel></SquadUpCarousel>
       </div>
+      <Link to="/fantasy-leagues">
+        <a className=" shadow-md  px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition my-10">
+          Learn More About Leagues
+        </a>
+      </Link>
     </main>
   );
 }
@@ -67,16 +72,17 @@ function FantasyLeagues() {
 
 function Testimonials() {
   return (
-    <main className="flex-1 container py-8">
-      <h1 className="text-6xl font-bold mb-4">
+    <main className="flex-1 flex flex-col items-center text-center max-w-3xl mx-auto px-4 py-8 space-y-5">
+      <h1 className="text-5xl font-bold">
         Don’t Take Our Word for It—Hear It From the Squads.
       </h1>
-      <p className="text-lg">
+      <p className="text-1xl italic">
         MESH is changing the game for fantasy sports. Here’s what players have
         to say.
       </p>
       <MeshVideo />
-      <TestimonalCarousel />
+      <TestimonialCarousel />
+
       <ContactUs />
     </main>
   );
