@@ -8,6 +8,7 @@ import UniversityCarousel from "./components/UniversityCarousel";
 import { HomeDynamicText } from "./components/VoteOnDynamicText";
 import { Link } from "react-router-dom";
 import { AppPreviewCarouselPlaceholder } from "./components/AppPreviewCarouselPlaceholder";
+import { SquadUpCarousel } from "./components/SquadUpCarousel";
 
 function Home() {
   return (
@@ -50,6 +51,7 @@ function Home() {
             Learn More about Squad-Based Management
           </a>
         </Link>
+        <SquadUpCarousel></SquadUpCarousel>
       </div>
     </main>
   );
