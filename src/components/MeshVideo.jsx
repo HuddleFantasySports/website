@@ -1,6 +1,6 @@
 const MeshVideo = () => {
   return (
-    <div className="flex justify-center pt-8">
+    <div className="flex justify-center pt-8 ">
       <video
         src="/Huddle_RD_2.0_4K.mov"
         autoPlay
@@ -8,7 +8,7 @@ const MeshVideo = () => {
         loop
         playsInline
         controls
-        className="max-w-[800px] w-full"
+        className="max-w-[800px] w-full  rounded-lg"
       />
     </div>
   );

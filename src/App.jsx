@@ -10,6 +10,11 @@ import { Link } from "react-router-dom";
 import { AppPreviewCarouselPlaceholder } from "./components/AppPreviewCarouselPlaceholder";
 import { SquadUpCarousel } from "./components/SquadUpCarousel";
 import { SquadFeatures } from "./components/SquadFeatures";
+import {
+  CaseStudySection,
+  EngagementSection,
+  LeaguesSection,
+} from "./components/SponsorshipsComponents";
 
 function Home() {
   return (
@@ -108,7 +113,7 @@ function SquadBasedManagement() {
         />
 
         {/* 2️⃣ Quote */}
-        <section className="py-16">
+        <section className="py-15">
           <blockquote className="text-center italic max-w-3xl mx-auto">
             “Forget going solo – MESH transforms fantasy football into a shared
             mission. Compete together. Win together. Grow together.”
@@ -123,10 +128,20 @@ function SquadBasedManagement() {
       transform -translate-x-1/2 /* shift it back by half its own width */
       w-screen                /* make it as wide as the viewport */
       border-t border-gray-200 opacity-50
+      my-10
     "
         />
+
+        <SquadFeatures></SquadFeatures>
+        <hr className="relative left-1/2 transform -translate-x-1/2 w-screen border-t border-gray-200 opacity-50 my-10" />
+
+        <section className="py-16">
+          <h1 className="text-4xl font-bold text-center">Ready to Squad Up?</h1>
+          <p className="mt-4 text-center max-w-2xl mx-auto">
+            Connect with a league rep to bring MESH to your fantasy league.
+          </p>
+        </section>
       </div>
-      <SquadFeatures></SquadFeatures>
     </main>
   );
 }
@@ -138,7 +153,7 @@ function FantasyLeagues() {
 function Testimonials() {
   return (
     <main className="flex-1 flex flex-col items-center text-center max-w-3xl mx-auto px-4 py-8 space-y-5">
-      <h1 className="text-5xl font-bold">
+      <h1 className="text-4xl font-bold">
         Don’t Take Our Word for It—Hear It From the Squads.
       </h1>
       <p className="text-1xl italic">
@@ -154,7 +169,25 @@ function Testimonials() {
 }
 
 function Sponsors() {
-  return <h1>Sponsors Page</h1>;
+  return (
+    <main className="flex-1 flex flex-col items-center text-center max-w-3xl mx-auto px-4 py-8 space-y-5">
+      <div>
+        <h1 className="text-4xl font-bold">
+          Sponsorships That Go Beyond Ads — Be Part of the Experience.
+        </h1>
+        <p className="text-1xl italic">
+          MESH leagues create real engagement, deep brand affinity, and 17 weeks
+          of authentic exposure.
+        </p>
+        <hr className=" relative left-1/2 transform -translate-x-1/2 w-screen border-t border-gray-200 opacity-50 my-10" />
+        <CaseStudySection />
+        <hr className=" relative left-1/2 transform -translate-x-1/2 w-screen border-t border-gray-200 opacity-50 my-10" />
+        <EngagementSection />
+        <hr className=" relative left-1/2 transform -translate-x-1/2 w-screen border-t border-gray-200 opacity-50 my-10" />
+        <LeaguesSection />
+      </div>
+    </main>
+  );
 }
 
 function Contact() {
