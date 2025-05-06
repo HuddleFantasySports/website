@@ -30,7 +30,7 @@ export function MenuBar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 text-lg font-semibold mx-auto">
+        <nav className="hidden md:flex items-center gap-6 text-lg font-semibold mx-auto ">
           {menuItems.map((item) => (
             <Link
               key={item.to}

@@ -33,12 +33,22 @@ function Home() {
       </div>
       <div className="flex justify-center mt-6">
         <div className="flex flex-wrap gap-4">
-          <button className=" shadow-md px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition">
-            Download the app
-          </button>
-          <button className=" shadow-md px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition">
+          <a
+            href="https://apps.apple.com/us/app/huddle-fantasy-sports/id6476977529"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-4"
+          >
+            <button className=" shadow-md px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition">
+              Download the app
+            </button>
+          </a>
+          <Link
+            to="/fantasy-leagues"
+            className=" shadow-md px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition"
+          >
             Explore Leagues
-          </button>
+          </Link>
         </div>
       </div>
 
