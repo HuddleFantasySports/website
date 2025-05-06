@@ -19,7 +19,7 @@ export function MenuBar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-transparent backdrop-blur-md text-white">
-      <div className="container mx-auto flex items-center justify-between px-4 py-3">
+      <div className="container mx-auto flex items-center justify-between px-4 ">
         {/* Logo on left */}
         <Link to="/">
           <img

@@ -16,6 +16,7 @@ import {
   LeaguesSection,
 } from "./components/SponsorshipsComponents";
 import { FantasyFeatures } from "./components/FantasyFeatures";
+import ScrollToTop from "./components/ScrollToTop";
 
 function Home() {
   return (
@@ -226,6 +227,7 @@ function Contact() {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <MenuBar />
         <Routes>

@@ -10,6 +10,11 @@
     @apply bg-background text-white text-foreground font-sans;
   }
 }
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
 
 @custom-variant dark (&:is(.dark *));
 #root {
