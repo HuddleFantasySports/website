@@ -17,6 +17,7 @@ import {
 } from "./components/SponsorshipsComponents";
 import { FantasyFeatures } from "./components/FantasyFeatures";
 import ScrollToTop from "./components/ScrollToTop";
+import ContactForm from "./components/ContactForm";
 
 function Home() {
   return (
@@ -232,7 +233,40 @@ function Sponsors() {
 }
 
 function Contact() {
-  return <h1>Contact Page</h1>;
+  return (
+    <main className="py-12">
+      <div className="container mx-auto px-4">
+        {/* Meet our Founders */}
+        <section>
+          <h2 className="text-3xl font-bold text-center">Meet our Founders</h2>
+
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 ">
+            {Array.from({ length: 3 }).map((_, idx) => (
+              <div key={idx} className="flex flex-col items-center">
+                <div className="w-32 h-32 bg-gray-200 flex items-center justify-center">
+                  <span className="text-gray-400">Image</span>
+                </div>
+                <p className="mt-2 text-center text-sm uppercase">BIO</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Community and Mission */}
+        <section className="mt-16">
+          <h2 className="text-3xl font-bold text-center">
+            Community and Mission
+          </h2>
+          <p className="mt-4 text-center text-sm max-w-prose mx-auto ">
+            Description
+          </p>
+        </section>
+
+        {/* Contact Us Form Placeholder */}
+        <ContactForm></ContactForm>
+      </div>
+    </main>
+  );
 }
 function App() {
   return (

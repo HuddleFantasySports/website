@@ -345,7 +345,7 @@ export function FantasyFeatures() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center mt-4 py-5">
             <CarouselPrevious className="relative static transform-none mx-2" />
             <CarouselNext className="relative static transform-none mx-2" />
           </div>
