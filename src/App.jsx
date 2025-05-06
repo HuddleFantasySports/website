@@ -15,6 +15,7 @@ import {
   EngagementSection,
   LeaguesSection,
 } from "./components/SponsorshipsComponents";
+import { FantasyFeatures } from "./components/FantasyFeatures";
 
 function Home() {
   return (
@@ -147,7 +148,36 @@ function SquadBasedManagement() {
 }
 
 function FantasyLeagues() {
-  return <h1>Fantasy Page</h1>;
+  return (
+    <main className="flex-1 flex flex-col items-center text-center max-w-3xl mx-auto px-4 py-8 space-y-5">
+      <div>
+        <section className="py-16">
+          <h1 className="text-4xl font-bold text-center">
+            Everyone Has a Squad. Now It's Time to Compete.
+          </h1>
+          <p className="mt-4 text-center max-w-2xl mx-auto">
+            Find your community, battle for bragging rights, and play for a
+            national audience.
+          </p>
+        </section>
+        {/* Divider */}
+        <hr
+          className="
+      relative
+      left-1/2                /* position its left edge at 50% of parent */
+      transform -translate-x-1/2 /* shift it back by half its own width */
+      w-screen                /* make it as wide as the viewport */
+      border-t border-gray-200 opacity-50
+    "
+        />
+
+        {/* Divider */}
+
+        <FantasyFeatures></FantasyFeatures>
+        <hr className="relative left-1/2 transform -translate-x-1/2 w-screen border-t border-gray-200 opacity-50 my-10" />
+      </div>
+    </main>
+  );
 }
 
 function Testimonials() {
