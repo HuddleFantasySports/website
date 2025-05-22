@@ -4,13 +4,7 @@
 import { useEffect, useState } from "react";
 
 export function HomeDynamicText() {
-  const options = [
-    "Lineups",
-    "Waivers",
-    "Trades",
-    "Squad Gamification",
-    "Drafts",
-  ];
+  const options = ["Lineups", "Waivers", "Trades", "Drafts"];
   const [idx, setIdx] = useState(0);
   const [hidden, setHidden] = useState(false);
 

@@ -2,7 +2,7 @@ import "./App.css";
 import MeshVideo from "./components/MeshVideo";
 import { TestimonialCarousel } from "./components/TestimonialCarousel";
 import { MenuBar } from "./components/menubar";
-import { ContactUs } from "./components/ContactUsButton";
+import { ContactUsButton } from "./components/ContactUsButton";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import UniversityCarousel from "./components/UniversityCarousel";
 import { HomeDynamicText } from "./components/VoteOnDynamicText";
@@ -205,7 +205,7 @@ function Testimonials() {
       <MeshVideo />
       <TestimonialCarousel />
 
-      <ContactUs />
+      <ContactUsButton />
     </main>
   );
 }

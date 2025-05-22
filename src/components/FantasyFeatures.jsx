@@ -142,35 +142,6 @@ const features = [
       ],
     },
   },
-  {
-    id: 5,
-    title: "Gamification Features",
-    description: "Gamification Description",
-    isHighlighted: false,
-    preview: {
-      title: "Secure Authentication",
-      subtitle: "Log in securely to grant access to your data.",
-      features: [
-        {
-          icon: "lock",
-          title: "Secure login",
-          description:
-            "Industry-standard authentication keeps your credentials safe.",
-        },
-        {
-          icon: "shield-check",
-          title: "No stored passwords",
-          description: "We never store your login credentials.",
-        },
-        {
-          icon: "user",
-          title: "User control",
-          description:
-            "Revoke access at any time through your account settings.",
-        },
-      ],
-    },
-  },
 ];
 
 export function FantasyFeatures() {
@@ -274,7 +245,7 @@ export function FantasyFeatures() {
     <div className="w-full max-w-6xl mx-auto">
       <div className="text-center mb-10">
         <h2 className="text-chart-4xl text-2xl font-bold mb-4 my-10">
-          Explore Squad Based Features
+          Explore Fantasy League Features
         </h2>
       </div>
 

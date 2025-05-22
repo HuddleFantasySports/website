@@ -27,7 +27,9 @@ export function TestimonialCarousel() {
               <div className="p-1">
                 <Card>
                   <CardContent className="flex aspect-square items-center justify-center p-6">
-                    <span className="text-4xl font-semibold">{index + 1}</span>
+                    <span className="text-4xl font-semibold">
+                      Testimonial {index + 1}
+                    </span>
                   </CardContent>
                 </Card>
               </div>
