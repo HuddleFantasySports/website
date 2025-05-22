@@ -18,7 +18,8 @@ import {
 import { FantasyFeatures } from "./components/FantasyFeatures";
 import ScrollToTop from "./components/ScrollToTop";
 import ContactForm from "./components/ContactForm";
-
+import SponsorshipsToggle from "./components/SponsorshipsToggle";
+import { AppFeaturesCarousel } from "./components/AppFeaturesCarousel";
 function Home() {
   return (
     <main className="flex-1 w-full py-8">
@@ -63,17 +64,18 @@ function Home() {
       border-t border-gray-200 opacity-50
     "
       />
+      <AppFeaturesCarousel> </AppFeaturesCarousel>
+      {/*       {
+        <div className="flex flex-col md:flex-row items-center justify-center my-10">
+          <div className="w-full md:w-1/2">
+            <HomeDynamicText />
+          </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-center my-10">
-        {/* Left: Vote text */}
-        <div className="w-full md:w-1/2">
-          <HomeDynamicText />
+          <div className="w-full md:w-1/2 flex justify-center">
+            <AppPreviewCarouselPlaceholder />
+          </div>
         </div>
-        {/* Right: Phone preview */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          <AppPreviewCarouselPlaceholder />
-        </div>
-      </div>
+      } */}
       <div className="my-6">
         <Link to="/squad-based-management">
           <a className=" shadow-md px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition my-10">
@@ -222,11 +224,7 @@ function Sponsors() {
           of authentic exposure.
         </p>
         <hr className=" relative left-1/2 transform -translate-x-1/2 w-screen border-t border-gray-200 opacity-50 my-10" />
-        <CaseStudySection />
-        <hr className=" relative left-1/2 transform -translate-x-1/2 w-screen border-t border-gray-200 opacity-50 my-10" />
-        <EngagementSection />
-        <hr className=" relative left-1/2 transform -translate-x-1/2 w-screen border-t border-gray-200 opacity-50 my-10" />
-        <LeaguesSection />
+        <SponsorshipsToggle />
       </div>
     </main>
   );

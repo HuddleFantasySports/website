@@ -5,11 +5,18 @@ import Marquee from "react-fast-marquee";
 
 const logos = [
   { name: "University of Washington", src: "/logos/Washington.png" },
-  { name: "University of Michigan", src: "/logos/um-logo.png" },
+  { name: "University of Michigan", src: "/logos/michigan.jpg" },
   { name: "University of Kentucky", src: "/logos/Kentucky.png" },
   { name: "University of Nebraska", src: "/logos/nebraska.png" },
   { name: "University of Iowa", src: "/logos/iowa.png" },
   { name: "Indiana University", src: "/logos/indiana.svg" },
+  { name: "University of Florida", src: "/logos/universityofflorida.jpg" },
+  { name: "University of North Carolina", src: "/logos/northcarolina.jpg" },
+  { name: "University of California", src: "/logos/uc.png" },
+  { name: "University of Tennessee", src: "/logos/Tennessee.png" },
+  { name: "University of Georgia", src: "/logos/georgia.jpg" },
+  { name: "University of Alabama", src: "/logos/alabama.jpg" },
+  { name: "University of Ohio", src: "/logos/ohiostate.jpg" },
 ];
 
 export default function UniversityCarousel() {
@@ -18,7 +25,7 @@ export default function UniversityCarousel() {
       {/* center the content in a max-width wrapper */}
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-sm text-gray-400 uppercase text-center mb-6">
-          Organizations We Work With
+          Find us at these campuses
         </h2>
 
         {/* marquee itself will fill the wrapper, logos inside flex-centered */}

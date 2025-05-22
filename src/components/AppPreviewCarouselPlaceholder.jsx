@@ -13,13 +13,7 @@ function PhonePreview({ label }) {
 
 // Carousel of phone previews (only one visible at a time, with fade transition)
 export function AppPreviewCarouselPlaceholder() {
-  const screens = [
-    "Lineups",
-    "Waivers",
-    "Trades",
-    "Squad Gamification",
-    "Drafts",
-  ];
+  const screens = ["Lineups", "Waivers", "Trades", "Drafts"];
   const [idx, setIdx] = useState(0);
   const [hidden, setHidden] = useState(false);
 
