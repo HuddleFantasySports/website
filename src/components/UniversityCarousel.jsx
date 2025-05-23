@@ -5,18 +5,20 @@ import Marquee from "react-fast-marquee";
 
 const logos = [
   { name: "University of Washington", src: "/logos/Washington.png" },
-  { name: "University of Michigan", src: "/logos/michigan.jpg" },
+  { name: "University of Michigan", src: "/logos/michigan2.png" },
   { name: "University of Kentucky", src: "/logos/Kentucky.png" },
   { name: "University of Nebraska", src: "/logos/nebraska.png" },
-  { name: "University of Iowa", src: "/logos/iowa.png" },
-  { name: "Indiana University", src: "/logos/indiana.svg" },
-  { name: "University of Florida", src: "/logos/universityofflorida.jpg" },
-  { name: "University of North Carolina", src: "/logos/northcarolina.jpg" },
-  { name: "University of California", src: "/logos/uc.png" },
-  { name: "University of Tennessee", src: "/logos/Tennessee.png" },
-  { name: "University of Georgia", src: "/logos/georgia.jpg" },
-  { name: "University of Alabama", src: "/logos/alabama.jpg" },
-  { name: "University of Ohio", src: "/logos/ohiostate.jpg" },
+  { name: "University of Iowa", src: "/logos/Block-IOWA-BLACK.png" },
+  // { name: "Indiana University", src: "" }, website needs login
+  { name: "University of Florida", src: "/logos/unf.png" }, // needs a login for real version
+  { name: "University of North Carolina", src: "/logos/UNC.png" },
+  {
+    name: "University of Tennessee",
+    src: "/logos/University - HorizLeftLogo-OnDark (RGB).png",
+  },
+  { name: "University of Georgia", src: "/logos/georgia.png" },
+  // { name: "University of Alabama", src: "/logos/alabama.jpg" }, need login
+  // { name: "University of Ohio", src: "/logos/ohiostate.jpg" },needs login
 ];
 
 export default function UniversityCarousel() {
@@ -35,7 +37,7 @@ export default function UniversityCarousel() {
           pauseOnHover
           className="overflow-hidden"
         >
-          <div className="flex items-center justify-center space-x-8">
+          <div className="flex items-center justify-center space-x-8 ">
             {logos.map((logo, i) => (
               <img
                 key={i}
@@ -44,6 +46,7 @@ export default function UniversityCarousel() {
                 className="h-16 w-auto object-contain grayscale brightness-0 invert opacity-60 hover:opacity-100 hover:grayscale-0 transition duration-300"
               />
             ))}
+            <div style={{ width: "1rem" }} />
           </div>
         </Marquee>
       </div>

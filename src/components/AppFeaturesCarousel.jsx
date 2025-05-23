@@ -71,7 +71,7 @@ export function AppFeaturesCarousel() {
             onClick={() => setIdx(i)}
             className={`h-2 w-8 rounded-full transition-colors duration-300 ${
               idx === i ? "bg-purple-500" : "bg-gray-400"
-            }`}
+            } hover:shadow-[0_0_8px_2px_rgba(168,85,247,0.5)]`}
             aria-label={`Go to ${features[i]}`}
           />
         ))}
