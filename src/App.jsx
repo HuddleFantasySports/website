@@ -108,10 +108,10 @@ function SquadBasedManagement() {
     <main className="flex-1 flex flex-col items-center text-center max-w-3xl mx-auto px-4 py-8 space-y-5">
       <div>
         <section className="py-16">
-          <h1 className="text-4xl font-bold text-center">
+          <h1 className="text-4xl font-bold text-center ">
             Fantasy Football, Reimagined for Everyone.
           </h1>
-          <p className="mt-4 text-center max-w-2xl mx-auto">
+          <p className="mt-4 text-center max-w-2xl mx-auto text-1xl italic">
             Whether you’re a seasoned pro or a first-time player, MESH makes
             fantasy football a squad experience.
           </p>
@@ -167,11 +167,12 @@ function FantasyLeagues() {
       <div>
         <section className="py-16">
           <h1 className="text-4xl font-bold text-center">
-            Everyone Has a Squad. Now It's Time to Compete.
+            Everyone Has a Squad. Now It’s Time to Compete.
           </h1>
-          <p className="mt-4 text-center max-w-2xl mx-auto">
+          <p className="mt-4 text-center max-w-2xl mx-auto text-1xl italic">
             Find your community, battle for bragging rights, and play for a
-            national audience.
+            national audience. Whether you’re part of Greek life, a bar crowd,
+            an online community, or a company — there’s a league for you.
           </p>
         </section>
         {/* Divider */}

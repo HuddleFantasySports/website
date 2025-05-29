@@ -10,136 +10,98 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  Shield,
-  Eye,
-  Share2,
-  Lock,
-  ShieldCheck,
-  User,
-} from "lucide-react";
+import CTAButton from "./ui/CTAbutton";
 
 // Feature data with corresponding preview screens
 const features = [
   {
     id: 1,
-    title: "Draft",
-    description: "Draft Features",
+    title: "Greek System Leagues",
+    description: "Fantasy Football for Fraternities & Sororities",
     isHighlighted: true,
     preview: {
-      title: "Draft Features",
-      subtitle: "Draft Features",
+      title: "Greek System Leagues",
+      subtitle: "Fantasy Football for Fraternities & Sororities",
       features: [
         {
-          icon: "shield",
-          title: "Trusted & secure",
           description:
-            "Your information is handled securely with end-to-end encryption. Your credentials are not shared with Acme Co.",
-        },
-        {
-          icon: "eye",
-          title: "Privacy first",
-          description:
-            "You can review a list of permissions before granting Acme Co. access to your system.",
-        },
-        {
-          icon: "share",
-          title: "Data portability",
-          description:
-            "We do not sell your employer and employee data, and will only use it with your permission.",
+            " Chapters compete against each other in squad-based leagues.Each house works together to draft, manage lineups, and make moves all season long. Compete for sponsor rewards, donations to philanthropy, and chapter-wide bragging rights.",
         },
       ],
       hasButton: true,
-      buttonText: "Continue",
+      buttonText: "Get Your Chapter Involved",
     },
   },
   {
     id: 2,
-    title: "Starting Lineup Features",
-    description: "Description",
+    title: "Influencer Leagues",
+    description: "Where Creators & Fans Team Up",
     isHighlighted: false,
     preview: {
-      title: "Data Security",
-      subtitle: "Review and approve exactly what data will be shared.",
+      title: "Influencer Leagues",
+      subtitle: "Where Creators & Fans Team Up",
       features: [
         {
-          icon: "lock",
-          title: "Granular permissions",
-          description: "See exactly what data will be accessed and shared.",
-        },
-        {
-          icon: "shield-check",
-          title: "Explicit approval",
-          description: "Nothing is shared without your explicit consent.",
-        },
-        {
-          icon: "eye",
-          title: "Transparency",
-          description: "Clear visibility into all data access requests.",
+          description:
+            " Influencers start the league — their fans help manage the team. Every vote impacts the roster, and top fans earn shoutouts, content drops, and more.It’s fantasy football as a fan experience.",
         },
       ],
       hasButton: true,
-      buttonText: "Review Permissions",
+      buttonText: "Join an Influencer Squad",
     },
   },
   {
     id: 3,
-    title: "Waivers Add/Drop Features",
-    description: "Description",
+    title: "Bar & Restaurant Leagues",
+    description: "Bar & Restaurant Leagues",
     isHighlighted: false,
     preview: {
-      title: "Choose Your Provider",
-      subtitle: "Connect with your preferred employment system.",
+      title: "Bar & Restaurant Leagues",
+      subtitle: "For Bars That Want to Win the Week",
       features: [
         {
-          icon: "user",
-          title: "Wide compatibility",
-          description: "Works with all major employment and HR systems.",
-        },
-        {
-          icon: "share",
-          title: "Easy selection",
-          description: "Simple interface to find and connect your provider.",
-        },
-        {
-          icon: "shield",
-          title: "Secure connections",
           description:
-            "All provider connections use secure authentication protocols.",
+            " Bars form squads with staff and customers managing one team together.Customers vote on decisions, unlock drink specials, and come back every week to support their squad. Great for building loyalty and boosting foot traffic.",
         },
       ],
       hasButton: true,
-      buttonText: "Select Provider",
+      buttonText: "Find a Local Squad",
     },
   },
   {
     id: 4,
-    title: "Trades Features",
-    description: "Trade Description",
+    title: "Corporate Leagues",
+    description: "Office Rivalries Meet Teamwork",
     isHighlighted: false,
     preview: {
-      title: "Secure Authentication",
-      subtitle: "Log in securely to grant access to your data.",
+      title: "Corporate Leagues",
+      subtitle: "Office Rivalries Meet Teamwork",
       features: [
         {
-          icon: "lock",
-          title: "Secure login",
           description:
-            "Industry-standard authentication keeps your credentials safe.",
-        },
-        {
-          icon: "shield-check",
-          title: "No stored passwords",
-          description: "We never store your login credentials.",
-        },
-        {
-          icon: "user",
-          title: "User control",
-          description:
-            "Revoke access at any time through your account settings.",
+            " Coworkers form squads and manage their fantasy team together. It’s fun, competitive, and a great way to build culture across departments. Play against other internal teams or companies in your space.",
         },
       ],
+      hasButton: true,
+      buttonText: "Bring MESH to Work",
+    },
+  },
+  {
+    id: 5,
+    title: "Other Groups",
+    description: "Any Group Can Play",
+    isHighlighted: false,
+    preview: {
+      title: "Other Groups",
+      subtitle: "Any Group Can Play",
+      features: [
+        {
+          description:
+            " Friends. Clubs. Group chats. Rec leagues. Dorm floors. If you’ve got a crew, you can build a squad and start a league.Compete locally or nationally — the platform is built for your group.",
+        },
+      ],
+      hasButton: true,
+      buttonText: "Start a League",
     },
   },
 ];
@@ -221,31 +183,11 @@ export function FantasyFeatures() {
     };
   }, [api, autoplay]);
 
-  // Icon component mapping
-  const IconComponent = ({ icon }) => {
-    switch (icon) {
-      case "shield":
-        return <Shield className="h-4 w-4" />;
-      case "eye":
-        return <Eye className="h-4 w-4" />;
-      case "share":
-        return <Share2 className="h-4 w-4" />;
-      case "lock":
-        return <Lock className="h-4 w-4" />;
-      case "shield-check":
-        return <ShieldCheck className="h-4 w-4" />;
-      case "user":
-        return <User className="h-4 w-4" />;
-      default:
-        return <Shield className="h-4 w-4" />;
-    }
-  };
-
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="text-center mb-10">
         <h2 className="text-chart-4xl text-2xl font-bold mb-4 my-10">
-          Explore Fantasy League Features
+          Choose Your League Type
         </h2>
       </div>
 
@@ -291,25 +233,24 @@ export function FantasyFeatures() {
                         {feature.preview.subtitle}
                       </p>
                     </div>
-
                     <div className="space-y-4">
                       {feature.preview.features.map((previewFeature, idx) => (
-                        <div key={idx} className="flex items-start gap-3 h-25">
-                          <div className="mt-1 bg-gray-100 p-1 rounded-full">
-                            <div className="h-6 w-5 flex items-center justify-center text-gray-600">
-                              <IconComponent icon={previewFeature.icon} />
-                            </div>
-                          </div>
+                        <div key={idx} className="flex items-start gap-3">
                           <div>
-                            <h4 className="font-medium text-sm">
-                              {previewFeature.title}
-                            </h4>
-                            <p className="text-gray-500 text-xs">
+                            <p className="text-gray-500 text-sm">
                               {previewFeature.description}
                             </p>
                           </div>
                         </div>
                       ))}
+
+                      {feature.preview.hasButton && (
+                        <div className="flex justify-center mt-6">
+                          <CTAButton className="w-60 h-10 text-center ">
+                            {feature.preview.buttonText}
+                          </CTAButton>
+                        </div>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
