@@ -1,42 +1,9 @@
+"use client";
+
 import { useState } from "react";
 
 function SponsorshipsToggle() {
   const [activeType, setActiveType] = useState("local");
-
-  const sponsorshipData = {
-    local: {
-      title: "Be the MVP of the Greek System",
-      points: [
-        "🏈 Up to 500 direct players per league plus thousands more across campus.",
-        "💡 Your brand is front and center during every league engagement.",
-        "🎯 Hyper-local targeting at the chapter and school level.",
-        "❤️ Support fraternity philanthropies through impactful donations.",
-        "📲 Promote in-app deals that drive students to your location.",
-        "🎉 Participate in exclusive giveaways, social events, and campus activations.",
-        "📢 Custom push notifications and messaging (with exclusive packages).",
-        "🚀 250% more foot traffic driven with exclusive sponsorship level.",
-        "📸 Potential social media collaborations for wider reach.",
-      ],
-      imageAlt: "Local sponsorship opportunity highlights",
-    },
-    national: {
-      title: "Become Part of a Greek System Tradition",
-      points: [
-        "🔥 81% brand affinity boost — from 4.3 to 7.8 after sponsorship (University of Washington case study).",
-        "🏛️ Sponsor entire university leagues made up of 10–12 fraternities and up to 1,500 student members.",
-        "🎯 Target 1,000–3,000 in-app users with 1.3M–4M seasonal impressions.",
-        "🎁 Gamified Prizes — reward top performing squads and drive brand loyalty.",
-        "💬 In-App Messaging — promote special offers directly to students.",
-        "❤️ Philanthropic Donations — build goodwill while supporting student causes.",
-        "💰 Competitive CPM (as low as $2.45) for deep Gen Z engagement.",
-        "📈 Massive brand visibility throughout the full fantasy season (Sept–Jan).",
-        "📞 Custom university selection available — sponsor by region or category (e.g., energy drinks, delivery).",
-      ],
-      imageAlt: "National sponsorship opportunity overview",
-    },
-  };
-
-  const content = sponsorshipData[activeType];
 
   return (
     <section className="py-12 text-white">
@@ -46,166 +13,299 @@ function SponsorshipsToggle() {
           Choose Your Sponsorship Type
         </h2>
         <p className="text-gray-300 max-w-xl mx-auto">
-          Mesh supports 1 exclusive, non-compeitive local & national brand per
+          Mesh supports 1 exclusive, non-competitive local & national brand per
           league
         </p>
       </div>
 
       {/* Toggle Buttons */}
       <div className="flex justify-center gap-4 mb-8">
-        {["local", "national"].map((type) => (
-          <button
-            key={type}
-            onClick={() => setActiveType(type)}
-            onMouseEnter={() => setActiveType(type)}
-            className={`px-6 py-2 rounded-full border transition ${
-              activeType === type
-                ? "bg-white text-black"
-                : "border-white text-white hover:bg-white hover:text-black"
-            }`}
-          >
-            {type === "local" ? "Local-Level" : "National"}
-          </button>
-        ))}
+        <button
+          onClick={() => setActiveType("local")}
+          onMouseEnter={() => setActiveType("local")}
+          className={`px-6 py-2 rounded-full border transition ${
+            activeType === "local"
+              ? "bg-white text-black"
+              : "border-white text-white hover:bg-white hover:text-black"
+          }`}
+        >
+          Local
+        </button>
+        <button
+          onClick={() => setActiveType("national")}
+          onMouseEnter={() => setActiveType("national")}
+          className={`px-6 py-2 rounded-full border transition ${
+            activeType === "national"
+              ? "bg-white text-black"
+              : "border-white text-white hover:bg-white hover:text-black"
+          }`}
+        >
+          National
+        </button>
       </div>
 
-      {/* Dynamic Content */}
-      <div className="max-w-5xl mx-auto px-4">
-        {activeType === "local" && (
-          <>
-            {/* Audience Overview */}
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-2">Who's Competing?</h3>
-              <p>
-                Each league has 8–12 fraternities with 20–50 members each,
-                reaching up to 500 players directly and thousands more across
-                Greek life.
-              </p>
+      {/* Local Layout */}
+      {activeType === "local" && (
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            {/* Left Column: Centered Phone Mockup + Benefits */}
+            <div className="flex flex-col items-center space-y-6">
+              <div className="w-full max-w-sm">
+                <img
+                  src="/Sponsorships/appPreviewLocal.png"
+                  alt="App Phone Mockup"
+                  className="w-full h-auto rounded-[inherit]"
+                />
+              </div>
+              <div className="text-left space-y-2">
+                <h3 className="text-xl font-semibold">Benefits</h3>
+                <ul className="list-disc list-inside ml-4 text-gray-200">
+                  <li>Drive foot-traffic with mass</li>
+                  <li>Become a life-long favorite</li>
+                  <li>Connect anytime, for any reason</li>
+                  <li>Stand out in a way no other brand does</li>
+                </ul>
+                <p className="mt-4 text-gray-300">
+                  Endless possibilities on what to send – best part: we have
+                  templates and ideas for your business ready to go. Connect in
+                  an authentic, attention-grabbing way!
+                </p>
+              </div>
             </div>
 
-            {/* Benefits Box */}
-            <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
-              <div className="bg-gray-500  p-6 rounded-lg shadow-md text-left">
-                <h3 className="text-xl font-semibold mb-4 text-center">
-                  Why Partner Locally?
-                </h3>
-                <div className="space-y-2">
-                  {content.points.map((point, idx) => (
-                    <p key={idx}>{point}</p>
-                  ))}
+            {/* Right Column: Fred’s Bar & Grill */}
+            <div className="bg-[#1E2329CC] rounded-2xl border border-gray-600 p-4 space-y-6">
+              <h3 className="text-lg font-semibold mb-4">
+                Fred’s Bar &amp; Grill
+              </h3>
+
+              {/* Announcement #1 */}
+              <div className="flex bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg p-1">
+                <div className="flex items-start bg-[#1E2329CC] rounded-[inherit] flex-1 p-4 space-x-4">
+                  <div className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-black"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M3 7v4a1 1 0 001 1h.586M7 11h10l3 4H7v-4zM12 3v6"
+                      />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold mb-1">
+                      BIG UNIVERSITY FOOTBALL WIN
+                    </h4>
+                    <p className="text-green-300 text-sm">
+                      Come celebrate the big win @ Fred’s –{" "}
+                      <span className="font-bold">
+                        50% off drinks or food for all league members.
+                      </span>{" "}
+                      Skip the LINE by showing this pass:{" "}
+                      <span className="text-yellow-300 font-semibold">
+                        FREDxMESH
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="bg-gray-800 rounded-lg h-60 flex items-center justify-center text-gray-400">
-                <span>{content.imageAlt} (Image Placeholder)</span>
-              </div>
-            </div>
 
-            {/* Sponsorship Tiers */}
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-2">
-                Local Sponsorship Tiers
-              </h3>
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border  border-gray-700">
-                  <thead>
-                    <tr className="bg-gray-500">
-                      <th className="p-3 border text-center">Tier</th>
-
-                      <th className="p-3 border text-center">Benefits</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="p-3 border">Exclusive Local</td>
-
-                      <td className="p-3 border">
-                        Exclusive in-app local business presence, unlimited
-                        in-app promos, event hosting, social media collabs,
-                        brand giveaways, and more.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="p-3 border">Local Highlight</td>
-
-                      <td className="p-3 border">
-                        Shared in-app local business presence, shared in-app
-                        promos, brand giveaways
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            {/* Advertising Differences */}
-            <div className="mb-12">
-              <h3 className="text-xl font-semibold mb-4">
-                Advertising Differences Across Levels
-              </h3>
-              <p className="mb-4 text-gray-300">
-                Our gamified, exclusive offers cut through the noise at crucial
-                times. Exclusive sponsors benefit from personalized messaging
-                and larger visual presence in the app.
-              </p>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-gray-500 rounded-lg p-4">
-                  <h4 className="text-yellow-400 font-bold mb-2">
-                    Exclusive Local
-                  </h4>
-                  <p className="mb-2">
-                    Be the ONLY local business reaching customers.
-                  </p>
-                  <p className="mb-2">
-                    Drives{" "}
-                    <span className="text-yellow-400 font-semibold">
-                      250% more foot traffic
-                    </span>
-                    .
-                  </p>
-                </div>
-                <div className="bg-gray-500 rounded-lg p-4">
-                  <h4 className="text-cyan-400 font-bold mb-2">
-                    Local Highlight
-                  </h4>
-                  <p className="mb-2">
-                    Be one of a handful of sponsors attracting customers with
-                    offers.
-                  </p>
-                  <p className="mb-2">Compete for Greek life customers.</p>
+              {/* Announcement #2 */}
+              <div className="flex bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg p-1">
+                <div className="flex items-start bg-[#1E2329CC] rounded-[inherit] flex-1 p-4 space-x-4">
+                  <div className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-black"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 8v4M16 12h-8m8 4H8m0 0l-4-8m16 8l-4-8"
+                      />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold mb-1">
+                      THURSDAY NIGHT FOOTBALL
+                    </h4>
+                    <p className="text-green-300 text-sm">
+                      Don’t watch the game HUNGRY: Best wings in town, for{" "}
+                      <span className="font-bold">
+                        FREE when you bring 5 guys and order a drink!
+                      </span>{" "}
+                      Let’s watch the Seahawks get the win!
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Testimonial */}
-            <blockquote className="bg-gray-500 p-6 rounded-lg text-lg italic border-l-4 border-yellow-400">
-              “Local sponsors make it way more fun — the deals, the prizes, it’s
-              just sick having them involved and backing Greek life. [Bar] was
-              our home for the NFL season.”
-              <div className="text-right mt-2 text-sm text-gray-400">
-                — University of Kentucky User
+              {/* Announcement #3 */}
+              <div className="flex bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg p-1">
+                <div className="flex items-start bg-[#1E2329CC] rounded-[inherit] flex-1 p-4 space-x-4">
+                  <div className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-black"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold mb-1">
+                      Congrats Sigma Chi
+                    </h4>
+                    <p className="text-green-300 text-sm">
+                      High scorers week 15! Sigma Chi dominated last week…{" "}
+                      <span className="font-bold">
+                        Sigma Chi’s come get a free T-shirt with any order this
+                        week! (1 per member)
+                      </span>
+                    </p>
+                  </div>
+                </div>
               </div>
-            </blockquote>
-          </>
-        )}
-
-        {activeType === "national" && (
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="bg-gray-500 p-6 rounded-lg shadow-md text-left">
-              <h3 className="text-2xl font-semibold mb-4 text-center">
-                {content.title}
-              </h3>
-              <ul className="space-y-3 list-inside text-left">
-                {content.points.map((point, idx) => (
-                  <li key={idx}>{point}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-gray-800 rounded-lg h-60 flex items-center justify-center text-gray-400">
-              <span>{content.imageAlt} (Image Placeholder)</span>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
+
+      {/* National Layout */}
+      {activeType === "national" && (
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            {/* Left Column: Centered Phone Mockup + Benefits */}
+            <div className="flex flex-col items-center space-y-6">
+              <div className="w-full max-w-sm">
+                <img
+                  src="/Sponsorships/AppNational.png"
+                  alt="App Phone Mockup"
+                  className="w-full h-auto rounded-[inherit]"
+                />
+              </div>
+              <div className="text-left space-y-2">
+                <h3 className="text-xl font-semibold">Benefits</h3>
+                <ul className="list-disc list-inside ml-4 text-gray-200">
+                  <li>Drive targeted web traffic</li>
+                  <li>Highlight new products &amp; sales</li>
+                  <li>Connect anytime, for any reason</li>
+                  <li>Stand out in a way no other brand does</li>
+                </ul>
+                <p className="mt-4 text-gray-300">
+                  Endless possibilities on what to send – best part: we have
+                  templates and ideas for your business ready to go. Connect in
+                  an authentic, attention-grabbing way!
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column: BrandX + Announcement Boxes */}
+            <div className="bg-[#1E2329CC] rounded-2xl border border-gray-600 p-4 space-y-6">
+              <h3 className="text-lg font-semibold mb-4">BrandX</h3>
+
+              {/* Announcement #1 */}
+              <div className="flex bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg p-1">
+                <div className="flex items-start bg-[#1E2329CC] rounded-[inherit] flex-1 p-4 space-x-4">
+                  <div className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
+                    {/* Replace with BrandX icon if available */}
+                    <img
+                      src="/Sponsorships/brandx-icon.png"
+                      alt="BrandX Icon"
+                      className="w-6 h-6"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold mb-1">
+                      🔥 Win a Squad Pack from BrandX
+                    </h4>
+                    <p className="text-green-300 text-sm">
+                      TOP SCORING FRATERNITIES FOR WEEK 12
+                      <br />
+                      <span className="text-white">
+                        This week, 3 lucky squads will win a BrandX Prize
+                        Pack—tees, hats, and more.
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Announcement #2 */}
+              <div className="flex bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg p-1">
+                <div className="flex items-start bg-[#1E2329CC] rounded-[inherit] flex-1 p-4 space-x-4">
+                  <div className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
+                    {/* Replace with BrandX icon if available */}
+                    <img
+                      src="/Sponsorships/brandx-icon.png"
+                      alt="BrandX Icon"
+                      className="w-6 h-6"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold mb-1">
+                      🍹 New Drop from BrandX
+                    </h4>
+                    <p className="text-green-300 text-sm">
+                      FLAVOR LAUNCH JUST HIT CAMPUS
+                      <br />
+                      <span className="text-white">
+                        Something fresh is brewing… Keep an eye out for the new
+                        PEACH can from Hoop Tea. Chill vibes. Big flavor.
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Announcement #3 */}
+              <div className="flex bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg p-1">
+                <div className="flex items-start bg-[#1E2329CC] rounded-[inherit] flex-1 p-4 space-x-4">
+                  <div className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
+                    {/* Replace with BrandX icon if available */}
+                    <img
+                      src="/Sponsorships/brandx-icon.png"
+                      alt="BrandX Icon"
+                      className="w-6 h-6"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold mb-1">
+                      📺 BRANDX NFL Fact of the Week
+                    </h4>
+                    <p className="text-green-300 text-sm">
+                      BRADY’S GOT MORE RINGS THAN TEAMS
+                      <br />
+                      <span className="text-white">
+                        Tom Brady has 7 rings—more than any NFL franchise.
+                        That’s one for each flavor of BRANDX! Greatness hits
+                        different.
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
