@@ -43,11 +43,11 @@ function SponsorshipsToggle() {
       {/* Toggle Intro */}
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold mb-4">
-          Choose Your Sponsorship Level
+          Choose Your Sponsorship Type
         </h2>
         <p className="text-gray-300 max-w-xl mx-auto">
-          Whether you’re a local bar or a national brand, MESH gets your name in
-          front of campus communities.
+          Mesh supports 1 exclusive, non-compeitive local & national brand per
+          league
         </p>
       </div>
 

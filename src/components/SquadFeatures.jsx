@@ -25,121 +25,91 @@ const features = [
   {
     id: 1,
     title: "Draft",
-    description: "Draft Features",
+    description: "Collaborative Drafting with Built-In Strategy Voting",
     isHighlighted: true,
     preview: {
-      title: "Draft Features",
-      subtitle: "Draft Features",
+      title: "Draft",
+      subtitle: "Collaborative Drafting with Built-In Strategy Voting",
       features: [
         {
-          icon: "shield",
-          title: "Trusted & secure",
           description:
-            "Your information is handled securely with end-to-end encryption. Your credentials are not shared with Acme Co.",
-        },
-        {
-          icon: "eye",
-          title: "Privacy first",
-          description:
-            "You can review a list of permissions before granting Acme Co. access to your system.",
-        },
-        {
-          icon: "share",
-          title: "Data portability",
-          description:
-            "We do not sell your employer and employee data, and will only use it with your permission.",
+            " Squads work together in real-time to build their rosters, casting votes, proposing picks, and debating draft strategy. Whether a draft happens over a couple of hours or a few weeks, every member has a say — because your draft is a team decision, not a solo mission.",
         },
       ],
       hasButton: true,
-      buttonText: "Continue",
+      buttonText: "Get Your Chapter Involved",
     },
   },
   {
     id: 2,
-    title: "Starting Lineup Features",
-    description: "Description",
+    title: "Starting Lineup",
+    description: "Weekly Lineup Debates with Majority Rules",
     isHighlighted: false,
     preview: {
-      title: "Data Security",
-      subtitle: "Review and approve exactly what data will be shared.",
+      title: "Starting Lineup",
+      subtitle: "Weekly Lineup Debates with Majority Rules",
       features: [
         {
-          icon: "lock",
-          title: "Granular permissions",
-          description: "See exactly what data will be accessed and shared.",
-        },
-        {
-          icon: "shield-check",
-          title: "Explicit approval",
-          description: "Nothing is shared without your explicit consent.",
-        },
-        {
-          icon: "eye",
-          title: "Transparency",
-          description: "Clear visibility into all data access requests.",
+          description:
+            "Every squad member gets a say in who starts each week by casting their vote. The final lineup is a team decision — not one person calling the shots. The more active your squad, the better your team performs. Start/Sit debates just got way more fun.",
         },
       ],
       hasButton: true,
-      buttonText: "Review Permissions",
+      buttonText: "Join an Influencer Squad",
     },
   },
   {
     id: 3,
-    title: "Waivers Add/Drop Features",
-    description: "Description",
+    title: "Waivers Add/Drops",
+    description: "Suggest as a squad. Final say from the coach.",
     isHighlighted: false,
     preview: {
-      title: "Choose Your Provider",
-      subtitle: "Connect with your preferred employment system.",
+      title: "Waivers Add/Drops",
+      subtitle: "Suggest as a squad. Final say from the coach.",
       features: [
         {
-          icon: "user",
-          title: "Wide compatibility",
-          description: "Works with all major employment and HR systems.",
-        },
-        {
-          icon: "share",
-          title: "Easy selection",
-          description: "Simple interface to find and connect your provider.",
-        },
-        {
-          icon: "shield",
-          title: "Secure connections",
           description:
-            "All provider connections use secure authentication protocols.",
+            "Anyone on the squad can suggest who to add or drop. After voting, the Head Coach or Waiver Admins make the final call and submit the claim. It’s a squad-driven process where everyone has input, but leadership locks it in.",
         },
       ],
       hasButton: true,
-      buttonText: "Select Provider",
+      buttonText: "Find a Local Squad",
     },
   },
   {
     id: 4,
-    title: "Trades Features",
-    description: "Trade Description",
+    title: "Trades",
+    description: "Trade Talks, Group-Approved",
     isHighlighted: false,
     preview: {
-      title: "Secure Authentication",
-      subtitle: "Log in securely to grant access to your data.",
+      title: "Trades",
+      subtitle: "Trade Talks, Group-Approved",
       features: [
         {
-          icon: "lock",
-          title: "Secure login",
           description:
-            "Industry-standard authentication keeps your credentials safe.",
-        },
-        {
-          icon: "shield-check",
-          title: "No stored passwords",
-          description: "We never store your login credentials.",
-        },
-        {
-          icon: "user",
-          title: "User control",
-          description:
-            "Revoke access at any time through your account settings.",
+            "All trade proposals must be squad-approved before being sent or accepted. Trade chat threads allow members to suggest, debate, and vote on offers, keeping deals fair and transparent within the team.",
         },
       ],
+      hasButton: true,
+      buttonText: "Bring MESH to Work",
+    },
+  },
+  {
+    id: 5,
+    title: "Gamification",
+    description: "Squad success now carries into next season.",
+    isHighlighted: false,
+    preview: {
+      title: "Gamification",
+      subtitle: "Squad success now carries into next season.",
+      features: [
+        {
+          description:
+            "Earn badges, trophies, and bragging rights as a unit — not just for one season, but across every year you compete. Top-performing squads build lasting legacies and unlock invites to next year’s invitational leagues, where the best in the country battle for BIG prizes.",
+        },
+      ],
+      hasButton: true,
+      buttonText: "Start a League",
     },
   },
 ];
@@ -281,7 +251,7 @@ export function SquadFeatures() {
           <CarouselContent>
             {features.map((feature) => (
               <CarouselItem key={feature.id}>
-                <Card className="border shadow-md">
+                <Card className="border shadow-md  bg-gray-300">
                   <CardContent className="p-6">
                     <div className="text-center border-b pb-4 mb-4">
                       <h3 className="text-2xl font-bold">
@@ -295,16 +265,11 @@ export function SquadFeatures() {
                     <div className="space-y-4">
                       {feature.preview.features.map((previewFeature, idx) => (
                         <div key={idx} className="flex items-start gap-3 h-25">
-                          <div className="mt-1 bg-gray-100 p-1 rounded-full">
-                            <div className="h-6 w-5 flex items-center justify-center text-gray-600">
-                              <IconComponent icon={previewFeature.icon} />
-                            </div>
-                          </div>
                           <div>
                             <h4 className="font-medium text-sm">
                               {previewFeature.title}
                             </h4>
-                            <p className="text-gray-500 text-xs">
+                            <p className="text-gray-800 text-sm">
                               {previewFeature.description}
                             </p>
                           </div>

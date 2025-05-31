@@ -20,6 +20,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import ContactForm from "./components/ContactForm";
 import SponsorshipsToggle from "./components/SponsorshipsToggle";
 import { AppFeaturesCarousel } from "./components/AppFeaturesCarousel";
+import SponsorshipInclude from "./components/SponsorshipsInclude";
 function Home() {
   return (
     <main className="flex-1 w-full py-8">
@@ -41,13 +42,13 @@ function Home() {
             rel="noopener noreferrer"
             className="ml-4"
           >
-            <button className=" shadow-md px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition">
+            <button className="shadow-md px-4 py-2 text-sm font-semibold bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-700 text-white text-sm font-semibold hover:brightness-110 shadow-lg transition-all duration-200] rounded-md hover:bg-[#6e4eb6] transition">
               Download the app
             </button>
           </a>
           <Link
             to="/fantasy-leagues"
-            className=" shadow-md px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition"
+            className="shadow-md px-4 py-2 text-sm font-semibold bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-700 text-white text-sm font-semibold hover:brightness-110 shadow-lg transition-all duration-200] rounded-md hover:bg-[#6e4eb6] transition"
           >
             Explore Leagues
           </Link>
@@ -78,7 +79,7 @@ function Home() {
       } */}
       <div className="my-6">
         <Link to="/squad-based-management">
-          <a className=" shadow-md px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition my-10">
+          <a className="shadow-md px-4 py-2 text-sm font-semibold bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-700 text-white text-sm font-semibold hover:brightness-110 shadow-lg transition-all duration-200] rounded-md hover:bg-[#6e4eb6] transition">
             Learn More about Squad-Based Management
           </a>
         </Link>
@@ -95,7 +96,7 @@ function Home() {
         <SquadUpCarousel></SquadUpCarousel>
       </div>
       <Link to="/fantasy-leagues">
-        <a className=" shadow-md  px-4 py-2 text-sm font-semibold text-white bg-[#8261C2] rounded-md hover:bg-[#6e4eb6] transition my-5">
+        <a className="shadow-md px-4 py-2 text-sm font-semibold bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-700 text-white text-sm font-semibold hover:brightness-110 shadow-lg transition-all duration-200] rounded-md hover:bg-[#6e4eb6] transition">
           Learn More About Leagues
         </a>
       </Link>
@@ -225,6 +226,7 @@ function Sponsors() {
           of authentic exposure.
         </p>
         <hr className=" relative left-1/2 transform -translate-x-1/2 w-screen border-t border-gray-200 opacity-50 my-10" />
+        <SponsorshipInclude></SponsorshipInclude>
         <SponsorshipsToggle />
       </div>
     </main>

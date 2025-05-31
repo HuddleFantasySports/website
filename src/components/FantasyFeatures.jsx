@@ -30,6 +30,7 @@ const features = [
       ],
       hasButton: true,
       buttonText: "Get Your Chapter Involved",
+      image: "/FantasyLeagues/1.png",
     },
   },
   {
@@ -48,6 +49,7 @@ const features = [
       ],
       hasButton: true,
       buttonText: "Join an Influencer Squad",
+      image: "/FantasyLeagues/2.png",
     },
   },
   {
@@ -66,6 +68,7 @@ const features = [
       ],
       hasButton: true,
       buttonText: "Find a Local Squad",
+      image: "/FantasyLeagues/3.png",
     },
   },
   {
@@ -84,6 +87,7 @@ const features = [
       ],
       hasButton: true,
       buttonText: "Bring MESH to Work",
+      image: "/FantasyLeagues/4.png",
     },
   },
   {
@@ -102,6 +106,7 @@ const features = [
       ],
       hasButton: true,
       buttonText: "Start a League",
+      image: "/FantasyLeagues/5.png",
     },
   },
 ];
@@ -191,9 +196,9 @@ export function FantasyFeatures() {
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 gap-8 items-center">
         {/* Left side - Feature descriptions */}
-        <div className="space-y-4">
+        <div className="space-y-6">
           {features.map((feature, index) => (
             <div
               key={feature.id}
@@ -223,13 +228,13 @@ export function FantasyFeatures() {
           <CarouselContent>
             {features.map((feature) => (
               <CarouselItem key={feature.id}>
-                <Card className="border shadow-md">
+                <Card className="border shadow-md  bg-gray-300">
                   <CardContent className="p-6">
                     <div className="text-center border-b pb-4 mb-4">
                       <h3 className="text-2xl font-bold">
                         {feature.preview.title}
                       </h3>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-8s00 text-sm">
                         {feature.preview.subtitle}
                       </p>
                     </div>
@@ -237,12 +242,21 @@ export function FantasyFeatures() {
                       {feature.preview.features.map((previewFeature, idx) => (
                         <div key={idx} className="flex items-start gap-3">
                           <div>
-                            <p className="text-gray-500 text-sm">
+                            <p className="text-gray-800 text-sm">
                               {previewFeature.description}
                             </p>
                           </div>
                         </div>
                       ))}
+                      {feature.preview.image && (
+                        <div className="flex justify-center mt-6">
+                          <img
+                            src={feature.preview.image}
+                            alt={`${feature.preview.title} preview`}
+                            className="w-[250px] h-auto rounded-2xl shadow-lg object-cover"
+                          />
+                        </div>
+                      )}
 
                       {feature.preview.hasButton && (
                         <div className="flex justify-center mt-6">
@@ -257,10 +271,10 @@ export function FantasyFeatures() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex justify-center mt-4 py-5">
+          {/* <div className="flex justify-center mt-4 py-5">
             <CarouselPrevious className="relative static transform-none mx-2" />
             <CarouselNext className="relative static transform-none mx-2" />
-          </div>
+          </div> */}
         </Carousel>
       </div>
     </div>
