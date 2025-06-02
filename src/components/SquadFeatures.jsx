@@ -9,7 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Button } from "@/components/ui/button";
+import CTAButton from "./ui/CTAbutton";
 import {
   ArrowRight,
   Shield,
@@ -33,7 +33,7 @@ const features = [
       features: [
         {
           description:
-            " Squads work together in real-time to build their rosters, casting votes, proposing picks, and debating draft strategy. Whether a draft happens over a couple of hours or a few weeks, every member has a say — because your draft is a team decision, not a solo mission.",
+            "Squads work together in real-time to build their rosters, casting votes, proposing picks, and debating draft strategy. Whether a draft happens over a couple of hours or a few weeks, every member has a say — because your draft is a team decision, not a solo mission.",
         },
       ],
       hasButton: true,
@@ -123,15 +123,10 @@ export function SquadFeatures() {
   // Handle feature box click
   const handleFeatureClick = (index) => {
     setActiveIndex(index);
-    // Move carousel to the corresponding slide
     api?.scrollTo(index);
-
-    // Reset autoplay timer when manually changing slides
     if (autoplayRef.current) {
       clearInterval(autoplayRef.current);
-      if (autoplay) {
-        startAutoplay();
-      }
+      if (autoplay) startAutoplay();
     }
   };
 
@@ -141,57 +136,40 @@ export function SquadFeatures() {
       const nextIndex = (activeIndex + 1) % features.length;
       setActiveIndex(nextIndex);
       api?.scrollTo(nextIndex);
-    }, 5000); // Change slide every 5 seconds
+    }, 5000);
   };
 
   // Initialize and clean up autoplay
   useEffect(() => {
-    if (autoplay) {
-      startAutoplay();
-    }
-
+    if (autoplay) startAutoplay();
     return () => {
-      if (autoplayRef.current) {
-        clearInterval(autoplayRef.current);
-      }
+      if (autoplayRef.current) clearInterval(autoplayRef.current);
     };
   }, [autoplay, activeIndex, api]);
 
   // Sync carousel with active index when API is available
   useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    api.scrollTo(activeIndex);
+    if (api) api.scrollTo(activeIndex);
   }, [api, activeIndex]);
 
   // Handle carousel change
   useEffect(() => {
-    if (!api) {
-      return;
-    }
-
+    if (!api) return;
     const onSelect = () => {
       const selectedIndex = api.selectedScrollSnap();
       setActiveIndex(selectedIndex);
-
-      // Reset autoplay timer when carousel changes
       if (autoplayRef.current) {
         clearInterval(autoplayRef.current);
-        if (autoplay) {
-          startAutoplay();
-        }
+        if (autoplay) startAutoplay();
       }
     };
-
     api.on("select", onSelect);
     return () => {
       api.off("select", onSelect);
     };
   }, [api, autoplay]);
 
-  // Icon component mapping
+  // Icon component mapping (if you choose to render icons anywhere)
   const IconComponent = ({ icon }) => {
     switch (icon) {
       case "shield":
@@ -220,67 +198,83 @@ export function SquadFeatures() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-8">
-        {/* Left side - Feature descriptions */}
-        <div className="space-y-4">
+        {/* Left side – Feature descriptions */}
+        <div className="space-y-6">
           {features.map((feature, index) => (
+            // Gradient wrapper with hover glow on all sides
             <div
               key={feature.id}
-              onClick={() => handleFeatureClick(index)}
-              className={`p-6  bg-gray-300 text-gray-800  rounded-lg cursor-pointer transition-all duration-300 ${
-                index === activeIndex
-                  ? feature.isHighlighted
-                    ? "bg-blue-50"
-                    : "border border-gray-200 shadow-sm"
-                  : "hover:bg-gray-50"
-              }`}
+              className="
+                p-[1px]
+                bg-gradient-to-r from-purple-500 to-teal-500
+                rounded-lg
+                transition-shadow duration-300
+                hover:shadow-lg hover:shadow-purple-500/50
+              "
             >
-              <h3
-                className={`text-md font-medium mb-2 ${
-                  index === activeIndex ? "text-primary" : ""
-                }`}
+              {/* Inner clickable card – dark background, active shadow */}
+              <div
+                onClick={() => handleFeatureClick(index)}
+                className={`
+                  p-6
+                  bg-[#212731]
+                  text-white
+                  rounded-lg
+                  cursor-pointer
+                  transition-all
+                  duration-300
+                  ${index === activeIndex ? "shadow-sm" : ""}
+                `}
               >
-                {feature.title}
-              </h3>
-              <p className="text-sm">{feature.description}</p>
+                <h3 className="text-md font-medium mb-2 text-white">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-white">{feature.description}</p>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Right side - Preview carousel */}
+        {/* Right side – Preview carousel */}
         <Carousel className="w-full" setApi={setApi}>
           <CarouselContent>
             {features.map((feature) => (
               <CarouselItem key={feature.id}>
-                <Card className="border shadow-md  bg-gray-300">
-                  <CardContent className="p-6">
-                    <div className="text-center border-b pb-4 mb-4">
-                      <h3 className="text-2xl font-bold">
-                        {feature.preview.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm">
-                        {feature.preview.subtitle}
-                      </p>
-                    </div>
-
-                    <div className="space-y-4">
-                      {feature.preview.features.map((previewFeature, idx) => (
-                        <div key={idx} className="flex items-start gap-3 h-25">
-                          <div>
-                            <h4 className="font-medium text-sm">
-                              {previewFeature.title}
-                            </h4>
-                            <p className="text-gray-800 text-sm">
+                <div className="p-[1px] bg-gradient-to-r from-purple-500 to-teal-500 rounded-2xl shadow-md">
+                  <Card className="bg-[#212731] rounded-2xl">
+                    <CardContent className="p-6">
+                      <div className="text-center border-b pb-4 mb-4">
+                        <h3 className="text-2xl text-white font-bold">
+                          {feature.preview.title}
+                        </h3>
+                        <p className="text-white text-sm">
+                          {feature.preview.subtitle}
+                        </p>
+                      </div>
+                      <div className="space-y-4">
+                        {feature.preview.features.map((previewFeature, idx) => (
+                          <div key={idx} className="flex items-start gap-3">
+                            <p className="text-white text-sm">
                               {previewFeature.description}
                             </p>
                           </div>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                        ))}
+
+                        {feature.preview.hasButton && (
+                          <div className="flex justify-center mt-6">
+                            <CTAButton className="w-60 h-10 text-center">
+                              {feature.preview.buttonText}
+                            </CTAButton>
+                          </div>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
+
           <div className="flex justify-center mt-4 py-5">
             <CarouselPrevious className="relative static transform-none mx-2" />
             <CarouselNext className="relative static transform-none mx-2" />
@@ -290,3 +284,4 @@ export function SquadFeatures() {
     </div>
   );
 }
+export default SquadFeatures;

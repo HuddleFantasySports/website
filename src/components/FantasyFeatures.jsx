@@ -187,7 +187,6 @@ export function FantasyFeatures() {
       api.off("select", onSelect);
     };
   }, [api, autoplay]);
-
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="text-center mb-10">
@@ -197,84 +196,102 @@ export function FantasyFeatures() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 items-center">
-        {/* Left side - Feature descriptions */}
+        {/* Left side – Feature descriptions */}
         <div className="space-y-6">
           {features.map((feature, index) => (
+            // 1px gradient wrapper gets the hover glow (shadow-purple-500/50)
             <div
               key={feature.id}
-              onClick={() => handleFeatureClick(index)}
-              className={`p-6  bg-gray-300 text-gray-800  rounded-lg cursor-pointer transition-all duration-300 ${
-                index === activeIndex
-                  ? feature.isHighlighted
-                    ? "bg-blue-50"
-                    : "border border-gray-200 shadow-sm"
-                  : "hover:bg-gray-50"
-              }`}
+              className="
+                p-[1px]
+                bg-gradient-to-r from-purple-500 to-teal-500
+                rounded-lg
+                transition-shadow duration-300
+                hover:shadow-lg hover:shadow-purple-500/50
+              "
             >
-              <h3
-                className={`text-md font-medium mb-2 ${
-                  index === activeIndex ? "text-primary" : ""
-                }`}
+              {/* Inner clickable card – always dark unless “active” */}
+              <div
+                onClick={() => handleFeatureClick(index)}
+                className={`
+                  p-6
+                  bg-[#212731]
+                  text-white
+                  rounded-lg
+                  cursor-pointer
+                  transition-all
+                  duration-300
+                  ${
+                    index === activeIndex
+                      ? "shadow-sm" /* subtle default shadow when selected */
+                      : "hover:border-gray-200"
+                  }
+                `}
               >
-                {feature.title}
-              </h3>
-              <p className="text-sm">{feature.description}</p>
+                <h3 className="text-md font-medium mb-2 text-white">
+                  {feature.title}
+                </h3>
+                <p className="text-sm">{feature.description}</p>
+              </div>
             </div>
           ))}
         </div>
 
-        {/* Right side - Preview carousel */}
+        {/* Right side – Preview carousel */}
         <Carousel className="w-full" setApi={setApi}>
           <CarouselContent>
             {features.map((feature) => (
               <CarouselItem key={feature.id}>
-                <Card className="border shadow-md  bg-gray-300">
-                  <CardContent className="p-6">
-                    <div className="text-center border-b pb-4 mb-4">
-                      <h3 className="text-2xl font-bold">
-                        {feature.preview.title}
-                      </h3>
-                      <p className="text-gray-8s00 text-sm">
-                        {feature.preview.subtitle}
-                      </p>
-                    </div>
-                    <div className="space-y-4">
-                      {feature.preview.features.map((previewFeature, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <div>
-                            <p className="text-gray-800 text-sm">
+                <div className="p-[1px] bg-gradient-to-r from-purple-500 to-teal-500 rounded-2xl shadow-md">
+                  <Card className="bg-[#212731] rounded-2xl">
+                    <CardContent className="p-6">
+                      <div className="text-center border-b pb-4 mb-4">
+                        <h3 className="text-2xl text-white font-bold">
+                          {feature.preview.title}
+                        </h3>
+                        <p className="text-white text-sm">
+                          {feature.preview.subtitle}
+                        </p>
+                      </div>
+                      <div className="space-y-4">
+                        {feature.preview.features.map((previewFeature, idx) => (
+                          <div key={idx} className="flex items-start gap-3">
+                            <p className="text-white text-sm">
                               {previewFeature.description}
                             </p>
                           </div>
-                        </div>
-                      ))}
-                      {feature.preview.image && (
-                        <div className="flex justify-center mt-6">
-                          <img
-                            src={feature.preview.image}
-                            alt={`${feature.preview.title} preview`}
-                            className="w-[250px] h-auto rounded-2xl shadow-lg object-cover"
-                          />
-                        </div>
-                      )}
+                        ))}
 
-                      {feature.preview.hasButton && (
-                        <div className="flex justify-center mt-6">
-                          <CTAButton className="w-60 h-10 text-center ">
-                            {feature.preview.buttonText}
-                          </CTAButton>
-                        </div>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
+                        {feature.preview.image && (
+                          <div className="flex justify-center mt-6">
+                            <img
+                              src={feature.preview.image}
+                              alt={`${feature.preview.title} preview`}
+                              className="w-[250px] h-auto rounded-2xl shadow-lg object-cover"
+                            />
+                          </div>
+                        )}
+
+                        {feature.preview.hasButton && (
+                          <div className="flex justify-center mt-6">
+                            <CTAButton className="w-60 h-10 text-center">
+                              {feature.preview.buttonText}
+                            </CTAButton>
+                          </div>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
               </CarouselItem>
             ))}
           </CarouselContent>
-          {/* <div className="flex justify-center mt-4 py-5">
+          {/*
+          <div className="flex justify-center mt-4 py-5">
             <CarouselPrevious className="relative static transform-none mx-2" />
             <CarouselNext className="relative static transform-none mx-2" />
-          </div> */}
+          </div>
+          */}
         </Carousel>
       </div>
     </div>

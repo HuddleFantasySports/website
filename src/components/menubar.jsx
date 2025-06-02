@@ -9,9 +9,9 @@ const menuItems = [
   { title: "Home", to: "/" },
   { title: "Squad-Based Management", to: "/squad-based-management" },
   { title: "Fantasy Leagues", to: "/fantasy-leagues" },
-  { title: "Testimonials", to: "/testimonials" },
+  // { title: "Testimonials", to: "/testimonials" },
   { title: "Sponsors", to: "/sponsors" },
-  { title: "Contact", to: "/contact" },
+  // { title: "Contact", to: "/contact" },
 ];
 
 export function MenuBar() {

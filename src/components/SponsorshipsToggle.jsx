@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 function SponsorshipsToggle() {
+  // ← Remove the `<"local" | "national">` type annotation here:
   const [activeType, setActiveType] = useState("local");
 
   return (
@@ -23,41 +24,36 @@ function SponsorshipsToggle() {
         <button
           onClick={() => setActiveType("local")}
           onMouseEnter={() => setActiveType("local")}
-          className={`px-6 py-2 rounded-full border transition ${
-            activeType === "local"
-              ? "bg-white text-black"
-              : "border-white text-white hover:bg-white hover:text-black"
-          }`}
+          className={`
+            px-6 py-2 rounded-full border transition
+            ${
+              activeType === "local"
+                ? "bg-white text-black"
+                : "border-white text-white hover:bg-white hover:text-black"
+            }
+          `}
         >
           Local
         </button>
         <button
           onClick={() => setActiveType("national")}
           onMouseEnter={() => setActiveType("national")}
-          className={`px-6 py-2 rounded-full border transition ${
-            activeType === "national"
-              ? "bg-white text-black"
-              : "border-white text-white hover:bg-white hover:text-black"
-          }`}
+          className={`
+            px-6 py-2 rounded-full border transition
+            ${
+              activeType === "national"
+                ? "bg-white text-black"
+                : "border-white text-white hover:bg-white hover:text-black"
+            }
+          `}
         >
           National
         </button>
       </div>
 
-      {/* Fade‐in container: keep both Local & National in the DOM, but cross‐fade via opacity */}
-      <div className="relative max-w-6xl mx-auto px-4">
-        {/* Local Content */}
-        <div
-          className={`
-            absolute inset-0
-            transition-opacity duration-500
-            ${
-              activeType === "local"
-                ? "opacity-100"
-                : "opacity-0 pointer-events-none"
-            }
-          `}
-        >
+      {/* Only render the active pane, so the container’s height adjusts automatically */}
+      <div className="max-w-6xl mx-auto px-4">
+        {activeType === "local" && (
           <div className="grid md:grid-cols-2 gap-8 items-start">
             {/* Left Column: Centered Phone + Benefits */}
             <div className="flex flex-col items-center space-y-6">
@@ -94,12 +90,11 @@ function SponsorshipsToggle() {
                 {/* Announcement #1 */}
                 <div className="bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] rounded-lg p-[1px]">
                   <div className="flex items-start bg-[#212731] rounded-[inherit] p-4 space-x-4">
-                    {/* Icon container as a rounded square */}
-                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl  bg-[#212731]">
+                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl bg-[#212731]">
                       <img
                         src="/Sponsorships/restaurant.png"
                         alt="Fred’s Icon"
-                        className="w-full h-full "
+                        className="w-full h-full"
                       />
                     </div>
                     <div className="flex-1">
@@ -120,11 +115,11 @@ function SponsorshipsToggle() {
                 {/* Announcement #2 */}
                 <div className="bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] rounded-lg p-[1px]">
                   <div className="flex items-start bg-[#212731] rounded-[inherit] p-4 space-x-4">
-                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl  bg-[#212731]">
+                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl bg-[#212731]">
                       <img
                         src="/Sponsorships/restaurant.png"
                         alt="Fred’s Icon"
-                        className="w-full h-full "
+                        className="w-full h-full"
                       />
                     </div>
                     <div className="flex-1">
@@ -135,7 +130,7 @@ function SponsorshipsToggle() {
                         Don't watch the game HUNGRY
                         <span className="block text-[#3AB298] mt-1">
                           Best wings in town, for FREE when you bring 5 guys and
-                          order a drink! Let's watch the Seahawks get the win!
+                          order a drink! Let’s watch the Seahawks get the win!
                         </span>
                       </p>
                     </div>
@@ -145,11 +140,11 @@ function SponsorshipsToggle() {
                 {/* Announcement #3 */}
                 <div className="bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] rounded-lg p-[1px]">
                   <div className="flex items-start bg-[#212731] rounded-[inherit] p-4 space-x-4">
-                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl  bg-[#212731]">
+                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl bg-[#212731]">
                       <img
                         src="/Sponsorships/restaurant.png"
                         alt="Fred’s Icon"
-                        className="w-full h-full "
+                        className="w-full h-full"
                       />
                     </div>
                     <div className="flex-1">
@@ -159,7 +154,7 @@ function SponsorshipsToggle() {
                       <p className="text-[#8261C2] font-bold text-sm">
                         High Scores week 15!
                         <span className="block text-[#3AB298] mt-1">
-                          Sigma Chi dominated last week... Sig Chi's come get a
+                          Sigma Chi dominated last week. Sig Chi's come get a
                           free T-shirt with any order this week! 1 per member
                         </span>
                       </p>
@@ -169,20 +164,9 @@ function SponsorshipsToggle() {
               </div>
             </div>
           </div>
-        </div>
+        )}
 
-        {/* National Content */}
-        <div
-          className={`
-            absolute inset-0
-            transition-opacity duration-500
-            ${
-              activeType === "national"
-                ? "opacity-100"
-                : "opacity-0 pointer-events-none"
-            }
-          `}
-        >
+        {activeType === "national" && (
           <div className="grid md:grid-cols-2 gap-8 items-start">
             {/* Left Column: Centered Phone + Benefits */}
             <div className="flex flex-col items-center space-y-6">
@@ -219,11 +203,11 @@ function SponsorshipsToggle() {
                 {/* Announcement #1 */}
                 <div className="bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] rounded-lg p-[1px]">
                   <div className="flex items-start bg-[#212731] rounded-[inherit] p-4 space-x-4">
-                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl  bg-[#212731]">
+                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl bg-[#212731]">
                       <img
                         src="/Sponsorships/brand.png"
                         alt="BrandX Icon"
-                        className="w-full h-full "
+                        className="w-full h-full"
                       />
                     </div>
                     <div className="flex-1">
@@ -245,7 +229,7 @@ function SponsorshipsToggle() {
                 {/* Announcement #2 */}
                 <div className="bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] rounded-lg p-[1px]">
                   <div className="flex items-start bg-[#212731] rounded-[inherit] p-4 space-x-4">
-                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl  bg-[#212731]">
+                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl bg-[#212731]">
                       <img
                         src="/Sponsorships/brand.png"
                         alt="BrandX Icon"
@@ -271,11 +255,11 @@ function SponsorshipsToggle() {
                 {/* Announcement #3 */}
                 <div className="bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] rounded-lg p-[1px]">
                   <div className="flex items-start bg-[#212731] rounded-[inherit] p-4 space-x-4">
-                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl  bg-[#212731]">
+                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl bg-[#212731]">
                       <img
                         src="/Sponsorships/brand.png"
                         alt="BrandX Icon"
-                        className="w-full h-full "
+                        className="w-full h-full"
                       />
                     </div>
                     <div className="flex-1">
@@ -297,7 +281,7 @@ function SponsorshipsToggle() {
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
