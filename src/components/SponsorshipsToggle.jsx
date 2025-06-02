@@ -44,9 +44,20 @@ function SponsorshipsToggle() {
         </button>
       </div>
 
-      {/* Local Layout */}
-      {activeType === "local" && (
-        <div className="max-w-6xl mx-auto px-4">
+      {/* Fade‐in container: keep both Local & National in the DOM, but cross‐fade via opacity */}
+      <div className="relative max-w-6xl mx-auto px-4">
+        {/* Local Content */}
+        <div
+          className={`
+            absolute inset-0
+            transition-opacity duration-500
+            ${
+              activeType === "local"
+                ? "opacity-100"
+                : "opacity-0 pointer-events-none"
+            }
+          `}
+        >
           <div className="grid md:grid-cols-2 gap-8 items-start">
             {/* Left Column: Centered Phone + Benefits */}
             <div className="flex flex-col items-center space-y-6">
@@ -76,41 +87,30 @@ function SponsorshipsToggle() {
             {/* Right Column: Fred’s Bar & Grill (gradient border & dark bg) */}
             <div className="bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] rounded-2xl p-[1px]">
               <div className="bg-[#212731] rounded-[inherit] p-4 space-y-6">
-                <h3 className="text-lg font-semibold mb-4 text-[#3DE29F]">
+                <h3 className="text-lg font-semibold mb-4 text-white">
                   Fred’s Bar &amp; Grill
                 </h3>
 
                 {/* Announcement #1 */}
                 <div className="bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] rounded-lg p-[1px]">
                   <div className="flex items-start bg-[#212731] rounded-[inherit] p-4 space-x-4">
-                    <div className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-black"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M3 7v4a1 1 0 001 1h.586M7 11h10l3 4H7v-4zM12 3v6"
-                        />
-                      </svg>
+                    {/* Icon container as a rounded square */}
+                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl  bg-[#212731]">
+                      <img
+                        src="/Sponsorships/restaurant.png"
+                        alt="Fred’s Icon"
+                        className="w-full h-full "
+                      />
                     </div>
                     <div className="flex-1">
                       <h4 className="text-white font-semibold mb-1">
                         BIG UNIVERSITY FOOTBALL WIN
                       </h4>
-                      <p className="text-[#3DE29F] text-sm">
-                        Come celebrate the big win @ Fred’s –{" "}
-                        <span className="text-white font-bold">
-                          50% off drinks or food for all league members.
-                        </span>{" "}
-                        Skip the LINE by showing this pass:{" "}
-                        <span className="text-[#8A70F5] font-semibold">
-                          FREDxMESH
+                      <p className="text-[#8261C2] font-bold text-sm">
+                        Come celebrate the big win @ Fred’s
+                        <span className="block text-[#3AB298] mt-1">
+                          50% off drinks or food for all league members. Skip
+                          the LINE by showing this pass: FREDxMESH
                         </span>
                       </p>
                     </div>
@@ -120,32 +120,23 @@ function SponsorshipsToggle() {
                 {/* Announcement #2 */}
                 <div className="bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] rounded-lg p-[1px]">
                   <div className="flex items-start bg-[#212731] rounded-[inherit] p-4 space-x-4">
-                    <div className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-black"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 8v4M16 12h-8m8 4H8m0 0l-4-8m16 8l-4-8"
-                        />
-                      </svg>
+                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl  bg-[#212731]">
+                      <img
+                        src="/Sponsorships/restaurant.png"
+                        alt="Fred’s Icon"
+                        className="w-full h-full "
+                      />
                     </div>
                     <div className="flex-1">
                       <h4 className="text-white font-semibold mb-1">
                         THURSDAY NIGHT FOOTBALL
                       </h4>
-                      <p className="text-[#3DE29F] text-sm">
-                        Don’t watch the game HUNGRY: Best wings in town, for{" "}
-                        <span className="text-white font-bold">
-                          FREE when you bring 5 guys and order a drink!
-                        </span>{" "}
-                        Let’s watch the Seahawks get the win!
+                      <p className="text-[#8261C2] font-bold text-sm">
+                        Don't watch the game HUNGRY
+                        <span className="block text-[#3AB298] mt-1">
+                          Best wings in town, for FREE when you bring 5 guys and
+                          order a drink! Let's watch the Seahawks get the win!
+                        </span>
                       </p>
                     </div>
                   </div>
@@ -154,31 +145,22 @@ function SponsorshipsToggle() {
                 {/* Announcement #3 */}
                 <div className="bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] rounded-lg p-[1px]">
                   <div className="flex items-start bg-[#212731] rounded-[inherit] p-4 space-x-4">
-                    <div className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-black"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
+                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl  bg-[#212731]">
+                      <img
+                        src="/Sponsorships/restaurant.png"
+                        alt="Fred’s Icon"
+                        className="w-full h-full "
+                      />
                     </div>
                     <div className="flex-1">
                       <h4 className="text-white font-semibold mb-1">
                         Congrats Sigma Chi
                       </h4>
-                      <p className="text-[#3DE29F] text-sm">
-                        High scorers week 15! Sigma Chi dominated last week…{" "}
-                        <span className="text-white font-bold">
-                          Sigma Chi’s come get a free T-shirt with any order
-                          this week! (1 per member)
+                      <p className="text-[#8261C2] font-bold text-sm">
+                        High Scores week 15!
+                        <span className="block text-[#3AB298] mt-1">
+                          Sigma Chi dominated last week... Sig Chi's come get a
+                          free T-shirt with any order this week! 1 per member
                         </span>
                       </p>
                     </div>
@@ -188,11 +170,19 @@ function SponsorshipsToggle() {
             </div>
           </div>
         </div>
-      )}
 
-      {/* National Layout */}
-      {activeType === "national" && (
-        <div className="max-w-6xl mx-auto px-4">
+        {/* National Content */}
+        <div
+          className={`
+            absolute inset-0
+            transition-opacity duration-500
+            ${
+              activeType === "national"
+                ? "opacity-100"
+                : "opacity-0 pointer-events-none"
+            }
+          `}
+        >
           <div className="grid md:grid-cols-2 gap-8 items-start">
             {/* Left Column: Centered Phone + Benefits */}
             <div className="flex flex-col items-center space-y-6">
@@ -222,28 +212,28 @@ function SponsorshipsToggle() {
             {/* Right Column: BrandX */}
             <div className="bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] rounded-2xl p-[1px]">
               <div className="bg-[#212731] rounded-[inherit] space-y-6 p-4">
-                <h3 className="text-lg font-semibold mb-4 text-[#3DE29F]">
+                <h3 className="text-lg font-semibold mb-4 text-white">
                   BrandX
                 </h3>
 
                 {/* Announcement #1 */}
                 <div className="bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] rounded-lg p-[1px]">
                   <div className="flex items-start bg-[#212731] rounded-[inherit] p-4 space-x-4">
-                    <div className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
+                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl  bg-[#212731]">
                       <img
-                        src="/Sponsorships/brandx-icon.png"
+                        src="/Sponsorships/brand.png"
                         alt="BrandX Icon"
-                        className="w-6 h-6"
+                        className="w-full h-full "
                       />
                     </div>
                     <div className="flex-1">
                       <h4 className="text-white font-semibold mb-1">
                         🔥 Win a Squad Pack from BrandX
                       </h4>
-                      <p className="text-[#3DE29F] text-sm">
+                      <p className="text-[#8261C2] text-sm font-bold">
                         TOP SCORING FRATERNITIES FOR WEEK 12
                         <br />
-                        <span className="text-white">
+                        <span className="text-[#3AB298] font-bold block mt-1">
                           This week, 3 lucky squads will win a BrandX Prize
                           Pack—tees, hats, and more.
                         </span>
@@ -255,21 +245,21 @@ function SponsorshipsToggle() {
                 {/* Announcement #2 */}
                 <div className="bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] rounded-lg p-[1px]">
                   <div className="flex items-start bg-[#212731] rounded-[inherit] p-4 space-x-4">
-                    <div className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
+                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl  bg-[#212731]">
                       <img
-                        src="/Sponsorships/brandx-icon.png"
+                        src="/Sponsorships/brand.png"
                         alt="BrandX Icon"
-                        className="w-6 h-6"
+                        className="w-full h-full"
                       />
                     </div>
                     <div className="flex-1">
                       <h4 className="text-white font-semibold mb-1">
-                        🍹 New Drop from BrandX
+                        🧃 New Drop from BrandX
                       </h4>
-                      <p className="text-[#3DE29F] text-sm">
+                      <p className="text-[#8261C2] text-sm font-bold">
                         FLAVOR LAUNCH JUST HIT CAMPUS
                         <br />
-                        <span className="text-white">
+                        <span className="text-[#3AB298] font-bold block mt-1">
                           Something fresh is brewing… Keep an eye out for the
                           new PEACH can from Hoop Tea. Chill vibes. Big flavor.
                         </span>
@@ -281,21 +271,21 @@ function SponsorshipsToggle() {
                 {/* Announcement #3 */}
                 <div className="bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] rounded-lg p-[1px]">
                   <div className="flex items-start bg-[#212731] rounded-[inherit] p-4 space-x-4">
-                    <div className="w-12 h-12 flex-shrink-0 bg-white rounded-full flex items-center justify-center">
+                    <div className="w-16 h-16 flex-shrink-0 rounded-2xl  bg-[#212731]">
                       <img
-                        src="/Sponsorships/brandx-icon.png"
+                        src="/Sponsorships/brand.png"
                         alt="BrandX Icon"
-                        className="w-6 h-6"
+                        className="w-full h-full "
                       />
                     </div>
                     <div className="flex-1">
                       <h4 className="text-white font-semibold mb-1">
-                        📺 BRANDX NFL Fact of the Week
+                        📘 BRANDX NFL Fact of the Week
                       </h4>
-                      <p className="text-[#3DE29F] text-sm">
+                      <p className="text-[#8261C2] text-sm font-bold">
                         BRADY’S GOT MORE RINGS THAN TEAMS
                         <br />
-                        <span className="text-white">
+                        <span className="text-[#3AB298] font-bold block mt-1">
                           Tom Brady has 7 rings—more than any NFL franchise.
                           That’s one for each flavor of BRANDX! Greatness hits
                           different.
@@ -308,7 +298,7 @@ function SponsorshipsToggle() {
             </div>
           </div>
         </div>
-      )}
+      </div>
     </section>
   );
 }
