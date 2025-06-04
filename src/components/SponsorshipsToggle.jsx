@@ -98,12 +98,12 @@ function SponsorshipsToggle() {
                       />
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-white font-semibold mb-1">
+                      <h4 className="text-left text-white font-semibold mb-1">
                         BIG UNIVERSITY FOOTBALL WIN
                       </h4>
-                      <p className="text-[#8261C2] font-bold text-sm">
+                      <p className="text-left text-[#8261C2] font-bold text-sm">
                         Come celebrate the big win @ Fred’s
-                        <span className="block text-[#3AB298] mt-1">
+                        <span className="text-left block text-[#3AB298] mt-1">
                           50% off drinks or food for all league members. Skip
                           the LINE by showing this pass: FREDxMESH
                         </span>
@@ -123,12 +123,12 @@ function SponsorshipsToggle() {
                       />
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-white font-semibold mb-1">
+                      <h4 className="text-left text-white font-semibold mb-1">
                         THURSDAY NIGHT FOOTBALL
                       </h4>
-                      <p className="text-[#8261C2] font-bold text-sm">
+                      <p className="text-left text-[#8261C2] font-bold text-sm">
                         Don't watch the game HUNGRY
-                        <span className="block text-[#3AB298] mt-1">
+                        <span className="text-left block text-[#3AB298] mt-1">
                           Best wings in town, for FREE when you bring 5 guys and
                           order a drink! Let’s watch the Seahawks get the win!
                         </span>
@@ -148,12 +148,12 @@ function SponsorshipsToggle() {
                       />
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-white font-semibold mb-1">
+                      <h4 className="text-left text-white font-semibold mb-1">
                         Congrats Sigma Chi
                       </h4>
-                      <p className="text-[#8261C2] font-bold text-sm">
+                      <p className="text-left text-[#8261C2] font-bold text-sm">
                         High Scores week 15!
-                        <span className="block text-[#3AB298] mt-1">
+                        <span className=" text-left block text-[#3AB298] mt-1">
                           Sigma Chi dominated last week. Sig Chi's come get a
                           free T-shirt with any order this week! 1 per member
                         </span>
@@ -211,13 +211,13 @@ function SponsorshipsToggle() {
                       />
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-white font-semibold mb-1">
+                      <h4 className="text-left text-white font-semibold mb-1">
                         🔥 Win a Squad Pack from BrandX
                       </h4>
-                      <p className="text-[#8261C2] text-sm font-bold">
+                      <p className="text-left text-[#8261C2] text-sm font-bold">
                         TOP SCORING FRATERNITIES FOR WEEK 12
                         <br />
-                        <span className="text-[#3AB298] font-bold block mt-1">
+                        <span className="text-left text-[#3AB298] font-bold block mt-1">
                           This week, 3 lucky squads will win a BrandX Prize
                           Pack—tees, hats, and more.
                         </span>
@@ -237,13 +237,13 @@ function SponsorshipsToggle() {
                       />
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-white font-semibold mb-1">
+                      <h4 className="text-left text-white font-semibold mb-1">
                         🧃 New Drop from BrandX
                       </h4>
-                      <p className="text-[#8261C2] text-sm font-bold">
+                      <p className="text-left text-[#8261C2] text-sm font-bold">
                         FLAVOR LAUNCH JUST HIT CAMPUS
                         <br />
-                        <span className="text-[#3AB298] font-bold block mt-1">
+                        <span className="text-left text-[#3AB298] font-bold block mt-1">
                           Something fresh is brewing… Keep an eye out for the
                           new PEACH can from Hoop Tea. Chill vibes. Big flavor.
                         </span>
@@ -263,13 +263,13 @@ function SponsorshipsToggle() {
                       />
                     </div>
                     <div className="flex-1">
-                      <h4 className="text-white font-semibold mb-1">
+                      <h4 className="text-left text-white font-semibold mb-1">
                         📘 BRANDX NFL Fact of the Week
                       </h4>
-                      <p className="text-[#8261C2] text-sm font-bold">
+                      <p className="text-left text-[#8261C2] text-sm font-bold">
                         BRADY’S GOT MORE RINGS THAN TEAMS
                         <br />
-                        <span className="text-[#3AB298] font-bold block mt-1">
+                        <span className="text-left text-[#3AB298] font-bold block mt-1">
                           Tom Brady has 7 rings—more than any NFL franchise.
                           That’s one for each flavor of BRANDX! Greatness hits
                           different.

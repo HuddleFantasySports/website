@@ -65,13 +65,13 @@ export default function SponsorshipInclude() {
 
                   {/* Text content */}
                   <div className="flex flex-col justify-center">
-                    <h4 className="text-md font-semibold mb-1 text-white">
+                    <h4 className="text-left text-md font-semibold mb-1 text-white">
                       {item.title}
                     </h4>
-                    <p className="text-sm text-[#8261C2] font-bold">
+                    <p className="text-left text-sm text-[#8261C2] font-bold">
                       {item.subtitle}
                     </p>
-                    <p className="text-[#3AB298] text-sm font-bold">
+                    <p className=" text-left text-[#3AB298] text-sm font-bold">
                       {item.description}
                     </p>
                   </div>
@@ -105,13 +105,13 @@ export default function SponsorshipInclude() {
 
                   {/* Text content */}
                   <div className="flex flex-col justify-center">
-                    <h4 className="text-md font-semibold mb-1 text-white">
+                    <h4 className=" text-left text-md font-semibold mb-1 text-white">
                       {item.title}
                     </h4>
-                    <p className="text-sm text-[#8261C2] font-bold">
+                    <p className=" text-left text-sm text-[#8261C2] font-bold">
                       {item.subtitle}
                     </p>
-                    <p className="text-[#3AB298] text-sm font-bold">
+                    <p className="text-left text-[#3AB298] text-sm font-bold">
                       {item.description}
                     </p>
                   </div>

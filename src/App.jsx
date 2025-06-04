@@ -88,23 +88,14 @@ function Home() {
             Learn More about Squad-Based Management
           </a>
         </Link>
-        <hr
-          className="
-      relative
-      left-1/2                /* position its left edge at 50% of parent */
-      transform -translate-x-1/2 /* shift it back by half its own width */
-      w-screen                /* make it as wide as the viewport */
-      border-t border-gray-200 opacity-50
-      my-10
-    "
-        />
-        <SquadUpCarousel></SquadUpCarousel>
+
+        {/* <SquadUpCarousel></SquadUpCarousel> */}
       </div>
-      <Link to="/fantasy-leagues">
+      {/* <Link to="/fantasy-leagues">
         <a className="shadow-md px-4 py-2 text-sm font-semibold bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-700 text-white text-sm font-semibold hover:brightness-110 shadow-lg transition-all duration-200] rounded-md hover:bg-[#6e4eb6] transition">
           Learn More About Leagues
         </a>
-      </Link>
+      </Link> */}
     </main>
   );
 }
