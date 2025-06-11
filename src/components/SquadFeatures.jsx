@@ -8,14 +8,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import CTAButton from "./ui/CTAbutton";
-import {
-  Shield,
-  Eye,
-  Share2,
-  Lock,
-  ShieldCheck,
-  User,
-} from "lucide-react";
+import { Shield, Eye, Share2, Lock, ShieldCheck, User } from "lucide-react";
 
 // Feature data with corresponding preview screens
 const features = [
