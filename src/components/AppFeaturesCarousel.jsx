@@ -47,9 +47,9 @@ export function AppFeaturesCarousel() {
   const slides = voteFeatures[category];
 
   return (
-    <div className="w-full max-w-6xl mx-auto flex flex-col items-center space-y-8 py-12 px-4 relative">
-      {/* Static Heading with dynamic feature in gradient and fade */}
-      <div className="text-center text-2xl font-semibold">
+    <div className="w-full max-w-6xl mx-auto flex flex-col items-center space-y-8 py-8 px-2 sm:px-4 relative">
+      {/* Heading */}
+      <div className="text-center text-lg sm:text-2xl font-semibold">
         <p className="mb-2">
           Vote on{" "}
           <span
@@ -63,10 +63,11 @@ export function AppFeaturesCarousel() {
         </p>
       </div>
 
-      {/* Phone previews with arrows and fade */}
+      {/* Carousel */}
       <div className="relative w-full flex items-center justify-center">
+        {/* Hide arrows on mobile, show on sm+ */}
         <button
-          className="absolute left-0 text-2xl px-4 py-2 text-gray-400 hover:text-white"
+          className="hidden sm:block absolute left-0 text-2xl px-2 py-1 text-gray-400 hover:text-white z-10 top-1/2 -translate-y-1/2"
           onClick={() => {
             setFade(false);
             setTimeout(() => {
@@ -76,25 +77,29 @@ export function AppFeaturesCarousel() {
               setFade(true);
             }, 300);
           }}
+          aria-label="Previous"
         >
           &#8592;
         </button>
 
         <div
-          className={`flex justify-center items-center gap-6 transition-opacity duration-500 ease-in-out ${
+          className={`flex justify-center items-center gap-2 xs:gap-3 sm:gap-6 transition-opacity duration-500 ease-in-out ${
             fade ? "opacity-100" : "opacity-0"
           }`}
         >
           {slides.map((slide, i) => (
             <div
               key={i}
-              className="w-72 h-[540px] rounded-3xl shadow-lg overflow-hidden flex flex-col items-center justify-center"
+              className="w-28 h-40 xs:w-36 xs:h-56 sm:w-72 sm:h-[540px] rounded-2xl shadow-lg overflow-hidden flex flex-col items-center justify-center"
             >
-              <div className="w-64 h-[500px] rounded-2xl flex items-center justify-center">
+              <div
+                className="w-24 h-32 xs:w-32 xs:h-48 sm:w-64 sm:h-[500px] rounded-xl flex items-center justify-center cursor-pointer"
+                onClick={() => setModalImage(slide.img)}
+              >
                 <img
                   src={slide.img}
                   alt={slide.text}
-                  className="h-full w-full object-contain rounded-2xl"
+                  className="h-full w-full object-contain rounded-xl"
                 />
               </div>
             </div>
@@ -102,7 +107,7 @@ export function AppFeaturesCarousel() {
         </div>
 
         <button
-          className="absolute right-0 text-2xl px-4 py-2 text-gray-400 hover:text-white"
+          className="hidden sm:block absolute right-0 text-2xl px-2 py-1 text-gray-400 hover:text-white z-10 top-1/2 -translate-y-1/2"
           onClick={() => {
             setFade(false);
             setTimeout(() => {
@@ -110,17 +115,18 @@ export function AppFeaturesCarousel() {
               setFade(true);
             }, 300);
           }}
+          aria-label="Next"
         >
           &#8594;
         </button>
       </div>
 
-      {/* Thin progress bar indicators */}
-      <div className="flex space-x-2 mt-6">
+      {/* Progress indicators */}
+      <div className="flex space-x-2 mt-4">
         {categories.map((_, i) => (
           <div
             key={i}
-            className={`h-1 w-10 rounded-full transition-colors duration-300 ${
+            className={`h-1 w-6 sm:w-10 rounded-full transition-colors duration-300 ${
               i === categoryIdx ? "bg-purple-500" : "bg-gray-400"
             }`}
           />

@@ -192,16 +192,15 @@ export function SquadFeatures() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <div className="text-center mb-10">
-        <h2 className="text-chart-4xl text-2xl font-bold mb-4">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
           Explore Squad Based Features
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         {/* Left side – Feature descriptions */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6 order-2 md:order-1">
           {features.map((feature, index) => (
-            // Gradient wrapper with hover glow on all sides
             <div
               key={feature.id}
               className="
@@ -212,11 +211,10 @@ export function SquadFeatures() {
                 hover:shadow-lg hover:shadow-purple-500/50
               "
             >
-              {/* Inner clickable card – dark background, active shadow */}
               <div
                 onClick={() => handleFeatureClick(index)}
                 className={`
-                  p-6
+                  p-4 sm:p-6
                   bg-[#212731]
                   text-white
                   rounded-lg
@@ -226,60 +224,69 @@ export function SquadFeatures() {
                   ${index === activeIndex ? "shadow-sm" : ""}
                 `}
               >
-                <h3 className="text-md font-medium mb-2 text-white">
+                <h3 className="text-base sm:text-md font-medium mb-2 text-white">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-white">{feature.description}</p>
+                <p className="text-xs sm:text-sm text-white">
+                  {feature.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Right side – Preview carousel */}
-        <Carousel className="w-full" setApi={setApi}>
-          <CarouselContent>
-            {features.map((feature) => (
-              <CarouselItem key={feature.id}>
-                <div className="p-[1px] bg-gradient-to-r from-purple-500 to-teal-500 rounded-2xl shadow-md">
-                  <Card className="bg-[#212731] rounded-2xl">
-                    <CardContent className="p-6">
-                      <div className="text-center border-b pb-4 mb-4">
-                        <h3 className="text-2xl text-white font-bold">
-                          {feature.preview.title}
-                        </h3>
-                        <p className="text-white text-sm">
-                          {feature.preview.subtitle}
-                        </p>
-                      </div>
-                      <div className="space-y-4">
-                        {feature.preview.features.map((previewFeature, idx) => (
-                          <div key={idx} className="flex items-start gap-3">
-                            <p className="text-white text-sm">
-                              {previewFeature.description}
-                            </p>
-                          </div>
-                        ))}
+        <div className="order-1 md:order-2">
+          <Carousel className="w-full" setApi={setApi}>
+            <CarouselContent>
+              {features.map((feature) => (
+                <CarouselItem key={feature.id}>
+                  <div className="p-[1px] bg-gradient-to-r from-purple-500 to-teal-500 rounded-2xl shadow-md">
+                    <Card className="bg-[#212731] rounded-2xl">
+                      <CardContent className="p-4 sm:p-6">
+                        <div className="text-center border-b pb-3 sm:pb-4 mb-3 sm:mb-4">
+                          <h3 className="text-lg sm:text-2xl text-white font-bold">
+                            {feature.preview.title}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-white">
+                            {feature.preview.subtitle}
+                          </p>
+                        </div>
+                        <div className="space-y-3 sm:space-y-4">
+                          {feature.preview.features.map(
+                            (previewFeature, idx) => (
+                              <div
+                                key={idx}
+                                className="flex items-start gap-2 sm:gap-3"
+                              >
+                                <p className="text-xs sm:text-sm text-white">
+                                  {previewFeature.description}
+                                </p>
+                              </div>
+                            )
+                          )}
 
-                        {feature.preview.hasButton && (
-                          <div className="flex justify-center mt-6">
-                            <CTAButton className="w-60 h-10 text-center">
-                              {feature.preview.buttonText}
-                            </CTAButton>
-                          </div>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
+                          {feature.preview.hasButton && (
+                            <div className="flex justify-center mt-4 sm:mt-6">
+                              <CTAButton className="w-full max-w-[180px] sm:max-w-[240px] min-h-[44px] sm:min-h-[48px] text-center text-xs sm:text-base whitespace-normal break-words px-2 flex items-center justify-center">
+                                {feature.preview.buttonText}
+                              </CTAButton>
+                            </div>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
 
-          <div className="flex justify-center mt-4 py-5">
-            <CarouselPrevious className="relative static transform-none mx-2" />
-            <CarouselNext className="relative static transform-none mx-2" />
-          </div>
-        </Carousel>
+            <div className="flex justify-center mt-3 sm:mt-4 py-3 sm:py-5">
+              <CarouselPrevious className="relative static transform-none mx-1 sm:mx-2" />
+              <CarouselNext className="relative static transform-none mx-1 sm:mx-2" />
+            </div>
+          </Carousel>
+        </div>
       </div>
     </div>
   );

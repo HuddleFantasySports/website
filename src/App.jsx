@@ -27,88 +27,68 @@ import TermsOfService from "./components/TermsOfService";
 import Support from "./components/Support";
 function Home() {
   return (
-    <main className="flex-1 w-full py-8">
+    <main className="flex-1 w-full py-8 px-2 sm:px-0">
       <h1
-        className="text-6xl md:text-6xl font-extrabold text-transparent bg-clip-text 
+        className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text 
              bg-[linear-gradient(90deg,_#80FFEA,_#B59BF0,_#FF7EB3,_#80FFEA)] 
-             bg-[length:300%_300%] animate-gradient-x"
+             bg-[length:300%_300%] animate-gradient-x text-center"
       >
         Squad Up. Compete. Win.
       </h1>
-      <div className="font-sans text-2xl italic">
+      <div className="font-sans text-lg xs:text-xl sm:text-2xl italic text-center mt-2">
         A new era of fantasy football starts here
       </div>
       <div className="flex justify-center mt-6">
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-row gap-2 sm:gap-4">
           <a
             href="https://apps.apple.com/us/app/huddle-fantasy-sports/id6476977529"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-4"
           >
-            {/* Alternate button color scheme bg-gradient-to-r from-[#A1F0E0]  to-[#C7B5F2] */}
-            <button className="shadow-md px-4 py-2 text-sm font-semibold bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-700 text-white text-sm font-semibold hover:brightness-110 shadow-lg transition-all duration-200] rounded-md hover:bg-[#6e4eb6] transition">
+            <button className="px-3 py-2 text-sm font-semibold bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-700 text-white hover:brightness-110 shadow-md rounded-md hover:bg-[#6e4eb6] transition-all duration-200 min-w-[120px]">
               Download the app
             </button>
           </a>
           <Link
             to="/fantasy-leagues"
-            className="shadow-md px-4 py-2 text-sm font-semibold bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-700 text-white text-sm font-semibold hover:brightness-110 shadow-lg transition-all duration-200] rounded-md hover:bg-[#6e4eb6] transition"
+            className="px-3 py-2 text-sm font-semibold bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-700 text-white hover:brightness-110 shadow-md rounded-md hover:bg-[#6e4eb6] transition-all duration-200 min-w-[120px] text-center flex items-center justify-center"
           >
             Explore Leagues
           </Link>
         </div>
       </div>
 
-      <UniversityCarousel></UniversityCarousel>
+      <UniversityCarousel />
+
       <hr
         className="
-      relative
-      left-1/2                /* position its left edge at 50% of parent */
-      transform -translate-x-1/2 /* shift it back by half its own width */
-      w-screen                /* make it as wide as the viewport */
-      border-t border-gray-200 opacity-50
-    "
+          relative left-1/2 transform -translate-x-1/2 
+          w-full sm:w-screen border-t border-gray-200 opacity-50 my-8
+        "
       />
-      <AppFeaturesCarousel> </AppFeaturesCarousel>
-      {/*       {
-        <div className="flex flex-col md:flex-row items-center justify-center my-10">
-          <div className="w-full md:w-1/2">
-            <HomeDynamicText />
-          </div>
 
-          <div className="w-full md:w-1/2 flex justify-center">
-            <AppPreviewCarouselPlaceholder />
-          </div>
-        </div>
-      } */}
-      <div className="my-6">
+      <AppFeaturesCarousel />
+
+      <div className="my-6 flex justify-center">
         <Link to="/squad-based-management">
-          <a className="shadow-md px-4 py-2 text-sm font-semibold bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-700 text-white text-sm font-semibold hover:brightness-110 shadow-lg transition-all duration-200] rounded-md hover:bg-[#6e4eb6] transition">
+          <span className="inline-block px-3 py-1.5 text-sm font-semibold bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-700 text-white rounded-md hover:brightness-110 shadow-md transition-all duration-200 hover:bg-[#6e4eb6] text-center cursor-pointer">
             Learn More about Squad-Based Management
-          </a>
+          </span>
         </Link>
-
-        {/* <SquadUpCarousel></SquadUpCarousel> */}
       </div>
-      {/* <Link to="/fantasy-leagues">
-        <a className="shadow-md px-4 py-2 text-sm font-semibold bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-700 text-white text-sm font-semibold hover:brightness-110 shadow-lg transition-all duration-200] rounded-md hover:bg-[#6e4eb6] transition">
-          Learn More About Leagues
-        </a>
-      </Link> */}
     </main>
   );
 }
 
 function SquadBasedManagement() {
   return (
-    <main className="flex-1 flex flex-col items-center text-center max-w-3xl mx-auto px-4 py-8 space-y-5">
+    <main className="flex-1 flex flex-col items-center text-center max-w-3xl mx-auto px-2 sm:px-4 py-8 space-y-5">
       <div>
-        <section className="py-16">
-          <h1 className="text-4xl font-bold text-center ">
+        <section className="py-10 sm:py-16">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-center">
             Fantasy Football, Reimagined for Everyone.
           </h1>
-          <p className="mt-4 text-center max-w-2xl mx-auto text-1xl italic">
+          <p className="mt-4 text-center max-w-xl sm:max-w-2xl mx-auto text-base xs:text-lg sm:text-xl italic">
             Whether you’re a seasoned pro or a first-time player, MESH makes
             fantasy football a squad experience.
           </p>
@@ -116,17 +96,14 @@ function SquadBasedManagement() {
         {/* Divider */}
         <hr
           className="
-      relative
-      left-1/2                /* position its left edge at 50% of parent */
-      transform -translate-x-1/2 /* shift it back by half its own width */
-      w-screen                /* make it as wide as the viewport */
-      border-t border-gray-200 opacity-50
-    "
+            relative left-1/2 transform -translate-x-1/2 
+            w-full sm:w-screen border-t border-gray-200 opacity-50
+          "
         />
 
         {/* 2️⃣ Quote */}
-        <section className="py-15">
-          <blockquote className="text-center italic max-w-3xl mx-auto">
+        <section className="py-8 sm:py-15">
+          <blockquote className="text-center italic max-w-xl sm:max-w-3xl mx-auto text-base xs:text-lg sm:text-xl">
             “Forget going solo – MESH transforms fantasy football into a shared
             mission. Compete together. Win together. Grow together.”
           </blockquote>
@@ -135,21 +112,21 @@ function SquadBasedManagement() {
         {/* Divider */}
         <hr
           className="
-      relative
-      left-1/2                /* position its left edge at 50% of parent */
-      transform -translate-x-1/2 /* shift it back by half its own width */
-      w-screen                /* make it as wide as the viewport */
-      border-t border-gray-200 opacity-50
-      my-10
-    "
+            relative left-1/2 transform -translate-x-1/2 
+            w-full sm:w-screen border-t border-gray-200 opacity-50 my-8 sm:my-10
+          "
         />
 
-        <SquadFeatures></SquadFeatures>
-        <hr className="relative left-1/2 transform -translate-x-1/2 w-screen border-t border-gray-200 opacity-50 my-10" />
+        <div className="w-full">
+          <SquadFeatures />
+        </div>
+        <hr className="relative left-1/2 transform -translate-x-1/2 w-full sm:w-screen border-t border-gray-200 opacity-50 my-8 sm:my-10" />
 
-        <section className="py-16">
-          <h1 className="text-4xl font-bold text-center">Ready to Squad Up?</h1>
-          <p className="mt-4 text-center max-w-2xl mx-auto">
+        <section className="py-10 sm:py-16">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-center">
+            Ready to Squad Up?
+          </h1>
+          <p className="mt-4 text-center max-w-xl sm:max-w-2xl mx-auto text-base xs:text-lg sm:text-xl">
             Connect with a league rep to bring MESH to your fantasy league.
           </p>
         </section>
@@ -160,13 +137,13 @@ function SquadBasedManagement() {
 
 function FantasyLeagues() {
   return (
-    <main className="flex-1 flex flex-col items-center text-center max-w-3xl mx-auto px-4 py-8 space-y-5">
+    <main className="flex-1 flex flex-col items-center text-center max-w-3xl mx-auto px-2 sm:px-4 py-8 space-y-5">
       <div>
-        <section className="py-16">
-          <h1 className="text-4xl font-bold text-center">
+        <section className="py-10 sm:py-16">
+          <h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-center">
             Everyone Has a Squad. Now It’s Time to Compete.
           </h1>
-          <p className="mt-4 text-center max-w-2xl mx-auto text-1xl italic">
+          <p className="mt-4 text-center max-w-xl sm:max-w-2xl mx-auto text-base xs:text-lg sm:text-xl italic">
             Find your community, battle for bragging rights, and play for a
             national audience. Whether you’re part of Greek life, a bar crowd,
             an online community, or a company — there’s a league for you.
@@ -175,18 +152,15 @@ function FantasyLeagues() {
         {/* Divider */}
         <hr
           className="
-      relative
-      left-1/2                /* position its left edge at 50% of parent */
-      transform -translate-x-1/2 /* shift it back by half its own width */
-      w-screen                /* make it as wide as the viewport */
-      border-t border-gray-200 opacity-50
-    "
+            relative left-1/2 transform -translate-x-1/2 
+            w-full sm:w-screen border-t border-gray-200 opacity-50
+          "
         />
 
         {/* Divider */}
 
-        <FantasyFeatures></FantasyFeatures>
-        <hr className="relative left-1/2 transform -translate-x-1/2 w-screen border-t border-gray-200 opacity-50 my-10" />
+        <FantasyFeatures />
+        <hr className="relative left-1/2 transform -translate-x-1/2 w-full sm:w-screen border-t border-gray-200 opacity-50 my-10" />
       </div>
     </main>
   );
@@ -212,17 +186,17 @@ function Testimonials() {
 
 function Sponsors() {
   return (
-    <main className="flex-1 flex flex-col items-center text-center max-w-3xl mx-auto px-4 py-8 space-y-5">
+    <main className="flex-1 flex flex-col items-center text-center max-w-3xl mx-auto px-2 sm:px-4 py-8 space-y-5">
       <div>
-        <h1 className="text-4xl font-bold">
+        <h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold">
           Sponsorships That Go Beyond Ads — Be Part of the Experience.
         </h1>
-        <p className="text-1xl italic">
+        <p className="text-base xs:text-lg sm:text-xl italic mt-2">
           MESH leagues create real engagement, deep brand affinity, and 17 weeks
           of authentic exposure.
         </p>
-        <hr className=" relative left-1/2 transform -translate-x-1/2 w-screen border-t border-gray-200 opacity-50 my-10" />
-        <SponsorshipInclude></SponsorshipInclude>
+        <hr className="relative left-1/2 transform -translate-x-1/2 w-full sm:w-screen border-t border-gray-200 opacity-50 my-10" />
+        <SponsorshipInclude />
         <SponsorshipsToggle />
       </div>
     </main>

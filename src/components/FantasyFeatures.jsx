@@ -188,18 +188,75 @@ export function FantasyFeatures() {
     };
   }, [api, autoplay]);
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto box-border px-4 sm:px-0 overflow-x-hidden">
       <div className="text-center mb-10">
-        <h2 className="text-chart-4xl text-2xl font-bold mb-4 my-10">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-4 my-10">
           Choose Your League Type
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8 items-center">
-        {/* Left side – Feature descriptions */}
-        <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 items-center">
+        {/* Carousel cards ABOVE on mobile, right on desktop */}
+        <div className="order-1 md:order-2 w-full max-w-full">
+          <Carousel className="w-full max-w-full" setApi={setApi}>
+            <CarouselContent>
+              {features.map((feature) => (
+                <CarouselItem key={feature.id} className="w-full max-w-full">
+                  <div className="p-[1px] bg-gradient-to-r from-purple-500 to-teal-500 rounded-2xl shadow-md w-full max-w-full">
+                    <Card className="bg-[#212731] rounded-2xl w-full max-w-full">
+                      <CardContent className="p-3 sm:p-6 w-full max-w-full">
+                        <div className="text-center border-b pb-2 sm:pb-4 mb-2 sm:mb-4">
+                          <h3 className="text-base sm:text-2xl text-white font-bold">
+                            {feature.preview.title}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-white">
+                            {feature.preview.subtitle}
+                          </p>
+                        </div>
+                        <div className="space-y-2 sm:space-y-4">
+                          {feature.preview.features.map(
+                            (previewFeature, idx) => (
+                              <div
+                                key={idx}
+                                className="flex items-start gap-1 sm:gap-3"
+                              >
+                                <p className="text-xs sm:text-sm text-white">
+                                  {previewFeature.description}
+                                </p>
+                              </div>
+                            )
+                          )}
+
+                          {feature.preview.image && (
+                            <div className="flex justify-center mt-3 sm:mt-6">
+                              <img
+                                src={feature.preview.image}
+                                alt={`${feature.preview.title} preview`}
+                                className="w-[140px] xs:w-[180px] sm:w-[250px] h-auto rounded-2xl shadow-lg object-cover max-w-full"
+                              />
+                            </div>
+                          )}
+
+                          {feature.preview.hasButton && (
+                            <div className="flex justify-center mt-3 sm:mt-6">
+                              <CTAButton className="w-full max-w-[160px] xs:max-w-[180px] sm:max-w-[240px] min-h-[40px] xs:min-h-[44px] sm:min-h-[48px] text-center text-xs sm:text-base whitespace-normal break-words px-2 flex items-center justify-center">
+                                {feature.preview.buttonText}
+                              </CTAButton>
+                            </div>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        </div>
+
+        {/* Feature previews BELOW on mobile, left on desktop */}
+        <div className="space-y-3 sm:space-y-6 order-2 md:order-1 w-full max-w-full">
           {features.map((feature, index) => (
-            // 1px gradient wrapper gets the hover glow (shadow-purple-500/50)
             <div
               key={feature.id}
               className="
@@ -208,91 +265,35 @@ export function FantasyFeatures() {
                 rounded-lg
                 transition-shadow duration-300
                 hover:shadow-lg hover:shadow-purple-500/50
+                w-full max-w-full
               "
             >
-              {/* Inner clickable card – always dark unless “active” */}
               <div
                 onClick={() => handleFeatureClick(index)}
                 className={`
-                  p-6
+                  p-3 sm:p-6
                   bg-[#212731]
                   text-white
                   rounded-lg
                   cursor-pointer
                   transition-all
                   duration-300
+                  w-full max-w-full
                   ${
                     index === activeIndex
-                      ? "shadow-sm" /* subtle default shadow when selected */
+                      ? "shadow-sm"
                       : "hover:border-gray-200"
                   }
                 `}
               >
-                <h3 className="text-md font-medium mb-2 text-white">
+                <h3 className="text-base sm:text-md font-medium mb-2 text-white">
                   {feature.title}
                 </h3>
-                <p className="text-sm">{feature.description}</p>
+                <p className="text-xs sm:text-sm">{feature.description}</p>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Right side – Preview carousel */}
-        <Carousel className="w-full" setApi={setApi}>
-          <CarouselContent>
-            {features.map((feature) => (
-              <CarouselItem key={feature.id}>
-                <div className="p-[1px] bg-gradient-to-r from-purple-500 to-teal-500 rounded-2xl shadow-md">
-                  <Card className="bg-[#212731] rounded-2xl">
-                    <CardContent className="p-6">
-                      <div className="text-center border-b pb-4 mb-4">
-                        <h3 className="text-2xl text-white font-bold">
-                          {feature.preview.title}
-                        </h3>
-                        <p className="text-white text-sm">
-                          {feature.preview.subtitle}
-                        </p>
-                      </div>
-                      <div className="space-y-4">
-                        {feature.preview.features.map((previewFeature, idx) => (
-                          <div key={idx} className="flex items-start gap-3">
-                            <p className="text-white text-sm">
-                              {previewFeature.description}
-                            </p>
-                          </div>
-                        ))}
-
-                        {feature.preview.image && (
-                          <div className="flex justify-center mt-6">
-                            <img
-                              src={feature.preview.image}
-                              alt={`${feature.preview.title} preview`}
-                              className="w-[250px] h-auto rounded-2xl shadow-lg object-cover"
-                            />
-                          </div>
-                        )}
-
-                        {feature.preview.hasButton && (
-                          <div className="flex justify-center mt-6">
-                            <CTAButton className="w-60 h-10 text-center">
-                              {feature.preview.buttonText}
-                            </CTAButton>
-                          </div>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          {/*
-          <div className="flex justify-center mt-4 py-5">
-            <CarouselPrevious className="relative static transform-none mx-2" />
-            <CarouselNext className="relative static transform-none mx-2" />
-          </div>
-          */}
-        </Carousel>
       </div>
     </div>
   );
