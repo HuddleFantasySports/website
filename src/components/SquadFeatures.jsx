@@ -6,12 +6,9 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import CTAButton from "./ui/CTAbutton";
 import {
-  ArrowRight,
   Shield,
   Eye,
   Share2,
@@ -197,9 +194,9 @@ export function SquadFeatures() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 items-start md:items-center">
         {/* Left side – Feature descriptions */}
-        <div className="space-y-4 sm:space-y-6 order-2 md:order-1">
+        <div className="space-y-4 sm:space-y-6 order-2 md:order-1 flex flex-col justify-center">
           {features.map((feature, index) => (
             <div
               key={feature.id}
@@ -236,56 +233,53 @@ export function SquadFeatures() {
         </div>
 
         {/* Right side – Preview carousel */}
-        <div className="order-1 md:order-2">
-          <Carousel className="w-full" setApi={setApi}>
-            <CarouselContent>
-              {features.map((feature) => (
-                <CarouselItem key={feature.id}>
-                  <div className="p-[1px] bg-gradient-to-r from-purple-500 to-teal-500 rounded-2xl shadow-md">
-                    <Card className="bg-[#212731] rounded-2xl">
-                      <CardContent className="p-4 sm:p-6">
-                        <div className="text-center border-b pb-3 sm:pb-4 mb-3 sm:mb-4">
-                          <h3 className="text-lg sm:text-2xl text-white font-bold">
-                            {feature.preview.title}
-                          </h3>
-                          <p className="text-xs sm:text-sm text-white">
-                            {feature.preview.subtitle}
-                          </p>
-                        </div>
-                        <div className="space-y-3 sm:space-y-4">
-                          {feature.preview.features.map(
-                            (previewFeature, idx) => (
-                              <div
-                                key={idx}
-                                className="flex items-start gap-2 sm:gap-3"
-                              >
-                                <p className="text-xs sm:text-sm text-white">
-                                  {previewFeature.description}
-                                </p>
+        <div className="order-1 md:order-2 flex flex-col justify-center h-full">
+          <div className="flex flex-col items-center justify-center h-full md:min-h-[520px]">
+            <Carousel className="w-full max-w-md" setApi={setApi}>
+              <CarouselContent>
+                {features.map((feature) => (
+                  <CarouselItem key={feature.id}>
+                    <div className="p-[1px] bg-gradient-to-r from-purple-500 to-teal-500 rounded-2xl shadow-md">
+                      <Card className="bg-[#212731] rounded-2xl">
+                        <CardContent className="p-4 sm:p-6">
+                          <div className="text-center border-b pb-3 sm:pb-4 mb-3 sm:mb-4">
+                            <h3 className="text-lg sm:text-2xl text-white font-bold">
+                              {feature.preview.title}
+                            </h3>
+                            <p className="text-xs sm:text-sm text-white">
+                              {feature.preview.subtitle}
+                            </p>
+                          </div>
+                          <div className="space-y-3 sm:space-y-4 text-center">
+                            {feature.preview.features.map(
+                              (previewFeature, idx) => (
+                                <div
+                                  key={idx}
+                                  className="flex flex-col items-center gap-2 sm:gap-3"
+                                >
+                                  <p className="text-xs sm:text-sm text-white">
+                                    {previewFeature.description}
+                                  </p>
+                                </div>
+                              )
+                            )}
+
+                            {feature.preview.hasButton && (
+                              <div className="flex justify-center mt-4 sm:mt-6">
+                                <CTAButton className="w-full max-w-[180px] sm:max-w-[240px] min-h-[44px] sm:min-h-[48px] text-center text-xs sm:text-base whitespace-normal break-words px-2 flex items-center justify-center">
+                                  {feature.preview.buttonText}
+                                </CTAButton>
                               </div>
-                            )
-                          )}
-
-                          {feature.preview.hasButton && (
-                            <div className="flex justify-center mt-4 sm:mt-6">
-                              <CTAButton className="w-full max-w-[180px] sm:max-w-[240px] min-h-[44px] sm:min-h-[48px] text-center text-xs sm:text-base whitespace-normal break-words px-2 flex items-center justify-center">
-                                {feature.preview.buttonText}
-                              </CTAButton>
-                            </div>
-                          )}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-
-            <div className="flex justify-center mt-3 sm:mt-4 py-3 sm:py-5">
-              <CarouselPrevious className="relative static transform-none mx-1 sm:mx-2" />
-              <CarouselNext className="relative static transform-none mx-1 sm:mx-2" />
-            </div>
-          </Carousel>
+                            )}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
         </div>
       </div>
     </div>

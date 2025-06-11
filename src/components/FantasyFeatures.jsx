@@ -25,7 +25,7 @@ const features = [
       features: [
         {
           description:
-            " Chapters compete against each other in squad-based leagues.Each house works together to draft, manage lineups, and make moves all season long. Compete for sponsor rewards, donations to philanthropy, and chapter-wide bragging rights.",
+            " Chapters compete against each other in squad-based leagues. Each house works together to draft, manage lineups, and make moves all season long. Compete for sponsor rewards, donations to philanthropy, and chapter-wide bragging rights.",
         },
       ],
       hasButton: true,
@@ -44,7 +44,7 @@ const features = [
       features: [
         {
           description:
-            " Influencers start the league — their fans help manage the team. Every vote impacts the roster, and top fans earn shoutouts, content drops, and more.It’s fantasy football as a fan experience.",
+            " Influencers start the league — their fans help manage the team. Every vote impacts the roster, and top fans earn shoutouts, content drops, and more. It’s fantasy football as a fan experience.",
         },
       ],
       hasButton: true,
@@ -63,7 +63,7 @@ const features = [
       features: [
         {
           description:
-            " Bars form squads with staff and customers managing one team together.Customers vote on decisions, unlock drink specials, and come back every week to support their squad. Great for building loyalty and boosting foot traffic.",
+            "Bars form squads with staff and customers managing one team together. Customers vote on decisions, unlock drink specials, and come back every week to support their squad. Great for building loyalty and boosting foot traffic.",
         },
       ],
       hasButton: true,
