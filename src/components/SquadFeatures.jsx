@@ -256,14 +256,6 @@ export function SquadFeatures() {
                                 </div>
                               )
                             )}
-
-                            {feature.preview.hasButton && (
-                              <div className="flex justify-center mt-4 sm:mt-6">
-                                <CTAButton className="w-full max-w-[180px] sm:max-w-[240px] min-h-[44px] sm:min-h-[48px] text-center text-xs sm:text-base whitespace-normal break-words px-2 flex items-center justify-center">
-                                  {feature.preview.buttonText}
-                                </CTAButton>
-                              </div>
-                            )}
                           </div>
                         </CardContent>
                       </Card>
