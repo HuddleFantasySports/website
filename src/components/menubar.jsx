@@ -11,7 +11,7 @@ const menuItems = [
   { title: "Fantasy Leagues", to: "/fantasy-leagues" },
   // { title: "Testimonials", to: "/testimonials" },
   { title: "Sponsors", to: "/sponsors" },
-  // { title: "Contact", to: "/contact" },
+  { title: "About", to: "/About" },
 ];
 
 export function MenuBar() {

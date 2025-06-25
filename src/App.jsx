@@ -25,6 +25,8 @@ import { Footer } from "./components/footer";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfService from "./components/TermsOfService";
 import Support from "./components/Support";
+import About from "./components/About";
+
 function Home() {
   return (
     <main className="flex-1 w-full py-8 px-2 sm:px-0">
@@ -203,42 +205,6 @@ function Sponsors() {
   );
 }
 
-function Contact() {
-  return (
-    <main className="py-12">
-      <div className="container mx-auto px-4">
-        {/* Meet our Founders */}
-        <section>
-          <h2 className="text-3xl font-bold text-center">Meet our Founders</h2>
-
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 ">
-            {Array.from({ length: 3 }).map((_, idx) => (
-              <div key={idx} className="flex flex-col items-center">
-                <div className="w-32 h-32 bg-gray-200 flex items-center justify-center">
-                  <span className="text-gray-400">Image</span>
-                </div>
-                <p className="mt-2 text-center text-sm uppercase">BIO</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Community and Mission */}
-        <section className="mt-16">
-          <h2 className="text-3xl font-bold text-center">
-            Community and Mission
-          </h2>
-          <p className="mt-4 text-center text-sm max-w-prose mx-auto ">
-            Description
-          </p>
-        </section>
-
-        {/* Contact Us Form Placeholder */}
-        <ContactForm></ContactForm>
-      </div>
-    </main>
-  );
-}
 function App() {
   return (
     <Router>
@@ -254,7 +220,7 @@ function App() {
           <Route path="/fantasy-leagues" element={<FantasyLeagues />} />
           {/* <Route path="/testimonials" element={<Testimonials />} /> */}
           <Route path="/sponsors" element={<Sponsors />} />
-          {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/About" element={<About />} />
           <Route path="/support" element={<Support />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />

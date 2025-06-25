@@ -31,7 +31,7 @@ const unlockItems = [
     title: "Exclusive Affiliation with a League",
     subtitle: "Own the spotlight—on social and in the app.",
     description:
-      " Whether it’s users or fans, your brand becomes the face of the league you sponsor. Total exclusivity. Total exposure.",
+      "Whether it’s users or fans, your brand becomes the face of the league you sponsor. Total exclusivity. Total exposure.",
     imgSrc: "/Sponsorships/affiliation.png",
   },
 ];
@@ -39,22 +39,21 @@ const unlockItems = [
 export default function SponsorshipInclude() {
   return (
     <section className="py-8 px-2 sm:py-12 sm:px-4">
-      {/* Stacked Sections */}
       <div className="max-w-5xl mx-auto space-y-8 sm:space-y-12">
         {/* Giveaway Section */}
         <div>
           <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-center text-white">
             What your company can give away
           </h3>
-          <div className="flex flex-col sm:flex-row gap-4 sm:space-x-4 sm:gap-0 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:space-x-4 sm:gap-0 justify-center items-stretch">
             {giveAwayItems.map((item) => (
               <div
                 key={item.title}
                 className="w-full sm:w-96 rounded-2xl bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] p-[1px] flex-shrink-0"
               >
-                {/* Inner card: solid dark background */}
-                <div className="bg-[#212731] rounded-[inherit] p-3 flex items-start h-auto space-x-3">
-                  {/* Outer “icon ring” */}
+                {/* Inner card */}
+                <div className="bg-[#212731] rounded-[inherit] p-3 flex items-start h-full space-x-3">
+                  {/* Icon */}
                   <div className="p-[2px] w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-2xl flex items-center border border-[#8A70F5] bg-[#212731]">
                     <img
                       src={item.imgSrc}
@@ -62,7 +61,6 @@ export default function SponsorshipInclude() {
                       className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover mx-auto"
                     />
                   </div>
-
                   {/* Text content */}
                   <div className="flex flex-col justify-center">
                     <h4 className="text-left text-sm sm:text-md font-semibold mb-1 text-white">
@@ -86,15 +84,15 @@ export default function SponsorshipInclude() {
           <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-center text-white">
             Capabilities you unlock in return
           </h3>
-          <div className="flex flex-col sm:flex-row gap-4 sm:space-x-4 sm:gap-0 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 sm:space-x-4 sm:gap-0 justify-center items-stretch">
             {unlockItems.map((item) => (
               <div
                 key={item.title}
                 className="w-full sm:w-96 rounded-2xl bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] p-[1px] flex-shrink-0"
               >
-                {/* Inner card: solid dark background */}
-                <div className="bg-[#212731] rounded-[inherit] p-3 flex items-start h-auto space-x-3">
-                  {/* Outer “icon ring” */}
+                {/* Inner card */}
+                <div className="bg-[#212731] rounded-[inherit] p-3 flex items-start h-full space-x-3">
+                  {/* Icon */}
                   <div className="p-[2px] w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-2xl flex items-center border border-[#8A70F5] bg-[#212731]">
                     <img
                       src={item.imgSrc}
@@ -102,7 +100,6 @@ export default function SponsorshipInclude() {
                       className="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover mx-auto"
                     />
                   </div>
-
                   {/* Text content */}
                   <div className="flex flex-col justify-center">
                     <h4 className="text-left text-sm sm:text-md font-semibold mb-1 text-white">
