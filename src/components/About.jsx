@@ -64,7 +64,9 @@ export default function About() {
                     className="w-32 h-32 rounded-full object-cover mb-4"
                   />
 
-                  <h3 className="font-semibold text-white">{founder.name}</h3>
+                  <h3 className="text-lg font-semibold text-white">
+                    {founder.name}
+                  </h3>
                   <p className="text-md text-white mt-1">
                     Role: {founder.role}
                   </p>
