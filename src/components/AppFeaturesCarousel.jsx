@@ -4,24 +4,24 @@ import { useState, useEffect } from "react";
 
 const voteFeatures = {
   Lineups: [
-    { text: "Build your Lineup Together", img: "/VoteOnImages/1.png" },
-    { text: "Optimize Based on Consensus", img: "/VoteOnImages/2.png" },
-    { text: "Lock in Before Game Time", img: "/VoteOnImages/3.png" },
+    { text: "Build your Lineup Together", img: "/VoteOnImages/Lineups1.png" },
+    { text: "Optimize Based on Consensus", img: "/VoteOnImages/Lineups2.png" },
+    // { text: "Lock in Before Game Time", img: "/VoteOnImages/Lineups3.png" },
   ],
   Waivers: [
-    { text: "Vote on Waiver Priorities", img: "/VoteOnImages/4.png" },
-    { text: "Avoid Conflicts", img: "/VoteOnImages/5.png" },
-    { text: "Get Everyone Involved", img: "/VoteOnImages/6.png" },
+    { text: "Vote on Waiver Priorities", img: "/VoteOnImages/Waivers1.png" },
+    { text: "Avoid Conflicts", img: "/VoteOnImages/Waivers2.png" },
+    // { text: "Get Everyone Involved", img: "/VoteOnImages/Waivers3.png" },
   ],
   Trades: [
-    { text: "Approve or Veto Trades", img: "/VoteOnImages/7.png" },
-    { text: "Fair Trades via Squad Input", img: "/VoteOnImages/8.png" },
-    { text: "Track Trade History", img: "/VoteOnImages/9.png" },
+    { text: "Approve or Veto Trades", img: "/VoteOnImages/Trades1.png" },
+    { text: "Fair Trades via Squad Input", img: "/VoteOnImages/Trades2.png" },
+    { text: "Track Trade History", img: "/VoteOnImages/Trades3.png" },
   ],
   Drafts: [
-    { text: "Vote on Draft Picks", img: "/VoteOnImages/10.png" },
-    { text: "Team Strategy Comes First", img: "/VoteOnImages/11.png" },
-    { text: "Celebrate Your Top Picks", img: "/VoteOnImages/12.png" },
+    { text: "Vote on Draft Picks", img: "/VoteOnImages/Draft1.png" },
+    { text: "Team Strategy Comes First", img: "/VoteOnImages/Draft2.png" },
+    { text: "Celebrate Your Top Picks", img: "/VoteOnImages/Draft3.png" },
   ],
 };
 
@@ -39,7 +39,7 @@ export function AppFeaturesCarousel() {
         setCategoryIdx((prev) => (prev + 1) % categories.length);
         setFade(true);
       }, 500);
-    }, 3000);
+    }, 6000);
     return () => clearInterval(interval);
   }, []);
 
@@ -53,13 +53,13 @@ export function AppFeaturesCarousel() {
         <p className="mb-2">
           Vote on{" "}
           <span
-            className={`inline-block px-1 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 transition-opacity duration-500 ease-in-out ${
+            className={`inline-block px-1 bg-clip-text text-transparent bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] transition-opacity duration-500 ease-in-out ${
               fade ? "opacity-100" : "opacity-0"
             }`}
           >
             {category}
           </span>{" "}
-          as a squad
+          as a Squad
         </p>
       </div>
 

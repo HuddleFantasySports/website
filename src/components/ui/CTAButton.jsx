@@ -1,10 +1,14 @@
-export default function CTAButton({ children, onClick, className = "" }) {
+export default function CTAButton({
+  children,
+  email = "jack@meshleagues.com",
+  className = "",
+}) {
   return (
-    <button
-      onClick={onClick}
-      className={`px-6 py-3 rounded-2xl bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-700 text-white text-sm font-semibold hover:brightness-110 shadow-lg transition-all duration-200 ${className}`}
+    <a
+      href={`mailto:${email}`}
+      className={`inline-block px-6 py-3 rounded-md shadow-md bg-gradient-to-r from-[#8A70F5] to-[#3DE29F] text-white text-sm font-bold hover:brightness-110 transition-all duration-200 ${className}`}
     >
       {children}
-    </button>
+    </a>
   );
 }

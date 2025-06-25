@@ -13,9 +13,9 @@ function SponsorshipsToggle() {
         <h2 className="text-3xl font-bold mb-4">
           Choose Your Sponsorship Type
         </h2>
-        <p className="text-gray-300 max-w-xl mx-auto">
+        <p className="max-w-xl mx-auto">
           Mesh supports 1 exclusive, non-competitive local & national brand per
-          league
+          league.
         </p>
       </div>
 
@@ -73,7 +73,7 @@ function SponsorshipsToggle() {
                   <li>Stand out in a way no other brand does</li>
                 </ul>
                 <p className="mt-4 text-gray-300">
-                  Endless possibilities on what to send – best part: we have
+                  Endless possibilities on what to send – the best part: we have
                   templates and ideas for your business ready to go. Connect in
                   an authentic, attention-grabbing way!
                 </p>
@@ -186,7 +186,7 @@ function SponsorshipsToggle() {
                   <li>Stand out in a way no other brand does</li>
                 </ul>
                 <p className="mt-4 text-gray-300">
-                  Endless possibilities on what to send – best part: we have
+                  Endless possibilities on what to send – the best part: we have
                   templates and ideas for your business ready to go. Connect in
                   an authentic, attention-grabbing way!
                 </p>

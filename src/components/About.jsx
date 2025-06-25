@@ -1,4 +1,5 @@
 import ContactForm from "@/components/ContactForm";
+import CTAButton from "./ui/CTAButton";
 
 const founders = [
   {
@@ -30,8 +31,8 @@ export default function About() {
       <div className="container mx-auto px-4">
         {/* About MESH */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-6">About MESH</h2>
-          <p className="text-center max-w-prose mx-auto text-sm">
+          <h2 className="text-4xl font-bold text-center mb-6">About MESH</h2>
+          <p className="text-center max-w-4xl mx-auto text-lg leading-relaxed">
             MESH is where fantasy sports meet real-life squads. We built it
             because managing a fantasy team shouldn’t feel like a one-man job.
             Whether it’s a fraternity, a group of coworkers, or your hometown
@@ -47,7 +48,7 @@ export default function About() {
         </section>
         {/* Meet our Founders */}
         <section className="mt-16">
-          <h2 className="text-3xl font-bold text-center mb-10">
+          <h2 className="text-4xl font-bold text-center mb-10">
             Meet Our Founders
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
@@ -64,10 +65,10 @@ export default function About() {
                   />
 
                   <h3 className="font-semibold text-white">{founder.name}</h3>
-                  <p className="text-sm text-white mt-1">
+                  <p className="text-md text-white mt-1">
                     Role: {founder.role}
                   </p>
-                  <p className="text-sm text-white      mt-2">
+                  <p className="text-md text-white      mt-2">
                     Favorite Team:{" "}
                     <span className="font-medium">{founder.team}</span>
                     <br />
@@ -83,12 +84,15 @@ export default function About() {
         {/* Mission */}
         <section className="mt-16">
           <h2 className="text-3xl font-bold text-center">Our Mission</h2>
-          <p className="mt-4 text-center text-sm max-w-prose mx-auto">
+          <p className="mt-4 text-center text-lg max-w-prose mx-auto">
             At MESH, we believe fantasy football is better when played
             together—where teamwork drives strategy, and victories are won as a
             squad—because there’s no ‘I’ in ‘squad’.
           </p>
         </section>
+        <CTAButton className="mt-5 w-full max-w-[140px] xs:max-w-[160px] sm:max-w-[200px] min-h-[36px] xs:min-h-[40px] sm:min-h-[44px] text-center text-md font-bold sm:text-md px-3 flex items-center justify-center whitespace-normal break-words">
+          Ready to Connect?
+        </CTAButton>
       </div>
     </main>
   );

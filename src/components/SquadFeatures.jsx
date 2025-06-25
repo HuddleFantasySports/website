@@ -202,24 +202,22 @@ export function SquadFeatures() {
               "
             >
               <div
-                onClick={() => handleFeatureClick(index)}
-                className={`
-                  p-4 sm:p-6
-                  bg-[#212731]
-                  text-white
-                  rounded-lg
-                  cursor-pointer
-                  transition-all
-                  duration-300
-                  ${index === activeIndex ? "shadow-sm" : ""}
-                `}
+                key={feature.id}
+                className="p-[1px] bg-gradient-to-r from-purple-500 to-teal-500 rounded-lg transition-shadow duration-300 hover:shadow-lg hover:shadow-purple-500/50"
+                onMouseEnter={() => setAutoplay(false)}
+                onMouseLeave={() => setAutoplay(true)}
               >
-                <h3 className="text-base sm:text-md font-medium mb-2 text-white">
-                  {feature.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-white">
-                  {feature.description}
-                </p>
+                <div
+                  onClick={() => handleFeatureClick(index)}
+                  className={`p-4 sm:p-6 bg-[#212731] text-white rounded-lg cursor-pointer transition-all duration-300 ${
+                    index === activeIndex ? "shadow-sm" : ""
+                  }`}
+                >
+                  <h3 className="font-bold text-lg mb-2 text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="text-md text-white">{feature.description}</p>
+                </div>
               </div>
             </div>
           ))}
@@ -239,7 +237,7 @@ export function SquadFeatures() {
                             <h3 className="text-lg sm:text-2xl text-white font-bold">
                               {feature.preview.title}
                             </h3>
-                            <p className="text-xs sm:text-sm text-white">
+                            <p className="text-md sm:text-md text-white">
                               {feature.preview.subtitle}
                             </p>
                           </div>
@@ -250,7 +248,7 @@ export function SquadFeatures() {
                                   key={idx}
                                   className="flex flex-col items-center gap-2 sm:gap-3"
                                 >
-                                  <p className="text-xs sm:text-sm text-white">
+                                  <p className="text-md sm:text-md text-white">
                                     {previewFeature.description}
                                   </p>
                                 </div>

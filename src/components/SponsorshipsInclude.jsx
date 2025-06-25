@@ -42,8 +42,8 @@ export default function SponsorshipInclude() {
       <div className="max-w-5xl mx-auto space-y-8 sm:space-y-12">
         {/* Giveaway Section */}
         <div>
-          <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-center text-white">
-            What your company can give away
+          <h3 className="text-3xl font-bold mb-4 text-center text-white">
+            What Your Company Can Give Away
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 sm:space-x-4 sm:gap-0 justify-center items-stretch">
             {giveAwayItems.map((item) => (
@@ -81,8 +81,8 @@ export default function SponsorshipInclude() {
 
         {/* Unlock Section */}
         <div>
-          <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-center text-white">
-            Capabilities you unlock in return
+          <h3 className="text-3xl font-bold mb-4 text-center text-white">
+            Capabilities You Unlock in Return
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 sm:space-x-4 sm:gap-0 justify-center items-stretch">
             {unlockItems.map((item) => (

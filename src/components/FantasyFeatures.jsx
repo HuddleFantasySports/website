@@ -55,7 +55,7 @@ const features = [
   {
     id: 3,
     title: "Bar & Restaurant Leagues",
-    description: "Bar & Restaurant Leagues",
+    description: "For Bars That Want to Win the Week",
     isHighlighted: false,
     preview: {
       title: "Bar & Restaurant Leagues",
@@ -209,7 +209,7 @@ export function FantasyFeatures() {
                           <h3 className="text-base sm:text-2xl text-white font-bold">
                             {feature.preview.title}
                           </h3>
-                          <p className="text-xs sm:text-sm text-white">
+                          <p className="text-md sm:text-md text-white">
                             {feature.preview.subtitle}
                           </p>
                         </div>
@@ -220,7 +220,7 @@ export function FantasyFeatures() {
                                 key={idx}
                                 className="flex items-start gap-1 sm:gap-3"
                               >
-                                <p className="text-xs sm:text-sm text-white">
+                                <p className="text-md sm:text-md text-white">
                                   {previewFeature.description}
                                 </p>
                               </div>
@@ -270,26 +270,24 @@ export function FantasyFeatures() {
             >
               <div
                 onClick={() => handleFeatureClick(index)}
+                onMouseEnter={() => setAutoplay(false)}
+                onMouseLeave={() => setAutoplay(true)}
                 className={`
-                  p-3 sm:p-6
-                  bg-[#212731]
-                  text-white
-                  rounded-lg
-                  cursor-pointer
-                  transition-all
-                  duration-300
-                  w-full max-w-full
-                  ${
-                    index === activeIndex
-                      ? "shadow-sm"
-                      : "hover:border-gray-200"
-                  }
-                `}
+    p-3 sm:p-6
+    bg-[#212731]
+    text-white
+    rounded-lg
+    cursor-pointer
+    transition-all
+    duration-300
+    w-full max-w-full
+    ${index === activeIndex ? "shadow-sm" : "hover:border-gray-200"}
+  `}
               >
-                <h3 className="text-base sm:text-md font-medium mb-2 text-white">
+                <h3 className="text-base sm:text-md font-bold mb-2 text-white">
                   {feature.title}
                 </h3>
-                <p className="text-xs sm:text-sm">{feature.description}</p>
+                <p className="text-md sm:text-md">{feature.description}</p>
               </div>
             </div>
           ))}
