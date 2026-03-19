@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — MESH</title>
+<title>Contact — MESH</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -147,11 +147,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:68px;d
   body { cursor: auto !important; }
   a, button, input, [onclick] { cursor: pointer !important; }
 }
+
+#cursor{
+  position:fixed;width:8px;height:8px;
+  background:var(--green);border-radius:50%;
+  pointer-events:none;z-index:9999;
+  transform:translate(-4px,-4px);
+  transition:opacity .3s;
+}
+#ring{
+  position:fixed;width:30px;height:30px;
+  border:1.5px solid rgba(58,178,152,.3);
+  border-radius:50%;pointer-events:none;
+  z-index:9998;transform:translate(-15px,-15px);
+  transition:width .2s,height .2s,border-color .2s,opacity .3s;
+}
 </style>
 </head>
 <body>
-<div class="cursor" id="cursor"></div>
-<div class="ring" id="ring"></div>
+<div id="cursor"></div>
+<div id="ring"></div>
 
 <nav id="nav">
   <div class="nav-logo">
@@ -166,180 +181,50 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:68px;d
     <span></span><span></span><span></span>
   </button>
 </nav>
+
 <div class="mobile-nav" id="mobile-nav">
   <a href="index.html">Home</a>
   <a href="sponsors.html">For Sponsors</a>
   <a href="index.html#waitlist" class="mobile-cta">Get Early Access</a>
 </div>
 
-<section class="legal-hero">
-  <div class="legal-hero-inner">
-    <div class="legal-eyebrow">
-      <div class="legal-eyebrow-line"></div>
-      <div class="legal-eyebrow-text">Legal</div>
+<!-- CONTACT SECTION -->
+<section style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 24px 80px;">
+  <div style="max-width:600px;width:100%;text-align:center;">
+
+    <div class="eyebrow" style="justify-content:center;margin-bottom:24px;">
+      <div class="eyebrow-line"></div>
+      <div class="eyebrow-text">Get in touch</div>
     </div>
-    <h1 class="legal-title">Privacy Policy</h1>
-    <p class="legal-date">Effective as of January 1, 2026 &nbsp;&middot;&nbsp; MESH Studios LLC</p>
+
+    <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,8vw,80px);color:var(--light);line-height:1;margin-bottom:24px;">
+      CONTACT US
+    </h1>
+
+    <p style="font-size:17px;color:var(--muted2);line-height:1.7;margin-bottom:48px;">
+      Have a question, partnership inquiry, or just want to say hello? We'd love to hear from you.
+    </p>
+
+    <a href="mailto:support@meshleagues.com"
+       style="display:inline-flex;align-items:center;gap:12px;
+              background:var(--bg2);border:1px solid var(--border2);
+              border-radius:12px;padding:24px 40px;
+              font-size:18px;font-weight:600;color:var(--green);
+              text-decoration:none;letter-spacing:.01em;
+              transition:border-color .2s,background .2s;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+      </svg>
+      support@meshleagues.com
+    </a>
+
+    <p style="margin-top:48px;font-size:13px;color:var(--muted);line-height:1.6;">
+      We typically respond within 24–48 hours.<br>
+      For sponsorship inquiries, visit our <a href="sponsors.html" style="color:var(--green);text-decoration:none;">For Sponsors</a> page.
+    </p>
+
   </div>
 </section>
-
-<div class="legal-body">
-  <div class="legal-body-inner">
-
-    <div class="legal-section">
-      <h2>1. General Purpose</h2>
-      <p>MESH Studios LLC (the "Company" or "we" or "us") has developed this Privacy Policy to demonstrate its commitment to protecting the privacy of users of the website (the "Site"), the mobile application (the "App"), and the web-based fantasy league platform featured thereon (the "Platform") (collectively, the "Services"). This Privacy Policy is intended to summarize and inform you (our "users" or "you") of our general privacy and data protection practices regarding the collection, use, and disclosures of information when you use our Services, and the choices you have with respect to that information.</p>
-      <p>Please read this Privacy Policy carefully so that you can make an informed decision regarding whether to use our Services. The term "including" means "including, but not limited to."</p>
-      <p>By accessing and continuing to use our Services, you are consenting to the practices described in this Privacy Policy. Your consent includes authorization for the Company to collect, receive, store, use, and disclose your information in accordance with this Privacy Policy and applicable law.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>2. Data Collected through User Submissions</h2>
-      <p>We collect and store information that you voluntarily submit to us, including via registration or form submission (collectively, "Voluntary Information"). If you voluntarily identify yourself, we collect and store your information and may use it for operational and commercial purposes, including to contact you and send you marketing information about our products and services.</p>
-      <p>While using our Services, we may ask you to provide us with certain information, which may include:</p>
-      <ul>
-        <li>Email address</li>
-        <li>First and last name</li>
-        <li>Phone number</li>
-        <li>City and state</li>
-        <li>Date of birth</li>
-        <li>Years of fantasy experience</li>
-      </ul>
-      <p>You are not under any obligation to provide this information. However, if you withhold certain information, we may not be able to provide certain services to you.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>3. Data Collected through User Visits, Interactions, and Activities</h2>
-      <p>We use cookies, pixels, and other online tracking technologies to collect information about visitor activity on our Services. Cookies are small text files used to enhance your experience and recognize repeat visitors. You consent to our use of both session and persistent cookies.</p>
-      <p>Additional information collected may include:</p>
-      <ul>
-        <li>Browser type, language, network, and device information</li>
-        <li>Referring and exit web pages and URLs</li>
-        <li>IP addresses (static and dynamic)</li>
-        <li>Clicks, internal links visited, pages visited, scrolling, and timestamps</li>
-      </ul>
-      <p>We may share this information with Google Analytics and other analytics providers to understand site traffic and activity.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>4. Location Data and Precise Geolocation</h2>
-      <p>By using our Services, <strong>you expressly consent to the collection, storage, and sharing of your precise and approximate location data</strong>, including GPS coordinates, IP-based location, and other location signals derived from your device. This location data may be collected continuously while the app is in use and, where you have granted permission, in the background.</p>
-      <p>We use location data for the following purposes:</p>
-      <ul>
-        <li>Delivering geographically targeted rewards, offers, and sponsor integrations</li>
-        <li>Connecting you with nearby squads, campus-based leagues, and local events</li>
-        <li>Improving the relevance of sponsored content and partner offers</li>
-        <li>Analytics and product improvement</li>
-      </ul>
-      <p><strong>You expressly authorize MESH Studios LLC to share your location data with our advertising partners, sponsors, and third-party commercial partners for targeted advertising and marketing purposes.</strong> We may also sell or license aggregated and individual location data to third parties. By using the Services, you provide your affirmative opt-in consent to this data sharing and sale.</p>
-      <p>You may withdraw consent to location data collection by disabling location permissions in your device settings. Doing so may limit certain features of the Services.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>5. Interest and Behavioral Data</h2>
-      <p>We collect data about your interests, preferences, and in-app behavior, including but not limited to: fantasy team choices, voting decisions, content interactions, reward redemptions, and engagement patterns (collectively, "Interest Data").</p>
-      <p><strong>You expressly authorize MESH Studios LLC to share and sell your Interest Data to advertisers, sponsors, and third-party commercial partners</strong> for the purpose of delivering targeted advertising, personalized offers, and sponsored rewards. This includes sharing with partners whose products and services we believe may be of interest to you based on your activity on the Services.</p>
-      <p>We may combine your Interest Data with your location data, demographic data, and other information to build audience profiles that are shared with or sold to advertising partners.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>6. Sale of Personal Information</h2>
-      <p>MESH Studios LLC reserves the right to sell personal information, including but not limited to Voluntary Information, Use Information, location data, Interest Data, and Participant Information (excluding payment information), to third-party commercial partners and advertisers for monetary or other valuable consideration.</p>
-      <p>By using the Services, you provide your affirmative consent to the sale of your personal information as described herein. If you wish to opt out of the sale of your personal information, you may contact us at <a href="mailto:support@meshleagues.com" style="color:var(--green);">support@meshleagues.com</a>. Note that opting out may limit your ability to receive rewards and sponsored benefits through the Services.</p>
-      <p>Residents of certain states (including California under the CCPA) have additional rights regarding the sale of personal information. Please see Section 16 for more details.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>7. Data Collected through Participation on the Platform</h2>
-      <p>We receive information about users who are active participants in managing teams ("Participants"), including name, email address, payment information, address, team name, team statistics, Voting Insights, team profile photos, username, profile photo, and any other information submitted or uploaded onto the Platform via community post, comment, chat, or other content.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>8. Purposes and Legal Basis for Collecting User Information</h2>
-      <p>We collect user information for the following purposes:</p>
-      <ul>
-        <li><strong>To respond to user inquiries and communicate with users</strong> — Legal basis: Legitimate interest; Consent.</li>
-        <li><strong>For marketing purposes</strong> — Legal basis: Legitimate interest in promoting the Services.</li>
-        <li><strong>To comply with legal obligations</strong> — Legal basis: Legal compliance.</li>
-        <li><strong>To evaluate and develop new features</strong> — Legal basis: Legitimate interest in improving user experiences.</li>
-        <li><strong>For advertising and targeted marketing</strong> — Legal basis: Consent; Legitimate interest.</li>
-        <li><strong>For sharing and selling to third-party commercial partners</strong> — Legal basis: Consent; Legitimate interest in raising capital.</li>
-      </ul>
-    </div>
-
-    <div class="legal-section">
-      <h2>9. How Information is Used and Shared</h2>
-      <p>You authorize us to collect, use, share, disclose, and sell the above information as follows:</p>
-      <ul>
-        <li><strong>Marketing and Promotion:</strong> We use Public Participant Information in marketing activities to promote interest in public leagues.</li>
-        <li><strong>Third Party Service Providers:</strong> We share information with service providers such as Google Analytics to perform functions on our behalf.</li>
-        <li><strong>Commercial Partners and Advertisers:</strong> We share and sell information, including location and interest data, with commercial partners and advertisers. We will obtain opt-in consent before sharing sensitive information about users younger than 13.</li>
-        <li><strong>Data Analytics:</strong> We analyze information in aggregate form to operate and improve the Services.</li>
-        <li><strong>Internal Sharing:</strong> We may share information with parent companies, subsidiaries, or affiliated companies.</li>
-        <li><strong>Sale of Business:</strong> In a corporate sale, merger, or similar event, your information may be part of the transferred assets.</li>
-        <li><strong>Legal Disclosure:</strong> We may disclose information when required by law, court order, or regulatory authority.</li>
-        <li><strong>Safety and Protection:</strong> We may disclose information to protect the rights, property, or safety of MESH Studios LLC or others.</li>
-      </ul>
-    </div>
-
-    <div class="legal-section">
-      <h2>10. Emails and Communications</h2>
-      <p>You may receive marketing or promotional communications from us upon submitting Voluntary Information. You can opt out by clicking the "unsubscribe" link in any marketing email. You cannot opt out of transactional emails critical to the Services.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>11. How We Protect Your Information</h2>
-      <p>We take commercially reasonable steps to protect your information from loss, misuse, and unauthorized access. However, no security system is impenetrable and we cannot guarantee the security of our databases or that information transmitted over the Internet is fully secure. We retain all information indefinitely but will delete a user's information upon request.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>12. Children and Age Requirements</h2>
-      <p>The Services are intended for users aged <strong>12 and older</strong>. We do not knowingly collect personal information from children under the age of 13 without verifiable parental consent, in compliance with the Children's Online Privacy Protection Act (COPPA).</p>
-      <p>If a user is between the ages of 12 and 13, a parent or legal guardian must provide verifiable consent prior to the collection of personal information. If we discover that we have inadvertently collected personal information from a child under 13 without parental consent, we will promptly delete such information. Parents or guardians may contact us at <a href="mailto:support@meshleagues.com" style="color:var(--green);">support@meshleagues.com</a> to request deletion of their child's information.</p>
-      <p><strong>We do not share, sell, or disclose the personal information of users under 13 to third parties for advertising or commercial purposes without verifiable parental consent.</strong></p>
-    </div>
-
-    <div class="legal-section">
-      <h2>13. International Residents</h2>
-      <p>The Services are operated in the United States. If you are located outside the United States, your information may be transferred to, processed, and used in the United States where privacy laws may differ from your jurisdiction. By using the Services, you irrevocably consent to such transfer and processing.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>14. Do Not Track</h2>
-      <p>We do not monitor, recognize, or respond to any opt-out or Do Not Track mechanisms, including general web browser "Do Not Track" settings or signals.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>15. Changes to this Privacy Policy</h2>
-      <p>We reserve the right to change this Privacy Policy at any time in our sole discretion. Changes will be posted to the Services. Each time you use the Services, the current version of the Privacy Policy will apply. By accessing the Services after any changes, you are deemed to have accepted such changes.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>16. Your Data Protection Rights</h2>
-      <p>Depending on where you live, you may have some or all of the following rights:</p>
-      <ul>
-        <li><strong>Right to Know:</strong> Request disclosure of the information we collect, use, or share about you.</li>
-        <li><strong>Right to Request Correction:</strong> Request correction of inaccurate information.</li>
-        <li><strong>Right to Request Deletion:</strong> Request deletion of your information.</li>
-        <li><strong>Right to Opt Out of Sale:</strong> Opt out of the sale of your personal information, including location and interest data.</li>
-        <li><strong>Right to Opt Out of Targeted Advertising:</strong> Opt out of processing your information for targeted advertising purposes.</li>
-        <li><strong>Right to Non-Discrimination:</strong> The right not to receive discriminatory treatment for exercising your privacy rights.</li>
-      </ul>
-      <p>California residents have additional rights under the CCPA, including the right to know whether their personal information is sold and to whom. To exercise any of these rights, contact us at <a href="mailto:support@meshleagues.com" style="color:var(--green);">support@meshleagues.com</a>.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>17. Governing Law</h2>
-      <p>This Privacy Policy is governed by the laws of the United States and the State of Washington without regard to conflicts of law principles. Users agree that state and federal courts in King County, Washington will have personal jurisdiction over them in connection with any disputes.</p>
-    </div>
-
-    <div class="legal-section">
-      <h2>18. Contact Us</h2>
-      <p>If you have any questions about this Privacy Policy, please email us at: <a href="mailto:support@meshleagues.com" style="color:var(--green);">support@meshleagues.com</a></p>
-    </div>
-
-  </div>
-</div>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -373,7 +258,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:68px;d
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
   var cursor = document.getElementById('cursor');
   var ring = document.getElementById('ring');

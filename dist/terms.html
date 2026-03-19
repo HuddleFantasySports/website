@@ -136,6 +136,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:68px;d
   .hamburger{display:flex;}
   .mobile-nav{display:flex;}
 }
+
+/* Hide custom cursor on touch devices */
+@media (hover: none), (pointer: coarse) {
+  #cursor, #ring { display: none !important; }
+  body { cursor: auto !important; }
+  a, button, input, [onclick] { cursor: pointer !important; }
+}
 </style>
 </head>
 <body>
@@ -259,7 +266,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:68px;d
 
     <div class="legal-section">
       <h2>13. Intellectual Property Disputes</h2>
-      <p>If you believe your work has been copied in a way that constitutes copyright infringement, please provide notice to <a href="/cdn-cgi/l/email-protection#d8abada8a8b7aaac98b5bdabb0b4bdb9bfadbdabf6bbb7b5"><span class="__cf_email__" data-cfemail="b2c1c7c2c2ddc0c6f2dfd7c1daded7d3d5c7d7c19cd1dddf">[email&#160;protected]</span></a> including: a signature of the authorized person, description of the infringed work, location of the infringing material, your contact information, a good faith statement, and a statement made under penalty of perjury that the information is accurate.</p>
+      <p>If you believe your work has been copied in a way that constitutes copyright infringement, please provide notice to <a href="mailto:support@meshleagues.com" style="color:var(--green);">support@meshleagues.com</a> including: a signature of the authorized person, description of the infringed work, location of the infringing material, your contact information, a good faith statement, and a statement made under penalty of perjury that the information is accurate.</p>
     </div>
 
     <div class="legal-section">
@@ -293,7 +300,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:68px;d
 
     <div class="legal-section">
       <h2>19. Contact Information</h2>
-      <p>If you have any questions about these Terms of Service, please email us at: <a href="/cdn-cgi/l/email-protection#62111712120d1016220f07110a0e0703051707114c010d0f"><span class="__cf_email__" data-cfemail="2b585e5b5b44595f6b464e5843474e4a4c5e4e5805484446">[email&#160;protected]</span></a></p>
+      <p>If you have any questions about these Terms of Service, please email us at: <a href="mailto:support@meshleagues.com" style="color:var(--green);">support@meshleagues.com</a></p>
     </div>
 
   </div>

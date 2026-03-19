@@ -372,6 +372,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:68px;d
   .hamburger{display:flex;}
   .mobile-nav{display:flex;}
 }
+
+/* Hide custom cursor on touch devices */
+@media (hover: none), (pointer: coarse) {
+  #cursor, #ring { display: none !important; }
+  body { cursor: auto !important; }
+  a, button, input, [onclick] { cursor: pointer !important; }
+}
 </style>
 </head>
 <body>

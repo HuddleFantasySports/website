@@ -442,6 +442,13 @@ nav.scrolled{
 .id-taunt-label{color:#fff;font-size:13px;font-weight:600;font-family:'Instrument Sans',sans-serif;}
 .id-taunt-sub{font-size:11px;color:rgba(255,255,255,.6);margin-top:6px;}
 
+
+/* Hide custom cursor on touch devices */
+@media (hover: none), (pointer: coarse) {
+  #cursor, #ring { display: none !important; }
+  body { cursor: auto !important; }
+  a, button, input, [onclick] { cursor: pointer !important; }
+}
 </style>
 </head>
 <body>
