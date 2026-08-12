@@ -66,7 +66,7 @@
       <h1 style="margin:0; font-family:'Bebas Neue',sans-serif; font-size:clamp(44px,6vw,84px); line-height:.92; letter-spacing:.5px; color:#FFFFFF;">PRIVACY POLICY</h1>
       <div style="display:flex; flex-wrap:wrap; gap:10px 26px; margin-top:22px; font-family:'Space Grotesk',sans-serif; font-size:12.5px; font-weight:600; letter-spacing:.6px; color:#71788C;">
         <span>MESH STUDIOS LLC</span>
-        <span>EFFECTIVE AUGUST 11, 2026</span>
+        <span>EFFECTIVE AUGUST 12, 2026 &#183; LAST UPDATED AUGUST 12, 2026</span>
       </div>
       <p style="margin:26px 0 0; font-size:16.5px; line-height:1.66; color:#A8AEC0; max-width:660px; text-wrap:pretty;">This Policy explains what information MESH collects, how we use and disclose it, and the choices you have. MESH is for adults 18 and older.</p>
     </div>
@@ -260,6 +260,7 @@
       <section id="p17" style="scroll-margin-top:100px; margin-top:44px;">
         <h2 style="margin:0 0 14px; font-family:'Bebas Neue',sans-serif; font-size:clamp(25px,2.5vw,34px); letter-spacing:.5px; color:#FFFFFF;">17. COMMUNICATIONS</h2>
         <p style="margin:0 0 14px; font-size:15.5px; line-height:1.72; color:#A8AEC0; text-wrap:pretty;">We may send service-related communications about accounts, security, league activity, purchases, support, or changes to the Services. If you opt in to marketing email, push notifications, or text messaging, you may change preferences using the methods provided in those communications, the Services, or your device settings, as applicable.</p>
+        <p style="margin:0 0 14px; font-size:15.5px; line-height:1.72; color:#A8AEC0; text-wrap:pretty;">Text messages are sent only with your express consent, which is not a condition of using the Services. Message and data rates may apply, and message frequency varies. Reply STOP to cancel or HELP for help.</p>
       </section>
 
       <section id="p18" style="scroll-margin-top:100px; margin-top:44px;">
@@ -349,7 +350,7 @@ class Component extends DCLogic {
     return {
       isLive: live,
       preLaunch: !live,
-      ctaHref: live ? ('https://apps.apple.com/us/app/mesh-fantasy-sports/id6476977529') : '#',
+      ctaHref: live ? (this.props.appStoreUrl ?? 'https://apps.apple.com/us/app/mesh-fantasy-sports/id6476977529') : '#',
       navLabel: live ? 'Download' : clock,
       navLabelLong: live ? 'Download' : 'Drops in ' + clock,
       heroLabel: live ? 'Download on the App Store' : 'Drops in ' + clock,
@@ -361,7 +362,7 @@ class Component extends DCLogic {
 
   baseVals() {
     return {
-      appStoreUrl: 'https://apps.apple.com/us/app/mesh-fantasy-sports/id6476977529',
+      appStoreUrl: this.props.appStoreUrl ?? 'https://apps.apple.com/us/app/mesh-fantasy-sports/id6476977529',
       linkedinUrl: this.props.linkedinUrl ?? 'https://www.linkedin.com/company/mesh-studios-llc'
     };
   }
