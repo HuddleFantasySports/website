@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Inter+Tight:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:#05070C;color:#F5F6F8;-webkit-font-smoothing:antialiased;}
+  a{color:#7FEDD2;text-decoration:none;}
+  a:hover{color:#B8FFEE;}
+  input{font-family:'Inter Tight',sans-serif;}
+  input::placeholder{color:#5C6478;}
+  @keyframes meshPulse{0%,100%{opacity:.5}50%{opacity:1}}
+  @keyframes meshFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+  @media (max-width:820px){
+    nav{padding-left:16px !important; padding-right:16px !important; padding-top:12px !important; padding-bottom:10px !important; row-gap:10px !important;}
+    nav > a:first-child{flex:0 0 auto !important;}
+    nav > div:last-child{flex:0 0 auto !important;}
+    nav > div:nth-child(2){order:3; flex:1 0 100% !important; flex-wrap:nowrap !important; overflow-x:auto; gap:20px !important; scrollbar-width:none; -webkit-overflow-scrolling:touch;}
+    nav > div:nth-child(2)::-webkit-scrollbar{display:none;}
+    nav > div:nth-child(2) > a{white-space:nowrap; padding:7px 0;}
+    footer a{padding:2px 0;}
+  }
+</style>
+</helmet>
+
+<div style="font-family:'Inter Tight',sans-serif; background:#05070C; overflow-x:hidden;">
+
+  <nav style="position:sticky; top:0; z-index:60; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px 24px; padding:clamp(14px,1.1vw,20px) clamp(18px,3vw,52px); background:rgba(5,7,12,.8); backdrop-filter:blur(20px); border-bottom:1px solid rgba(255,255,255,.07);">
+    <a href="index.html" style="display:flex; align-items:center; flex:1 1 0; min-width:0;"><img src="assets/mesh-logo-sm.png" alt="MESH" style="height:clamp(22px,1.7vw,30px); display:block;"></a>
+    <div style="display:flex; align-items:center; flex-wrap:wrap; gap:9px clamp(15px,1.9vw,32px); font-family:'Space Grotesk',sans-serif; font-size:clamp(13.5px,1.05vw,16px); font-weight:600; letter-spacing:.3px;">
+      <a href="index.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">Home</a>
+      <a href="nfl-squads.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">NFL Squads</a>
+      <a href="greek-life.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">For Greek Life</a>
+      <a href="brands.html" style="color:#F5F6F8;">For Brands</a>
+    </div>
+    <div data-nav-cta style="flex:1 1 0; display:flex; justify-content:flex-end;">
+      <a href="#contact" style="display:inline-flex; align-items:center; gap:8px; padding:clamp(10px,.85vw,13px) clamp(18px,1.5vw,26px); border-radius:10px; background:linear-gradient(135deg,#7C5CE0,#9D7BF7); color:#FFFFFF; font-family:'Space Grotesk',sans-serif; font-size:clamp(13.5px,1.05vw,16px); font-weight:700;" style-hover="transform:translateY(-1px);">Get in touch</a>
+    </div>
+  </nav>
+
+  <section style="padding:clamp(64px,7vw,100px) clamp(20px,5vw,64px) clamp(56px,6vw,84px); background:radial-gradient(ellipse 85% 70% at 25% -10%, rgba(124,92,224,.3) 0%, rgba(124,92,224,0) 62%), radial-gradient(ellipse 60% 55% at 92% 45%, rgba(95,227,192,.14) 0%, rgba(95,227,192,0) 62%), #05070C;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr)); gap:clamp(36px,4vw,60px); align-items:center;">
+      <div>
+        <div style="display:inline-flex; align-items:center; gap:8px; padding:7px 15px; border-radius:20px; background:rgba(157,123,247,.1); border:1px solid rgba(157,123,247,.4); font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:1.5px; color:#C9B8FF; margin-bottom:24px;">
+          <span style="width:6px; height:6px; border-radius:50%; background:#9D7BF7; animation:meshPulse 2s ease-in-out infinite;"></span>2026 SEASON PARTNERSHIPS OPEN
+        </div>
+        <h1 style="margin:0; font-family:'Bebas Neue',sans-serif; font-size:clamp(44px,6vw,88px); line-height:.88; letter-spacing:.5px; color:#FFFFFF;">GET INSIDE<br><span style="color:#9D7BF7;">THE CULTURE.</span></h1>
+        <p style="margin:24px 0 0; font-size:19px; line-height:1.55; color:#A8AEC0; max-width:520px; text-wrap:pretty;">Brands live inside the prizes, digital identity, and live events. Learn how to engage the next generation of sports fans today.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:13px; margin-top:32px;">
+          <a href="#contact" style="display:inline-flex; align-items:center; gap:9px; padding:16px 28px; border-radius:12px; background:linear-gradient(135deg,#7C5CE0,#9D7BF7); color:#FFFFFF; font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:700; box-shadow:0 12px 38px rgba(124,92,224,.42);" style-hover="transform:translateY(-2px);">Start a conversation</a>
+          <a href="#activations" style="display:inline-flex; align-items:center; gap:9px; padding:16px 26px; border-radius:12px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.16); color:#F5F6F8; font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:600;" style-hover="background:rgba(255,255,255,.1);">See how it works &#8595;</a>
+        </div>
+      </div>
+      <div style="position:relative; display:flex; justify-content:center; align-items:center;">
+        <div style="position:absolute; width:76%; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle, rgba(124,92,224,.2) 0%, rgba(124,92,224,0) 68%); pointer-events:none;"></div>
+        <img src="assets/hero-lineup-sm.png" alt="MESH mascots" style="position:relative; width:100%; max-width:520px; display:block; animation:meshFloat 9s ease-in-out infinite; filter:drop-shadow(0 40px 70px rgba(0,0,0,.6));">
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:34px clamp(20px,5vw,64px); border-top:1px solid rgba(255,255,255,.07); border-bottom:1px solid rgba(255,255,255,.07); background:#080B12;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(160px,100%),1fr)); gap:24px;">
+      <sc-for list="{{ audience }}" as="a" hint-placeholder-count="5">
+        <div>
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:38px; line-height:1; color:{{ a.color }};">{{ a.value }}</div>
+          <div style="font-family:'Space Grotesk',sans-serif; font-size:10.5px; font-weight:700; letter-spacing:1.3px; color:#71788C; margin-top:6px;">{{ a.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="activations" style="padding:clamp(70px,8vw,110px) clamp(20px,5vw,64px); background:#080B12; border-top:1px solid rgba(255,255,255,.07);">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; color:#C9B8FF; margin-bottom:18px;">ACTIVATION EXAMPLES</div>
+      <h2 style="margin:0 0 12px; font-family:'Bebas Neue',sans-serif; font-size:clamp(38px,4.8vw,66px); line-height:.94; letter-spacing:.5px; color:#FFFFFF;">BECOME PART<br>OF THE SEASON.</h2>
+      <p style="margin:0 0 30px; font-size:17px; line-height:1.55; color:#8E95A8; max-width:600px;">A few examples below. We work with brand partners on custom solutions, so an activation is built around what you are actually trying to do.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr)); gap:20px; align-items:stretch;">
+
+        <div style="display:flex; flex-direction:column; padding:clamp(26px,2.4vw,34px) clamp(24px,2.2vw,32px); border-radius:20px; background:#0A0D15; border:1px solid rgba(255,255,255,.09);">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:14px; min-height:clamp(44px,4vw,64px);">
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:700; letter-spacing:1.5px; color:#FF5A3C;">TIMED OFFER MODULE</span>
+            <img src="assets/logo-doordash-tight.png" loading="lazy" alt="DoorDash" style="height:clamp(44px,4vw,64px); width:auto; display:block; flex-shrink:0;">
+          </div>
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:clamp(26px,2.2vw,32px); letter-spacing:.5px; line-height:1.02; color:#FFFFFF; margin-top:9px;">DROP A PROMO ON DRAFT DAY</div>
+          <p style="margin:10px 0 0; font-size:15px; line-height:1.55; color:#8E95A8;">Offers fire inside the draft room while the whole squad is on the clock together &mdash; one order, ten people eating.</p>
+
+          <div style="flex:1; display:flex; align-items:center; justify-content:center; margin:22px 0 18px; padding:clamp(18px,2vw,26px); border-radius:16px; background:radial-gradient(ellipse 90% 80% at 50% 50%, rgba(255,90,60,.1) 0%, rgba(255,90,60,0) 70%), rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06);">
+            <div style="width:100%; border-radius:14px; overflow:hidden; background:#140A08; border:1px solid rgba(255,90,60,.5); box-shadow:0 14px 40px rgba(255,48,8,.18);">
+              <div style="display:flex; align-items:center; gap:11px; padding:17px 18px 12px;">
+                <span style="width:30px; height:30px; border-radius:8px; background:#FF3008; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:700; color:#FFFFFF;">D</span>
+                <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:1.3px; color:#FF7A5C;">DOORDASH</span>
+                <span style="font-family:'Space Grotesk',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:1.1px; color:#8E95A8; white-space:nowrap;">2H BEFORE DRAFT</span>
+                <span style="flex:1;"></span>
+                <span style="font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:.8px; color:#FFFFFF;">{{ promoClock }}</span>
+              </div>
+              <div style="padding:0 18px 14px; font-size:17px; font-weight:600; color:#F5F6F8;">Draft in 2h &#183; 30% off orders $25+</div>
+              <div style="padding:0 18px 12px;">
+                <div style="padding:15px; border-radius:11px; background:#FF3008; text-align:center; font-size:16.5px; font-weight:700; color:#FFFFFF;">Order for the squad! &#8594;</div>
+              </div>
+              <div style="padding:0 18px 16px; text-align:right; font-size:11px; color:#7A6A66;">Expires at kickoff &#183; terms apply</div>
+            </div>
+          </div>
+
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding-top:16px; border-top:1px solid rgba(255,255,255,.08);">
+            <span style="font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:.5px; color:#FFFFFF;">DRAFT DAY OFFER</span>
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:1.1px; color:#FF7A5C;">IN THE DRAFT ROOM</span>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; padding:clamp(26px,2.4vw,34px) clamp(24px,2.2vw,32px); border-radius:20px; background:linear-gradient(160deg,rgba(245,178,60,.09),#0A0D15 62%); border:1px solid rgba(245,178,60,.32);">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:14px; min-height:clamp(44px,4vw,64px);">
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:10px; font-weight:700; letter-spacing:1.5px; color:#F5B23C;">BRANDED MASCOT</span>
+            <span style="font-family:'Bebas Neue',sans-serif; font-size:clamp(24px,2vw,30px); letter-spacing:1px; color:#F5B23C;">B&#183;DUBS</span>
+          </div>
+          <div style="font-family:'Bebas Neue',sans-serif; font-size:clamp(26px,2.2vw,32px); letter-spacing:.5px; line-height:1.02; color:#FFFFFF; margin-top:9px;">BECOME A SQUAD'S FACE</div>
+          <p style="margin:10px 0 0; font-size:15px; line-height:1.55; color:#8E95A8;">A custom mascot in the store that squads choose, equip, and taunt with all season. Your brand shows up every time they score.</p>
+
+          <div style="position:relative; flex:1; display:flex; align-items:center; justify-content:center; min-height:230px; margin:22px 0 18px; padding:18px; border-radius:16px; background:radial-gradient(ellipse 80% 70% at 50% 62%, rgba(245,178,60,.16) 0%, rgba(245,178,60,0) 70%), rgba(255,255,255,.02); border:1px solid rgba(255,255,255,.06); overflow:hidden;">
+            <img src="assets/mascot-bdubs-v2-sm.png" loading="lazy" alt="Buffalo Wild Wings mascot" style="position:relative; height:100%; max-height:290px; width:auto; max-width:100%; object-fit:contain; display:block; filter:drop-shadow(0 20px 36px rgba(0,0,0,.6));">
+          </div>
+
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; padding-top:16px; border-top:1px solid rgba(255,255,255,.08);">
+            <span style="font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:.5px; color:#FFFFFF;">THE WINGMAN</span>
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:9.5px; font-weight:700; letter-spacing:1.1px; color:#F5B23C;">LEGENDARY &#183; SPONSORED</span>
+          </div>
+        </div>
+
+      </div>
+      <p style="margin:22px 0 0; font-size:12.5px; color:#4E556B;">Brands shown are examples of activation formats. Logos are property of their respective owners.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(70px,8vw,110px) clamp(20px,5vw,64px); background:linear-gradient(180deg,#05070C,#0A0714 50%,#05070C);">
+    <div style="max-width:1180px; margin:0 auto;">
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; color:#7FEDD2; margin-bottom:18px;">FROM OUR PARTNERS</div>
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:26px; flex-wrap:wrap; margin-bottom:40px;">
+        <h2 style="margin:0; font-family:'Bebas Neue',sans-serif; font-size:clamp(38px,4.8vw,66px); line-height:.94; letter-spacing:.5px; color:#FFFFFF;">WHAT BRANDS SAY.</h2>
+        <img src="assets/logo-dsc-sm.png" loading="lazy" alt="Dollar Shave Club" style="height:clamp(46px,4vw,68px); width:auto; display:block;">
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:18px;">
+        <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="3">
+          <div style="display:flex; flex-direction:column; padding:30px 28px; border-radius:20px; background:#0A0D15; border:1px solid rgba(255,255,255,.09);">
+            <div style="font-family:'Bebas Neue',sans-serif; font-size:30px; line-height:1; color:{{ q.accent }};">&ldquo;</div>
+            <p style="margin:6px 0 20px; font-size:16px; line-height:1.6; color:#D3D8E4; flex:1;">{{ q.text }}</p>
+            <div style="font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:700; color:#FFFFFF;">{{ q.who }}</div>
+            <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:600; letter-spacing:1px; color:{{ q.accent }}; margin-top:4px;">{{ q.org }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(70px,8vw,110px) clamp(20px,5vw,64px); background:#080B12; border-top:1px solid rgba(255,255,255,.07);">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr)); gap:clamp(36px,4vw,60px); align-items:center;">
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; color:#F5B23C; margin-bottom:18px;">SOCIAL &amp; IRL EXTENSIONS</div>
+        <h2 style="margin:0 0 18px; font-family:'Bebas Neue',sans-serif; font-size:clamp(38px,4.8vw,66px); line-height:.94; letter-spacing:.5px; color:#FFFFFF;">THE LEAGUE DOESN'T<br>STAY IN THE APP.</h2>
+        <p style="margin:0 0 22px; font-size:17px; line-height:1.6; color:#A8AEC0; max-width:480px; text-wrap:pretty;">Every activation extends past the phone. The league creates real gatherings on campus &mdash; draft parties, watch parties, trophy ceremonies &mdash; and partners get access to all of them.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+          <sc-for list="{{ extensionChips }}" as="c" hint-placeholder-count="4">
+            <span style="padding:9px 16px; border-radius:30px; background:rgba(245,178,60,.08); border:1px solid rgba(245,178,60,.3); font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:600; color:#F5B23C;">{{ c }}</span>
+          </sc-for>
+        </div>
+      </div>
+      <div style="position:relative; border-radius:22px; overflow:hidden; border:1px solid rgba(255,255,255,.1);">
+        <img src="assets/mesh-irl-sm.png" loading="lazy" alt="MESH league night" style="width:100%; display:block;">
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(5,7,12,0) 45%,rgba(5,7,12,.9));"></div>
+        <div style="position:absolute; left:26px; right:26px; bottom:24px; font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:.6px; color:#FFFFFF;">DRAFT PARTIES &#183; WATCH PARTIES &#183; TROPHY CEREMONIES</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding:clamp(70px,8vw,110px) clamp(20px,5vw,64px); background:radial-gradient(ellipse 70% 80% at 50% 120%, rgba(124,92,224,.2) 0%, rgba(124,92,224,0) 62%), #05070C;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr)); gap:clamp(36px,4vw,60px); align-items:center;">
+      <div>
+        <h2 style="margin:0 0 16px; font-family:'Bebas Neue',sans-serif; font-size:clamp(40px,5.2vw,72px); line-height:.92; letter-spacing:.5px; color:#FFFFFF;">LET'S BUILD YOUR<br>2026 ACTIVATION.</h2>
+        <p style="margin:0 0 26px; font-size:18px; line-height:1.55; color:#A8AEC0; max-width:460px;">Tell us who you're trying to reach and we'll come back with what a MESH season could look like for your brand.</p>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <a href="mailto:support@meshleagues.com" style="display:flex; align-items:center; gap:12px; font-size:16px; color:#F5F6F8;" style-hover="color:#9D7BF7;">
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:1.3px; color:#71788C; width:74px;">EMAIL</span>support@meshleagues.com
+          </a>
+          <a href="https://www.instagram.com/mesh.leagues/" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:12px; font-size:16px; color:#F5F6F8;" style-hover="color:#9D7BF7;">
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:1.3px; color:#71788C; width:74px;">INSTAGRAM</span>@mesh.leagues
+          </a>
+          <a href="{{ linkedinUrl }}" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:12px; font-size:16px; color:#F5F6F8;" style-hover="color:#9D7BF7;">
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:1.3px; color:#71788C; width:74px;">LINKEDIN</span>MESH Studios LLC
+          </a>
+        </div>
+      </div>
+      <div style="padding:clamp(28px,3vw,40px); border-radius:24px; background:#0A0D15; border:1.5px solid rgba(157,123,247,.35); box-shadow:0 30px 70px rgba(0,0,0,.5);">
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:1.6px; color:#C9B8FF;">PARTNERSHIP ENQUIRY</div>
+            <h3 style="margin:10px 0 20px; font-family:'Bebas Neue',sans-serif; font-size:32px; letter-spacing:.5px; color:#FFFFFF;">TELL US ABOUT YOUR BRAND.</h3>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <input value="{{ brand }}" onChange="{{ onBrand }}" placeholder="Brand or company" style="width:100%; box-sizing:border-box; padding:14px 16px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.14); color:#F5F6F8; font-size:15px; outline:none;">
+              <input value="{{ email }}" onChange="{{ onEmail }}" placeholder="Work email" style="width:100%; box-sizing:border-box; padding:14px 16px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.14); color:#F5F6F8; font-size:15px; outline:none;">
+              <input value="{{ goal }}" onChange="{{ onGoal }}" placeholder="What are you trying to achieve?" style="width:100%; box-sizing:border-box; padding:14px 16px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.14); color:#F5F6F8; font-size:15px; outline:none;">
+              <button onClick="{{ submit }}" style="width:100%; padding:15px; border-radius:12px; border:none; background:linear-gradient(135deg,#7C5CE0,#9D7BF7); color:#FFFFFF; font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:700; cursor:pointer;" style-hover="transform:translateY(-1px);">Request the partnership deck</button>
+            </div>
+            <p style="margin:16px 0 0; font-size:12px; line-height:1.5; color:#4E556B;">We'll reply within two business days with availability for the 2026 season.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align:center; padding:20px 0;">
+            <div style="width:56px; height:56px; margin:0 auto 18px; border-radius:50%; background:rgba(157,123,247,.14); border:1.5px solid rgba(157,123,247,.5); display:flex; align-items:center; justify-content:center; font-size:26px; color:#C9B8FF;">&#10003;</div>
+            <h3 style="margin:0 0 10px; font-family:'Bebas Neue',sans-serif; font-size:32px; letter-spacing:.5px; color:#FFFFFF;">REQUEST RECEIVED.</h3>
+            <p style="margin:0 auto; font-size:15px; line-height:1.55; color:#8E95A8; max-width:340px;">We'll send the partnership deck and 2026 season availability to your inbox within two business days.</p>
+            <a href="mailto:support@meshleagues.com" style="display:inline-block; margin-top:20px; font-family:'Space Grotesk',sans-serif; font-size:14px; font-weight:700; color:#C9B8FF;">Or email support@meshleagues.com</a>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding:52px clamp(20px,5vw,64px) 42px; border-top:1px solid rgba(255,255,255,.07); background:#05070C;">
+    <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(200px,100%),1fr)); gap:40px;">
+      <div style="min-width:180px;">
+        <img src="assets/mesh-logo-sm.png" alt="MESH" style="height:22px; display:block; margin-bottom:22px;">
+        <div style="display:flex; gap:11px;">
+          <a href="{{ linkedinUrl }}" target="_blank" rel="noopener" style="width:38px; height:38px; border-radius:10px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center;" style-hover="background:rgba(255,255,255,.12);">
+            <svg viewBox="0 0 24 24" style="width:17px; height:17px; fill:#B7BECB;"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"></path></svg>
+          </a>
+          <a href="https://www.instagram.com/mesh.leagues/" target="_blank" rel="noopener" style="width:38px; height:38px; border-radius:10px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center;" style-hover="background:rgba(255,255,255,.12);">
+            <svg viewBox="0 0 24 24" style="width:17px; height:17px; fill:#B7BECB;"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.38C1.35 2.67.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.12.66.66 1.34 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.12-1.38.66-.66 1.07-1.34 1.38-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.12A5.87 5.87 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-10.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"></path></svg>
+          </a>
+          <a href="https://www.tiktok.com/@mesh.leagues" target="_blank" rel="noopener" style="width:38px; height:38px; border-radius:10px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center;" style-hover="background:rgba(255,255,255,.12);">
+            <svg viewBox="0 0 24 24" style="width:17px; height:17px; fill:#B7BECB;"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:1.6px; color:#5FE3C0; margin-bottom:16px;">PLAY</div>
+        <div style="display:flex; flex-direction:column; gap:11px; font-size:14px;">
+          <a href="index.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">Home</a>
+          <a href="nfl-squads.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">NFL Squads</a>
+          <a href="{{ appStoreUrl }}" style="color:#9098AC;" style-hover="color:#F5F6F8;">Download</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:1.6px; color:#5FE3C0; margin-bottom:16px;">PARTNERS</div>
+        <div style="display:flex; flex-direction:column; gap:11px; font-size:14px;">
+          <a href="greek-life.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">For Greek Life</a>
+          <a href="brands.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">For Brands</a>
+          <a href="https://www.instagram.com/mesh.leagues/" target="_blank" rel="noopener" style="color:#9098AC;" style-hover="color:#F5F6F8;">Instagram</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:1.6px; color:#5FE3C0; margin-bottom:16px;">SUPPORT</div>
+        <div style="display:flex; flex-direction:column; gap:11px; font-size:14px;">
+          <a href="https://app.notion.com/p/MESH-Help-Center-3aec6335f8cf81fc8101d401ed896cd4?source=copy_link" target="_blank" rel="noopener" style="color:#9098AC;" style-hover="color:#F5F6F8;">Help Center</a>
+          <a href="mailto:support@meshleagues.com" style="color:#9098AC;" style-hover="color:#F5F6F8;">Contact</a>
+          <a href="privacy.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">Privacy Policy</a>
+          <a href="terms.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1180px; margin:36px auto 0; padding-top:24px; border-top:1px solid rgba(255,255,255,.07); font-size:12.5px; color:#4E556B;">&copy; 2026 MESH Studios LLC. All rights reserved.</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440},&quot;launchAt&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;2026-08-14T00:00:00Z&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Launch&quot;},&quot;appStoreUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://apps.apple.com/us/app/mesh-fantasy-sports/id6476977529&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;linkedinUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.linkedin.com/company/mesh-studios-llc&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;}}">
+class Component extends DCLogic {
+  LAUNCH_AT = Date.parse('2026-08-14T00:00:00Z');
+
+
+  componentWillUnmount() { clearInterval(this._tick); }
+
+  launchVals() {
+    if (!this._tick) this._tick = setInterval(() => this.forceUpdate(), 1000);
+    const at = Date.parse(this.props.launchAt || '') || this.LAUNCH_AT;
+    const ms = at - Date.now();
+    const live = ms <= 0;
+    const pad = n => String(n).padStart(2, '0');
+    const d = Math.floor(ms / 86400000);
+    const h = Math.floor(ms % 86400000 / 3600000);
+    const m = Math.floor(ms % 3600000 / 60000);
+    const s = Math.floor(ms % 60000 / 1000);
+    const clock = d > 0 ? d + 'd ' + pad(h) + ':' + pad(m) + ':' + pad(s) : pad(h) + ':' + pad(m) + ':' + pad(s);
+    return {
+      isLive: live,
+      preLaunch: !live,
+      ctaHref: live ? ('https://apps.apple.com/us/app/mesh-fantasy-sports/id6476977529') : '#',
+      navLabel: live ? 'Download' : clock,
+      heroLabel: live ? 'Download on the App Store' : 'Drops in ' + clock,
+      dropLine: 'DROPS THURSDAY 5:00 PM PT'
+    };
+  }
+
+  state = { brand: '', email: '', goal: '', sent: false };
+
+  renderVals() { return Object.assign({}, this.baseVals(), this.launchVals()); }
+
+  baseVals() {
+    return {
+      appStoreUrl: this.props.appStoreUrl || 'https://apps.apple.com/us/app/mesh-fantasy-sports/id6476977529',
+      linkedinUrl: this.props.linkedinUrl || 'https://www.linkedin.com/company/mesh-studios-llc',
+      brand: this.state.brand, email: this.state.email, goal: this.state.goal,
+      sent: this.state.sent, notSent: !this.state.sent,
+      onBrand: (e) => this.setState({ brand: e.target.value }),
+      onEmail: (e) => this.setState({ email: e.target.value }),
+      onGoal:  (e) => this.setState({ goal: e.target.value }),
+      submit:  () => this.setState({ sent: true }),
+      promoClock: '1:59:52',
+      audience: [
+        { value:'10K+',  label:'USERS',            color:'#7FEDD2' },
+        { value:'88%',   label:'MALE',             color:'#9D7BF7' },
+        { value:'600+',  label:'CHAPTERS',         color:'#F5B23C' },
+        { value:'50+',   label:'GREEK SYSTEMS',    color:'#FF8FA0' },
+        { value:'100K+', label:'STUDENT EXPOSURE', color:'#F5F6F8' }
+      ],
+      quotes: [
+        { accent:'#7FEDD2', who:'Steven', org:'SENIOR BRAND MANAGER \u00b7 DOLLAR SHAVE CLUB',
+          text:'MESH allowed us to show up inside an experience our target audience already loves, rather than interrupting them with traditional ads.' },
+        { accent:'#F5B23C', who:'Travis', org:'BAR MANAGER \u00b7 BAR SOUTH, UGA',
+          text:'MESH packed the bar. The league made Bar South the natural home base for UGA\u2019s Greek organizations every Monday and Thursday night.' }
+      ],
+      extensionChips: ['Draft parties', 'Weekly watch parties', 'Trophy ceremonies', 'Campus sampling', 'On-site activations']
+    };
+  }
+}
+</script>
+</body>
+</html>
