@@ -39,12 +39,12 @@
 <div style="font-family:'Inter Tight',sans-serif; background:#05070C; overflow-x:hidden;">
 
   <nav style="position:sticky; top:0; z-index:60; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px 24px; padding:clamp(14px,1.1vw,20px) clamp(18px,3vw,52px); background:rgba(5,7,12,.8); backdrop-filter:blur(20px); border-bottom:1px solid rgba(255,255,255,.07);">
-    <a href="index.html" style="display:flex; align-items:center; flex:1 1 0; min-width:0;"><img src="assets/mesh-logo-sm.png" alt="MESH" style="height:clamp(22px,1.7vw,30px); display:block;"></a>
+    <a href="/" style="display:flex; align-items:center; flex:1 1 0; min-width:0;"><img src="assets/mesh-logo-sm.png" alt="MESH" style="height:clamp(22px,1.7vw,30px); display:block;"></a>
     <div style="display:flex; align-items:center; flex-wrap:wrap; gap:9px clamp(15px,1.9vw,32px); font-family:'Space Grotesk',sans-serif; font-size:clamp(13.5px,1.05vw,16px); font-weight:600; letter-spacing:.3px;">
-      <a href="index.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">Home</a>
-      <a href="nfl-squads.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">NFL Squads</a>
-      <a href="greek-life.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">For Greek Life</a>
-      <a href="brands.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">For Brands</a>
+      <a href="/" style="color:#9098AC;" style-hover="color:#F5F6F8;">Home</a>
+      <a href="/nfl-squads" style="color:#9098AC;" style-hover="color:#F5F6F8;">NFL Squads</a>
+      <a href="/greek-life" style="color:#9098AC;" style-hover="color:#F5F6F8;">For Greek Life</a>
+      <a href="/brands" style="color:#9098AC;" style-hover="color:#F5F6F8;">For Brands</a>
     </div>
     <div style="flex:1 1 0; display:flex; justify-content:flex-end;">
       <sc-if value="{{ isLive }}" hint-placeholder-val="{{ false }}">
@@ -101,7 +101,7 @@
         <a href="#s22" style="color:#8E95A8;" style-hover="color:#F5F6F8;">22. General Terms</a>
         <a href="#s23" style="color:#8E95A8;" style-hover="color:#F5F6F8;">23. Contact Us</a>
       </div>
-      <a href="privacy.html" style="display:inline-block; margin-top:26px; padding-top:18px; border-top:1px solid rgba(255,255,255,.08); font-family:'Space Grotesk',sans-serif; font-size:12.5px; font-weight:700; letter-spacing:.5px; color:#C9B8FF;" style-hover="color:#E3D4FF;">Privacy Policy &#8594;</a>
+      <a href="/privacy" style="display:inline-block; margin-top:26px; padding-top:18px; border-top:1px solid rgba(255,255,255,.08); font-family:'Space Grotesk',sans-serif; font-size:12.5px; font-weight:700; letter-spacing:.5px; color:#C9B8FF;" style-hover="color:#E3D4FF;">Privacy Policy &#8594;</a>
     </aside>
 
     <main style="min-width:0; max-width:760px;">
@@ -233,7 +233,7 @@
 
       <section id="s14" style="scroll-margin-top:100px; margin-top:44px;">
         <h2 style="margin:0 0 14px; font-family:'Bebas Neue',sans-serif; font-size:clamp(25px,2.5vw,34px); letter-spacing:.5px; color:#FFFFFF;">14. LOCATION AND DEVICE PERMISSIONS</h2>
-        <p style="margin:0 0 14px; font-size:15.5px; line-height:1.72; color:#A8AEC0; text-wrap:pretty;">Certain features may request access to device permissions such as precise or approximate location, notifications, or other device capabilities. You may decline optional permissions, although some location-aware or other features may be limited. MESH&rsquo;s collection and use of personal information is described in the <a href="privacy.html">Privacy Policy</a>.</p>
+        <p style="margin:0 0 14px; font-size:15.5px; line-height:1.72; color:#A8AEC0; text-wrap:pretty;">Certain features may request access to device permissions such as precise or approximate location, notifications, or other device capabilities. You may decline optional permissions, although some location-aware or other features may be limited. MESH&rsquo;s collection and use of personal information is described in the <a href="/privacy">Privacy Policy</a>.</p>
       </section>
 
       <section id="s15" style="scroll-margin-top:100px; margin-top:44px;">
@@ -317,16 +317,16 @@
       <div>
         <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:1.6px; color:#5FE3C0; margin-bottom:16px;">PLAY</div>
         <div style="display:flex; flex-direction:column; gap:11px; font-size:14px;">
-          <a href="index.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">Home</a>
-          <a href="nfl-squads.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">NFL Squads</a>
+          <a href="/" style="color:#9098AC;" style-hover="color:#F5F6F8;">Home</a>
+          <a href="/nfl-squads" style="color:#9098AC;" style-hover="color:#F5F6F8;">NFL Squads</a>
           <a href="{{ appStoreUrl }}" style="color:#9098AC;" style-hover="color:#F5F6F8;">Download</a>
         </div>
       </div>
       <div>
         <div style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:1.6px; color:#5FE3C0; margin-bottom:16px;">PARTNERS</div>
         <div style="display:flex; flex-direction:column; gap:11px; font-size:14px;">
-          <a href="greek-life.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">For Greek Life</a>
-          <a href="brands.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">For Brands</a>
+          <a href="/greek-life" style="color:#9098AC;" style-hover="color:#F5F6F8;">For Greek Life</a>
+          <a href="/brands" style="color:#9098AC;" style-hover="color:#F5F6F8;">For Brands</a>
           <a href="https://www.instagram.com/mesh.leagues/" target="_blank" rel="noopener" style="color:#9098AC;" style-hover="color:#F5F6F8;">Instagram</a>
         </div>
       </div>
@@ -335,8 +335,8 @@
         <div style="display:flex; flex-direction:column; gap:11px; font-size:14px;">
           <a href="https://app.notion.com/p/MESH-Help-Center-3aec6335f8cf81fc8101d401ed896cd4?source=copy_link" target="_blank" rel="noopener" style="color:#9098AC;" style-hover="color:#F5F6F8;">Help Center</a>
           <a href="mailto:support@meshleagues.com" style="color:#9098AC;" style-hover="color:#F5F6F8;">Contact</a>
-          <a href="privacy.html" style="color:#9098AC;" style-hover="color:#F5F6F8;">Privacy Policy</a>
-          <a href="terms.html" style="color:#F5F6F8;">Terms of Use</a>
+          <a href="/privacy" style="color:#9098AC;" style-hover="color:#F5F6F8;">Privacy Policy</a>
+          <a href="/terms" style="color:#F5F6F8;">Terms of Use</a>
         </div>
       </div>
     </div>
